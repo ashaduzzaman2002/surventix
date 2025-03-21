@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
-const NAV_LINKS = [
+export const NAV_LINKS = [
   {
     label: "Home",
     href: "/",
@@ -48,7 +48,7 @@ const Header = () => {
           </div>
           <div>
             <p className="uppercase font-bold text-lg">Surventix</p>
-            <p className="text-xs opacity-80">Driven By Discover</p>
+            <p className="text-xs opacity-80">Driven By Discovery</p>
           </div>
         </div>
 
@@ -64,9 +64,7 @@ const Header = () => {
 
         <div>
           <Link href='#' className="border border-white px-8 text-lg capitalize py-2.5 rounded-4xl">Join our panel</Link>
-          {/* <StarBorder>
-          Join Our Panel
-      </StarBorder> */}
+      
         </div>
       </div>
     </header>

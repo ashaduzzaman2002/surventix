@@ -8,13 +8,13 @@ const slides = [
   {
     content: () => (
       <>
-        <h2 className="text-5xl font-bold mb-6">
+        <h2 className="text-5xl font-bold mb-6 font-altitude " >
           Altitude | ESOMAR Latin America 2025
         </h2>
 
         <p className="mb-8 ">
           <span className="opacity-80">Why guess when you can know? At </span>
-          <span className="font-bold">Surventix</span>
+          <span className="font-bold font-altitude">Surventix</span>
           <span className="opacity-80">
             , we turn raw numbers into game-changing insights that fuel smart
             business moves. Whether you&apos;re chasing hidden industry gems or
@@ -31,7 +31,7 @@ const slides = [
         </p>
 
         <p>
-          <span className="font-bold">Surventix</span>{" "}
+          <span className="font-bold font-altitude">Surventix</span>{" "}
           <span className="opacity-80">
             is a leading online panel company, renowned for its extensive global
             reach and robust panel of 7.5 million active users worldwide
@@ -45,7 +45,7 @@ const slides = [
   {
     content: () => (
       <>
-        <h2 className="text-5xl font-bold mb-6">
+        <h2 className="text-5xl font-bold mb-6 font-altitude">
           Surventix – Smarter Research, Stronger Decisions, Bigger Impact.
         </h2>
 
@@ -55,7 +55,7 @@ const slides = [
             In today’s fast-moving market, staying ahead requires more than just
             data—it demands intelligent insights and actionable strategies. At{" "}
           </span>
-          <span className="font-bold">Surventix</span>
+          <span className="font-bold font-altitude">Surventix</span>
           <span className=" opacity-80">
             , we empower businesses with cutting-edge market research solutions
             that decode trends, understand consumer behaviour, and drive
@@ -93,7 +93,7 @@ const slides = [
   {
     content: () => (
       <>
-        <h2 className="text-5xl font-bold mb-6">
+        <h2 className="text-5xl font-bold mb-6 font-altitude">
           Find the Trends Before They Find You.
         </h2>
 
@@ -102,7 +102,7 @@ const slides = [
             In a world drowning in data, making sense of it all is the real
             game-changer. That’s where
           </span>
-          <span className="font-bold"> Surventix</span>{" "}
+          <span className="font-bold font-altitude"> Surventix</span>{" "}
           <span className="opacity-80">
             {" "}
             steps in—we don’t just crunch numbers, we decode the story behind
