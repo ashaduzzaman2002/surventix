@@ -1,37 +1,30 @@
+"use client";
+
+import { NAV_LINKS } from "@/constant/path";
+import { cn } from "@/lib/utils";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
-
-export const NAV_LINKS = [
-  {
-    label: "Home",
-    href: "/",
-  },
-  {
-    label: "About Us",
-    href: "/about-us",
-  },
-  {
-    label: "Our Services",
-    href: "/our-services",
-  },
-  {
-    label: "Code of Conduct",
-    href: "/code-of-conduct",
-  },
-  {
-    label: "Security Check",
-    href: "/security-check",
-  },
-  {
-    label: "Carrier",
-    href: "/carrier",
-  },
-];
+import React, { useEffect, useState } from "react";
 
 const Header = () => {
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <header className="fixed w-full top-0 z-50 bg-[#00233C]/40">
+    <header
+      className={cn(
+        isScrolled ? "bg-[#00233C]" : "bg-[#00233C]/40",
+        "fixed w-full top-0 z-50"
+      )}
+    >
       <div className="container flex justify-between items-center">
         <div className="flex items-center gap-2">
           <div className="relative">
@@ -55,16 +48,18 @@ const Header = () => {
         <ul className="flex gap-7">
           {NAV_LINKS.map((item, i) => (
             <li key={i}>
-              <Link href={item.href} >
-                {item.label}
-              </Link>
+              <Link href={item.href}>{item.label}</Link>
             </li>
           ))}
         </ul>
 
         <div>
-          <Link href='#' className="border border-white px-8 text-lg capitalize py-2.5 rounded-4xl">Join our panel</Link>
-      
+          <Link
+            href="/signup"
+            className="border border-white px-8 text-lg capitalize py-2.5 rounded-4xl"
+          >
+            Sign up
+          </Link>
         </div>
       </div>
     </header>

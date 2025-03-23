@@ -70,12 +70,12 @@ const Blog = () => {
               </div>
 
               <div className="mt-12">
-                <h2 className="text-[30px] font-bold leading-9" >
-                  {item.title?.slice(0, 40).trim()}...
+                <h2 className="text-[30px] font-bold leading-9 line-clamp-2" >
+                  {item.title}
                 </h2>
 
-                <p className="mt-16">
-                  {item.description?.slice(0, 100).trim()}...
+                <p className="mt-16 line-clamp-3">
+                  {item.description}
                 </p>
               </div>
             </div>

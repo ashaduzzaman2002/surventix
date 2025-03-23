@@ -11,11 +11,11 @@ const OurExpertise = () => {
         <h1 className="text-[30px] font-bold mb-[120px] text-center font-altitude">
           What to Expect at Surventix
         </h1>
-        <div className="grid grid-cols-2 gap-11">
+        <div className="grid grid-cols-2 gap-20">
           <div className="relative">
             <Image
               src={programme3}
-              className="h-full w-full rounded-[15px] object-cover"
+              className="h-full max-h-[400px] w-full rounded-[15px] object-cover"
               alt="programme"
             />
 
@@ -38,7 +38,7 @@ const OurExpertise = () => {
               seize opportunities, and stay ahead of the curve.
             </p>
 
-            <div className="mt-16">
+            <div className="mt-20">
               <Link
                 href="#"
                 className="border border-[#5CE1F2] bg-[#5CE1F2]  text-[#04021d] h-[52px] text-[20px] px-[32px] font-medium text-lg capitalize py-2.5 rounded-4xl"

@@ -1,8 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import { NAV_LINKS } from "./header";
 import { Facebook, LinkedIn, X, YouTube } from "@/assets/Icon";
+import { NAV_LINKS } from "@/constant/path";
 
 const Footer = () => {
   return (
@@ -11,7 +11,7 @@ const Footer = () => {
       style={{ background: "linear-gradient(180deg, #02000f, #001238)" }}
     >
       <div className="container">
-        <div className="grid grid-cols-[200px_1fr_240px] gap-[125px] pb-[180px]">
+        <div className="flex justify-between gap-[125px] pb-[80px]">
           <div>
             <div>
               <Link href="/">
@@ -43,6 +43,20 @@ const Footer = () => {
                   {item.label}
                 </Link>
               ))}
+            </div>
+          </div>
+
+          <div>
+            <div className="flex gap-[30px] flex-col mt-2.5">
+              <a target="_blank" href="#">
+                Privacy policy
+              </a>
+              <a target="_blank" href="#">
+                Cookie policy
+              </a>
+              <a target="_blank" href="#">
+                Terms of use
+              </a>
             </div>
           </div>
 
@@ -110,57 +124,14 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="flex justify-between items-center border-t border-[#84828c] pt-5 gap-5">
-          <Link href="/">
-            <div className="flex items-center gap-2">
-              <div className="relative">
-                <div className="absolute flex justify-center items-center top-0 bottom-0 left-0 right-0">
-                  <div className="bg-white w-[40px] h-[40px]"></div>
-                </div>
-                <Image
-                  className="relative"
-                  src="/logo.png"
-                  alt="logo"
-                  width={74}
-                  height={74}
-                />
-              </div>
-              <div>
-                <p className="uppercase font-bold text-lg">Surventix</p>
-                <p className="text-xs opacity-80">Driven By Discovery</p>
-              </div>
-            </div>
-          </Link>
-          <p className="text-[10px] text-[#84828c]">
+        <div className="flex justify-center items-center border-t border-[#84828c] pt-5 gap-5">
+          <p className="text-[10px] text-[#84828c] text-center">
             Copyright © <span>2025</span> New York AMA Communication Services,
             Inc.
             <br />
             All rights reserved. 234 5th Avenue, 2nd Floor, New York, NY 10001 |
             Phone: 212-849-2752
           </p>
-          <div className="flex gap-3">
-            <a
-              target="_blank"
-              className="text-sm text-[#84828c]"
-              href="#"
-            >
-              Privacy policy
-            </a>
-            <a
-              target="_blank"
-              className="text-sm text-[#84828c]"
-              href="#"
-            >
-              Cookie policy
-            </a>
-            <a
-              target="_blank"
-              className="text-sm text-[#84828c]"
-              href="#"
-            >
-              Terms of use
-            </a>
-          </div>
         </div>
       </div>
     </div>

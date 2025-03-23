@@ -127,7 +127,6 @@
   }
 }
 
-
 .container {
   @apply max-w-[1450px] mx-auto px-4;
 }
@@ -142,9 +141,24 @@ body {
 }
 
 .text-shadow {
-  text-shadow: 
-    -2px -2px 0 rgba(255, 255, 255, 0.3), 
-    -1px -1px 0 rgba(255, 255, 255, 0.3), 
-    2px 2px 0 rgba(0, 0, 255, 0.5),
+  text-shadow: -2px -2px 0 rgba(255, 255, 255, 0.3),
+    -1px -1px 0 rgba(255, 255, 255, 0.3), 2px 2px 0 rgba(0, 0, 255, 0.5),
     4px 4px 0 rgba(0, 0, 255, 0.3);
+}
+
+
+
+@layer utilities {
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+
+  .animate-marquee {
+    animation: marquee 10s linear infinite;
+  }
 }

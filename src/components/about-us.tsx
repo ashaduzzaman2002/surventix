@@ -11,7 +11,7 @@ const AboutUs = () => {
         <h1 className="text-[30px] font-bold mb-[120px] text-center font-altitude">
           Know about Surventix
         </h1>
-        <div className="grid grid-cols-2 gap-11">
+        <div className="grid grid-cols-2 gap-20">
           <div className="flex flex-col justify-center">
             <p className="text-[20px] font-medium">
               At Surventix, we are redefining the way businesses approach market research and
@@ -21,7 +21,7 @@ const AboutUs = () => {
               communities they serve.
             </p>
 
-            <div className="mt-16">
+            <div className="mt-20">
               <Link href='#' className="border border-[#5CE1F2] bg-[#5CE1F2]  text-[#04021d] h-[52px] text-[20px] px-[32px] font-medium text-lg capitalize py-2.5 rounded-4xl">Read More</Link>
             </div>
 
@@ -30,7 +30,7 @@ const AboutUs = () => {
           <div className="relative">
             <Image
               src={programme2}
-              className="h-full w-full rounded-[15px] object-cover"
+              className="h-full max-h-[400px] w-full rounded-[15px] object-cover"
               alt="programme"
             />
 
