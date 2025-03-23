@@ -47,7 +47,7 @@ const Header = () => {
 
         <ul className="flex gap-7">
           {NAV_LINKS.map((item, i) => (
-            <li key={i}>
+            <li key={i} className="nav-links">
               <Link href={item.href}>{item.label}</Link>
             </li>
           ))}
@@ -56,7 +56,7 @@ const Header = () => {
         <div>
           <Link
             href="/signup"
-            className="border border-white px-8 text-lg capitalize py-2.5 rounded-4xl"
+            className="border-2 border-[#5CE1F2] text-[#5CE1F2] hover:bg-[#5CE1F2] hover:text-[#04021d] duration-300 transition-all ease-in-out px-8 text-lg capitalize py-2.5 rounded-4xl"
           >
             Sign up
           </Link>
