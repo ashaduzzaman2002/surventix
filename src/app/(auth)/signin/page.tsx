@@ -1,29 +1,29 @@
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import {
-  createUserWithEmailAndPassword,
-  signInWithEmailAndPassword,
-} from "firebase/auth";
+// import {
+//   createUserWithEmailAndPassword,
+//   signInWithEmailAndPassword,
+// } from "firebase/auth";
 import Link from "next/link";
 import React from "react";
-import { auth, db } from "../../../firebase";
-import { doc, setDoc } from "firebase/firestore";
+// import { auth, db } from "../../../firebase";
+// import { doc, setDoc } from "firebase/firestore";
 const Signin = () => {
-  const handleSignIn = async () => {
-    // e.preventDefault();
-    // setError("");
-    // setLoading(true);
+  // const handleSignIn = async () => {
+  //   // e.preventDefault();
+  //   // setError("");
+  //   // setLoading(true);
 
-    try {
-      await signInWithEmailAndPassword(auth, "Abbhh", "131223");
-      // setLoading(false);
-      // navigate("/");
-    } catch (err) {
-      // // setLoading(false);
-      // const errorMessage = getFriendlyErrorMessage(err.code);
-      // setError(errorMessage);
-    }
-  };
+  //   try {
+  //     await signInWithEmailAndPassword(auth, "Abbhh", "131223");
+  //     // setLoading(false);
+  //     // navigate("/");
+  //   } catch (err) {
+  //     // // setLoading(false);
+  //     // const errorMessage = getFriendlyErrorMessage(err.code);
+  //     // setError(errorMessage);
+  //   }
+  // };
   return (
     <div className="bg-white h-full text-[#02000F] rounded-tl-4xl rounded-bl-4xl flex justify-center items-center">
       <div className="max-w-[400px] ">

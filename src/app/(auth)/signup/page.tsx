@@ -1,43 +1,43 @@
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { auth, db } from "@/firebase";
-import { createUserWithEmailAndPassword } from "firebase/auth";
-import { doc, setDoc } from "firebase/firestore";
+// import { auth, db } from "@/firebase";
+// import { createUserWithEmailAndPassword } from "firebase/auth";
+// import { doc, setDoc } from "firebase/firestore";
 import Link from "next/link";
 import React from "react";
 
 const Signup = () => {
-  const handleCreateAccount = async () => {
-    console.log("JO");
-    // e.preventDefault();
-    try {
-      const userCredential = await createUserWithEmailAndPassword(
-        auth,
-        "Aj@yopmail.com",
-        "123456"
-      );
+  // const handleCreateAccount = async () => {
+  //   console.log("JO");
+  //   // e.preventDefault();
+  //   try {
+  //     const userCredential = await createUserWithEmailAndPassword(
+  //       auth,
+  //       "Aj@yopmail.com",
+  //       "123456"
+  //     );
 
-      // Add user to Firestore
-      const user = userCredential.user;
-      await setDoc(doc(db, "users", user.uid), {
-        name: "AJ",
-        email: user.email,
-        phoneNumber: "7976",
-        createdAt: new Date().toISOString(),
-      });
-      console.log("CALLED");
+  //     // Add user to Firestore
+  //     const user = userCredential.user;
+  //     await setDoc(doc(db, "users", user.uid), {
+  //       name: "AJ",
+  //       email: user.email,
+  //       phoneNumber: "7976",
+  //       createdAt: new Date().toISOString(),
+  //     });
+  //     console.log("CALLED");
 
-      // setLoading(false);
-      // navigate("/");
-      alert("Sign-up successful! Welcome!");
-    } catch (err) {
-      console.log(err, "EENBN");
+  //     // setLoading(false);
+  //     // navigate("/");
+  //     alert("Sign-up successful! Welcome!");
+  //   } catch (err) {
+  //     console.log(err, "EENBN");
 
-      // setLoading(false);
-      // const errorMessage = getFriendlyErrorMessage(err.code);
-      // setError(errorMessage);
-    }
-  };
+  //     // setLoading(false);
+  //     // const errorMessage = getFriendlyErrorMessage(err.code);
+  //     // setError(errorMessage);
+  //   }
+  // };
   return (
     <div className="bg-white h-full text-[#02000F] rounded-tl-4xl rounded-bl-4xl flex justify-center items-center">
       <div className="max-w-[400px] ">
