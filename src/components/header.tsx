@@ -58,7 +58,7 @@ const Header = () => {
             href="/signup"
             className="border-2 border-[#5CE1F2] text-[#5CE1F2] hover:bg-[#5CE1F2] hover:text-[#04021d] duration-300 transition-all ease-in-out px-8 text-lg capitalize py-2.5 rounded-4xl"
           >
-            Sign up
+            join our panel
           </Link>
         </div>
       </div>
