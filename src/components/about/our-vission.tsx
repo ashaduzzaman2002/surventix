@@ -33,12 +33,12 @@ const sections = [
 ];
 
 export default function OurVission() {
-    const containerRef = useRef<HTMLDivElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll();
   const [activeIndex, setActiveIndex] = useState(0);
 
-  console.log(activeIndex)
-  console.log(scrollYProgress)
+  console.log(activeIndex);
+  console.log(scrollYProgress);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -56,23 +56,17 @@ export default function OurVission() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-
-console.log(activeIndex)
-
-useEffect(() => {
-    const handleScroll = () => {
-      const sectionHeight = window.innerHeight * 0.6;
-      const scrollPosition = window.scrollY + window.innerHeight * 0.4;
-      const newIndex = Math.floor(scrollPosition / sectionHeight);
-      setActiveIndex(Math.min(sections.length - 1, newIndex));
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
   return (
     <div ref={containerRef} className="relative text-white">
-      <motion.h2 className="text-5xl sticky top-28 max-w-[300px] text-center font-semibold mx-auto"  >
+      <motion.h2
+        className="text-5xl sticky top-28 max-w-[300px] text-center font-semibold mx-auto"
+        animate={
+          activeIndex === sections.length - 1
+            ? { y: -200, opacity: 0 }
+            : { y: 0, opacity: 1 }
+        }
+        transition={{ duration: 0.5 }}
+      >
         Our{" "}
         <span className="bg-gradient-to-r from-purple-500 via-pink-500 to bg-yellow-500 bg-clip-text text-transparent">
           Vision
@@ -83,14 +77,11 @@ useEffect(() => {
         Mission:
       </motion.h2>
       {sections.map((section, index) => {
-   
-
         return (
           <motion.div
             key={index}
-            
             className={`sticky top-[210px] left-0 w-full h-[60vh] flex items-center justify-center px-6 `}
-            style={{ zIndex: sections.length + index, }}
+            style={{ zIndex: sections.length + index }}
           >
             <motion.div style={{}}>
               <Card className="max-w-2xl h-[240px] bg-gray-800 p-6 rounded-2xl shadow-xl">

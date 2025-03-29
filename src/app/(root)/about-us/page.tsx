@@ -1,8 +1,17 @@
+"use client";
+
 import { about1, about2 } from "@/assets";
 import { PlayWhite } from "@/assets/Icon";
 import OurVission from "@/components/about/our-vission";
 import Image from "next/image";
 import React from "react";
+import { motion } from "framer-motion";
+// import CompanyOverview from "@/components/about/company-overview";
+
+const sectionVariants = {
+  hidden: { opacity: 0, y: 50 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } },
+};
 
 const AboutUs = () => {
   return (
@@ -83,8 +92,16 @@ const AboutUs = () => {
           </div>
         </div>
       </section>
+      {/* <CompanyOverview /> */}
 
-      <OurVission />
+      <motion.div
+        variants={sectionVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+      >
+        <OurVission />
+      </motion.div>
       {/* <OurVission /> */}
     </div>
   );
