@@ -5,22 +5,15 @@ import Link from "next/link";
 import React from "react";
 import { Facebook, LinkedIn, X, YouTube } from "@/assets/Icon";
 import { NAV_LINKS } from "@/constant/path";
-import { motion } from "framer-motion";
 import { Input } from "./ui/input";
 
-const sectionVariants = {
-  hidden: { opacity: 0, y: 50 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } },
-};
+
 
 const Footer = () => {
   return (
-    <motion.div
-      variants={sectionVariants}
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, amount: 0.2 }}
-      className="flex flex-col text-white py-9"
+    <div
+      
+      className="flex flex-col text-white py-9 bg-[#02000F]"
       style={{ background: "linear-gradient(180deg, #02000f, #001238)" }}
     >
       <div className="container">
@@ -124,7 +117,7 @@ const Footer = () => {
           </p>
         </div>
       </div>
-    </motion.div>
+    </div>
   );
 };
 

@@ -8,7 +8,7 @@ const OurExpertise = () => {
   return (
     <div className=" text-white pb-[80px] pt-10">
       <div className="container">
-        <h1 className="text-[30px] font-bold mb-[120px] text-center font-altitude">
+        <h1 className="text-5xl  font-semibold mb-[120px] text-center">
           What to Expect at Surventix
         </h1>
         <div className="grid grid-cols-2 gap-20">

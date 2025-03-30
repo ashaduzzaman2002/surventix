@@ -7,7 +7,11 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
     <>
       <Header />
       {children}
-      <Footer />
+
+      <div className="relative z-10">
+
+        <Footer />
+      </div>
     </>
   );
 };

@@ -4,10 +4,12 @@ import { NAV_LINKS } from "@/constant/path";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import React, { useEffect, useState } from "react";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
+  const pathname = usePathname()
 
   useEffect(() => {
     const handleScroll = () => {
@@ -21,7 +23,7 @@ const Header = () => {
   return (
     <header
       className={cn(
-        isScrolled ? "bg-[#00233C]" : "bg-[#00233C]/40",
+        isScrolled || pathname !== '/' ? "bg-[#00233C]" : "bg-[#00233C]/40",
         "fixed w-full top-0 z-50"
       )}
     >

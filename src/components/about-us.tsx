@@ -8,9 +8,11 @@ const AboutUs = () => {
   return (
     <div className=" text-white py-[80px]" >
       <div className="container">
-        <h1 className="text-[30px] font-bold mb-[120px] text-center font-altitude">
+        <h1 className="text-5xl  font-semibold mb-[120px] text-center">
           Know about Surventix
         </h1>
+
+        
         <div className="grid grid-cols-2 gap-20">
           <div className="flex flex-col justify-center">
             <p className="text-[20px] font-medium">

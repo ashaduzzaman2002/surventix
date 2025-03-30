@@ -9,6 +9,10 @@
   src: url(/Altitude.otf);
 }
 
+*{
+  scroll-behavior: smooth;
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);

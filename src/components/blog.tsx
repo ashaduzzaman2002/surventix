@@ -37,7 +37,7 @@ const data = [
 const Blog = () => {
   return (
     <div className="container text-white pb-[80px] pt-10">
-      <h1 className="text-[30px] font-bold mb-[180px] text-center font-altitude">
+      <h1 className="text-5xl  font-semibold mb-[160px] text-center">
         Our Blogs
       </h1>
 

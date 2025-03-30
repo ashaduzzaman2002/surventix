@@ -6,6 +6,8 @@ import OurVission from "@/components/about/our-vission";
 import Image from "next/image";
 import React from "react";
 import { motion } from "framer-motion";
+import WhyChooseUs from "@/components/about/why-choose-us";
+import MeetOurTeam from "@/components/about/team";
 // import CompanyOverview from "@/components/about/company-overview";
 
 const sectionVariants = {
@@ -16,7 +18,7 @@ const sectionVariants = {
 const AboutUs = () => {
   return (
     <div>
-      <section className="relative mb-[80px] overflow-hidden bg-gradient-to-tr from-[#5D1FE6] to-[#03C8CF] mt-20 py-10">
+      <section className="relative mb-[80px] overflow-hidden bg-gradient-to-tr from-[#5D1FE6] to-[#03C8CF] mt-16 py-10">
         <div className="container">
           <div className="grid grid-cols-2 overflow-hidden ">
             <div className="flex w-full flex-col pr-0 mb-4 mb-md-0 relative z-10">
@@ -102,7 +104,9 @@ const AboutUs = () => {
       >
         <OurVission />
       </motion.div>
-      {/* <OurVission /> */}
+
+      <WhyChooseUs />
+      <MeetOurTeam />
     </div>
   );
 };
