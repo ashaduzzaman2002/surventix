@@ -192,7 +192,7 @@ const EthicalCard = ({
       });
 
       // Pause the animation initially
-      animationInstance.current.goToAndStop(0, true);
+      animationInstance.current.stop();
     }
 
     return () => {
@@ -205,7 +205,7 @@ const EthicalCard = ({
   };
 
   const handleMouseLeave = () => {
-    animationInstance.current?.goToAndStop(0, true); // Reset to initial frame
+    animationInstance.current?.stop(); // Stop instead of resetting to first frame
   };
 
   return (
@@ -214,7 +214,8 @@ const EthicalCard = ({
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
-      <div ref={animationContainer} className="absolute inset-0"></div>
+      {/* Ensure animation container doesn't block text */}
+      <div ref={animationContainer} className="absolute inset-0 pointer-events-none"></div>
 
       <div className="absolute inset-0">
         <div className="h-full translate-y-0 group-hover:-translate-y-[350px] duration-1000 transition-all ease-in-out flex items-end p-6 pb-8">
