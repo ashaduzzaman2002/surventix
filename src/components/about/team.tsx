@@ -5,12 +5,12 @@ import { motion } from "framer-motion";
 
 export default function MeetOurTeam() {
     return (
-        <div className=" container text-white py-16 text-center mb-10">
-            <h2 className="text-4xl font-bold mb-4">Meet Our Team</h2>
-            <p className="text-gray-400 mb-10 max-w-2xl mx-auto">
+        <div className=" container text-white md:py-16 text-center mb-10">
+            <h2 className="md:text-5xl text-3xl font-bold mb-4">Meet Our Team</h2>
+            <p className="text-gray-400 mb-10 text-sm max-w-2xl mx-auto">
             At Surventix, our leadership team is made up of passionate and forward-thinking professionals committed to shaping the company’s future. With deep expertise across various industries, they work relentlessly to create meaningful solutions that drive success for our global customers.” 
             </p>
-            <div className="grid grid-cols-3 gap-10 pt-10">
+            <div className="grid md:grid-cols-3 gap-10 pt-10">
                 {teamMembers.map((member, index) => (
                     <motion.div
                         key={index}

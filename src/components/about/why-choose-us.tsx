@@ -11,11 +11,11 @@ import Image from "next/image";
 
 const WhyChooseUs = () => {
   return (
-    <div className="container mt-10">
-      <div className="flex justify-between items-center">
+    <div className="container md:mt-10">
+      <div className="flex flex-wrap justify-between items-center">
         <div className="max-w-[650px]">
-          <h2 className="text-5xl mb-5">Why Choose Surventix?</h2>
-          <p className="text-sm opacity-80">
+          <h2 className="md:text-5xl text-3xl mb-5">Why Choose Surventix?</h2>
+          <p className="text-sm opacity-80 mb-8 md:mb-0">
             At Surventix, we redefine market intelligence through a harmonized
             fusion of advanced analytics, strategic expertise, and cutting-edge
             technology, ensuring that businesses not only navigate complexities
@@ -30,7 +30,7 @@ const WhyChooseUs = () => {
       </div>
 
       <div>
-        <Carousel className="w-full mx-auto pb-28 mt-16">
+        <Carousel className="w-full mx-auto pb-28 md:mt-16 mt-12">
           <CarouselContent className="-ml-4 md:-ml-8">
             {WHY_CHOOSE_US.map((item, index) => (
               <CarouselItem

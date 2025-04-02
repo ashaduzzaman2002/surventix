@@ -59,7 +59,7 @@ export default function OurVission() {
   return (
     <div ref={containerRef} className="relative text-white">
       <motion.h2
-        className="text-5xl sticky top-28 max-w-[300px] text-center font-semibold mx-auto"
+        className="md:text-5xl text-3xl sticky top-28 max-w-[300px] text-center font-semibold mx-auto"
         animate={
           activeIndex === sections.length - 1
             ? { y: -200, opacity: 0 }
@@ -80,14 +80,16 @@ export default function OurVission() {
         return (
           <motion.div
             key={index}
-            className={`sticky top-[210px] left-0 w-full h-[60vh] flex items-center justify-center px-6 `}
+            className={`sticky md:top-[210px] top-[180px] left-0 w-full md:h-[60vh] h-[50vh] flex items-center justify-center px-6 `}
             style={{ zIndex: sections.length + index }}
           >
             <motion.div style={{}}>
-              <Card className="max-w-2xl h-[240px] bg-gray-800 p-6 rounded-2xl shadow-xl">
+              <Card className="max-w-2xl md:h-[240px] h-[260px] bg-gray-800 md:p-6 rounded-2xl shadow-xl">
                 <CardContent>
-                  <h2 className="text-2xl font-bold mb-4">{section.title}</h2>
-                  <p className="text-lg">{section.content}</p>
+                  <h2 className="md:text-2xl text-xl font-bold mb-4">
+                    {section.title}
+                  </h2>
+                  <p className="md:text-lg text-sm">{section.content}</p>
                 </CardContent>
               </Card>
             </motion.div>

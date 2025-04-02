@@ -6,10 +6,12 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React, { useEffect, useState } from "react";
+import { Menu, X } from "lucide-react";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
-  const pathname = usePathname()
+  const [menuOpen, setMenuOpen] = useState(false);
+  const pathname = usePathname();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -20,21 +22,29 @@ const Header = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  useEffect(() => {
+    if (menuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+  }, [menuOpen]);
+
   return (
     <header
       className={cn(
-        isScrolled || pathname !== '/' ? "bg-[#00233C]" : "bg-[#00233C]/40",
-        "fixed w-full top-0 z-50"
+        isScrolled || pathname !== "/" ? "bg-[#00233C]" : "bg-[#00233C]/40",
+        "fixed w-full top-0 z-50 transition-all"
       )}
     >
-      <div className="container flex justify-between items-center">
+      <div className="container flex justify-between items-center ">
         <div className="flex items-center gap-2">
-          <div className="relative">
+          <div className="relative ">
             <div className="absolute flex justify-center items-center top-0 bottom-0 left-0 right-0">
-              <div className="bg-white w-[40px] h-[40px]"></div>
+              <div className="bg-white md:w-[40px] md:h-[40px] h-[29px] w-[30px]"></div>
             </div>
             <Image
-              className="relative"
+              className="relative w-[65px] h-[65px] md:w-[74px] md:h-[74px]"
               src="/logo.png"
               alt="logo"
               width={74}
@@ -42,27 +52,60 @@ const Header = () => {
             />
           </div>
           <div>
-            <p className="uppercase font-bold text-lg">Surventix</p>
-            <p className="text-xs opacity-80">Driven By Discovery</p>
+            <p className="uppercase font-bold md:text-lg text-base">
+              Surventix
+            </p>
+            <p className="md:text-xs text-[10px] opacity-80">
+              Driven By Discovery
+            </p>
           </div>
         </div>
 
-        <ul className="flex gap-7">
+        <nav className="hidden md:flex gap-7">
           {NAV_LINKS.map((item, i) => (
-            <li key={i} className="nav-links">
+            <li key={i} className="nav-links list-none">
               <Link href={item.href}>{item.label}</Link>
             </li>
           ))}
-        </ul>
+        </nav>
 
-        <div>
+        <div className="hidden md:block">
           <Link
             href="/signup"
-            className="border-2 border-[#5CE1F2] text-[#5CE1F2] hover:bg-[#5CE1F2] hover:text-[#04021d] duration-300 transition-all ease-in-out px-8 text-lg capitalize py-2.5 rounded-4xl"
+            className="border-[1.5px] border-white text-white hover:bg-white hover:text-[#04021d] duration-300 transition-all ease-in-out px-8 text-lg capitalize py-2.5 rounded-4xl"
           >
             join our panel
           </Link>
         </div>
+
+        {/* Mobile Menu Button */}
+        <button
+          className="md:hidden text-white z-50"
+          onClick={() => setMenuOpen(!menuOpen)}
+        >
+          {menuOpen ? <X size={28} /> : <Menu size={28} />}
+        </button>
+      </div>
+
+      {/* Mobile Menu */}
+      <div
+        className={cn(
+          "fixed inset-0 bg-[#00233C]  flex flex-col items-center justify-center space-y-6 text-white text-xl transform transition-transform duration-300",
+          menuOpen ? "translate-x-0" : "-translate-x-full"
+        )}
+      >
+        {NAV_LINKS.map((item, i) => (
+          <Link key={i} href={item.href} onClick={() => setMenuOpen(false)}>
+            {item.label}
+          </Link>
+        ))}
+        <Link
+          href="/signup"
+          className="border-[1.5px] border-white text-white hover:bg-white hover:text-[#04021d] duration-300 transition-all ease-in-out px-6 py-2 rounded-4xl"
+          onClick={() => setMenuOpen(false)}
+        >
+          join our panel
+        </Link>
       </div>
     </header>
   );

@@ -14,8 +14,10 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Surventix — Helped their clients with innovative research and tech services",
-  description: "Whether conducting targeted niche studies or large-scale global surveys, Surventix ensures accurate, reliable, and actionable data to empower decision-making.",
+  title:
+    "Surventix — Helped their clients with innovative research and tech services",
+  description:
+    "Whether conducting targeted niche studies or large-scale global surveys, Surventix ensures accurate, reliable, and actionable data to empower decision-making.",
 };
 
 export default function RootLayout({
@@ -30,11 +32,10 @@ export default function RootLayout({
       >
         <ThemeProvider
           attribute="class"
-          defaultTheme="dark" 
+          defaultTheme="dark"
           enableSystem
           disableTransitionOnChange
         >
-         
           {children}
         </ThemeProvider>
       </body>

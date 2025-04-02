@@ -18,14 +18,14 @@ const sectionVariants = {
 const AboutUs = () => {
   return (
     <div>
-      <section className="relative mb-[80px] overflow-hidden bg-gradient-to-tr from-[#5D1FE6] to-[#03C8CF] mt-16 py-10">
+      <section className="relative min-h-screen md:mb-[80px] mb-16 overflow-hidden bg-gradient-to-tr from-[#5D1FE6] to-[#03C8CF] py-10 md:pt-28 pt-16">
         <div className="container">
-          <div className="grid grid-cols-2 overflow-hidden ">
+          <div className="grid lg:grid-cols-2 overflow-hidden gap-8 md:gap-0">
             <div className="flex w-full flex-col pr-0 mb-4 mb-md-0 relative z-10">
               <h1 className="text-white text-sm mb-2 pt-[30px] uppercase tracking-wider">
                 Company Overview
               </h1>
-              <h2 className="text-white text-[50px] leading-[50px] font-bold mb-5 ">
+              <h2 className="text-white md:text-[50px] md:leading-[50px] text-3xl leading-[30px] font-bold mb-5 ">
                 Smarter connections, stronger insights, research unleashed -
                 Powered by People, Strengthened by Partnerships
               </h2>
@@ -51,12 +51,12 @@ const AboutUs = () => {
               </div>
             </div>
 
-            <div className="flex flex-col  justify-center items-center pl-8 relative z-10">
+            <div className="flex flex-col  justify-center items-center md:pl-8 relative z-10">
               <div className=" h-full relative z-10">
-                <div className="h-[90%] w-[90%] overflow-hidden rounded-[15px]">
+                <div className="h-[90%] w-[90%] aspect-square overflow-hidden rounded-[15px]">
                   <Image
                     src={about1}
-                    className="h-full object-cover"
+                    className="h-full w-full object-cover"
                     alt="image"
                   />
                 </div>
