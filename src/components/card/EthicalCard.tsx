@@ -19,7 +19,7 @@ const EthicalCard = ({
     const animationInstance = useRef<AnimationItem | null>(null);
   
     useEffect(() => {
-      if (animationContainer.current) {
+      if (typeof window !== 'undefined' && animationContainer.current) {
         animationInstance.current = lottie.loadAnimation({
           container: animationContainer.current,
           renderer: "svg",
@@ -35,7 +35,7 @@ const EthicalCard = ({
       return () => {
         animationInstance.current?.destroy();
       };
-    }, []);
+    }, [animationFile]);
   
     const handleMouseEnter = () => {
       animationInstance.current?.goToAndPlay(0, true); // Play from start
