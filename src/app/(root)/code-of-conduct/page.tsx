@@ -4,8 +4,8 @@ import { CODE_OF_CONDUCT, COMMITMENTS, ETHICS, FAQ } from "@/constant/data";
 import { ArrowRight, Minus, Plus } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import React, { useEffect, useRef, useState } from "react";
-import lottie, { AnimationItem } from "lottie-web";
+import React, { useEffect, useState } from "react";
+// import lottie, { AnimationItem } from "lottie-web";
 import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
 
@@ -178,7 +178,7 @@ const EthicalCard = ({
   className,
   title,
   description,
-  animationFile,
+  // animationFile,
 }: {
   className: string;
   title: string;
@@ -187,48 +187,48 @@ const EthicalCard = ({
 }) => {
 
  
-  const animationContainer = useRef<HTMLDivElement>(null);
-  const animationInstance = useRef<AnimationItem | null>(null);
+  // const animationContainer = useRef<HTMLDivElement>(null);
+  // const animationInstance = useRef<AnimationItem | null>(null);
 
   
 
-  useEffect(() => {
-    if (animationContainer.current) {
-      animationInstance.current = lottie.loadAnimation({
-        container: animationContainer.current,
-        renderer: "svg",
-        loop: false, // Ensure it doesn't loop
-        autoplay: false, // Don't play initially
-        animationData: animationFile,
-      });
+  // useEffect(() => {
+  //   if (animationContainer.current) {
+  //     animationInstance.current = lottie.loadAnimation({
+  //       container: animationContainer.current,
+  //       renderer: "svg",
+  //       loop: false, // Ensure it doesn't loop
+  //       autoplay: false, // Don't play initially
+  //       animationData: animationFile,
+  //     });
 
-      // Pause the animation initially
-      animationInstance.current.stop();
-    }
+  //     // Pause the animation initially
+  //     animationInstance.current.stop();
+  //   }
 
-    return () => {
-      animationInstance.current?.destroy();
-    };
-  }, [animationFile]);
+  //   return () => {
+  //     animationInstance.current?.destroy();
+  //   };
+  // }, [animationFile]);
 
-  const handleMouseEnter = () => {
-    animationInstance.current?.goToAndPlay(0, true); // Play from start
-  };
+  // const handleMouseEnter = () => {
+  //   animationInstance.current?.goToAndPlay(0, true); // Play from start
+  // };
 
-  const handleMouseLeave = () => {
-    animationInstance.current?.stop(); // Stop instead of resetting to first frame
-  };
+  // const handleMouseLeave = () => {
+  //   animationInstance.current?.stop(); // Stop instead of resetting to first frame
+  // };
 
   
 
   return (
     <div
       className={`h-[300px] w-[450px] group overflow-hidden relative ${className}`}
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
+      // onMouseEnter={handleMouseEnter}
+      // onMouseLeave={handleMouseLeave}
     >
       {/* Ensure animation container doesn't block text */}
-      <div ref={animationContainer} className="absolute inset-0 pointer-events-none"></div>
+      {/* <div ref={animationContainer} className="absolute inset-0 pointer-events-none"></div> */}
 
       <div className="absolute inset-0">
         <div className="h-full translate-y-0 group-hover:-translate-y-[350px] duration-1000 transition-all ease-in-out flex items-end p-6 pb-8">
