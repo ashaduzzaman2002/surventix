@@ -178,8 +178,18 @@ const EthicalCard = ({
   description: string;
   animationFile: Record<string, unknown>;
 }) => {
+
+ 
   const animationContainer = useRef<HTMLDivElement>(null);
   const animationInstance = useRef<AnimationItem | null>(null);
+
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true); // Ensure component runs only in the client
+  }, []);
+
+
 
   useEffect(() => {
     if (animationContainer.current) {
@@ -207,6 +217,10 @@ const EthicalCard = ({
   const handleMouseLeave = () => {
     animationInstance.current?.stop(); // Stop instead of resetting to first frame
   };
+
+
+  if (!isClient) return null;
+  
 
   return (
     <div
