@@ -474,7 +474,7 @@ export const ETHICS = [
     description: `We proactively identify and mitigate any
 situations that may create bias or undue influence. Should a potential issue arise, we ensure
 full transparency and disclosure, maintaining trust and fairness in all professional dealings`,
-    className: "mr-auto mb-20 bg-[#E2062E]",
+    className: "mr-auto md:mb-20 mb-10 bg-[#E2062E]",
     animation: timealphared,
   },
   {
@@ -484,7 +484,7 @@ full transparency and disclosure, maintaining trust and fairness in all professi
 and industry regulations, including ESOMAR and MRS guidelines. By following these
 internationally recognized ethical frameworks, we guarantee responsible research practices
 and data integrity.`,
-    className: "ml-auto mb-20 bg-[#460073]",
+    className: "ml-auto md:mb-20 mb-10 bg-[#460073]",
     animation: timealphaviolet,
   },
   {

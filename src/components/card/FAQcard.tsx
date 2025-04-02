@@ -18,25 +18,25 @@ const FAQcard = ({
 }) => {
   const [open, setOpen] = useState(false);
   return (
-    <div className="border-t-2 border-b-2 py-5 border-purple-600">
+    <div className="md:border-t-2 border-t border-b md:border-b-2 md:py-5 py-4 border-purple-700">
       <div
         className="flex justify-between "
         onClick={() => setOpen((prev) => !prev)}
       >
-        <h2 className="text-2xl font-bold">{item.title}</h2>{" "}
+        <h2 className="md:text-2xl text-lg md:font-bold font-semibold">{item.title}</h2>{" "}
         <motion.button animate={{ rotate: open ? 180 : 0 }}>
           {open ? <Minus /> : <Plus />}
         </motion.button>
       </div>
 
       <motion.div
-        className={cn(open ? "mt-6" : "", "overflow-hidden flex gap-10")}
+        className={cn(open ? "mt-6" : "", "overflow-hidden flex md:flex-row flex-col  md:gap-10 gap-8")}
         initial={{ height: 0 }}
         animate={{ height: open ? "auto" : 0 }}
       >
-        <p className="text-lg">{item.description}</p>
+        <p className="md:text-lg text-sm">{item.description}</p>
         <div>
-          <div className="w-[300px] h-[200px]">
+          <div className="md:w-[300px] w-full h-[200px]">
             <Image
               className="w-full h-full"
               src={item.image}

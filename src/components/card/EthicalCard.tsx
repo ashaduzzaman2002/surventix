@@ -1,76 +1,95 @@
-'use client'
+"use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import type { AnimationItem } from "lottie-web";
 
 const EthicalCard = ({
-    className,
-    title,
-    description,
-    animationFile,
-  }:
-  {
-    className: string;
-    title: string;
-    description: string;
-    animationFile: Record<string, unknown>;
-  }) => {
-    const animationContainer = useRef<HTMLDivElement>(null);
-    const animationInstance = useRef<AnimationItem | null>(null);
+  className,
+  title,
+  description,
+  animationFile,
+}: {
+  className: string;
+  title: string;
+  description: string;
+  animationFile: Record<string, unknown>;
+}) => {
+  const animationContainer = useRef<HTMLDivElement>(null);
+  const animationInstance = useRef<AnimationItem | null>(null);
+  const [isMobile, setIsMobile] = useState(false);
+  const [isActive, setIsActive] = useState(false);
 
-    useEffect(() => {
-      if (typeof window !== 'undefined' && animationContainer.current) {
-        // Dynamically import lottie-web
-        import("lottie-web").then((lottie) => {
-          animationInstance.current = lottie.default.loadAnimation({
-            container: animationContainer.current!,
-            renderer: "svg",
-            loop: false,
-            autoplay: false,
-            animationData: animationFile,
-          });
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth <= 768);
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
 
-          // Pause the animation initially
-          animationInstance.current.stop();
+  useEffect(() => {
+    if (typeof window !== "undefined" && animationContainer.current) {
+      import("lottie-web").then((lottie) => {
+        animationInstance.current = lottie.default.loadAnimation({
+          container: animationContainer.current!,
+          renderer: "svg",
+          loop: false,
+          autoplay: false,
+          animationData: animationFile,
         });
-      }
+        animationInstance.current.stop();
+      });
+    }
 
-      return () => {
-        animationInstance.current?.destroy();
-      };
-    }, [animationFile]);
-
-    const handleMouseEnter = () => {
-      animationInstance.current?.goToAndPlay(0, true); // Play from start
+    return () => {
+      animationInstance.current?.destroy();
     };
+  }, [animationFile]);
 
-    const handleMouseLeave = () => {
-      animationInstance.current?.stop(); // Stop instead of resetting to first frame
-    };
+  const handleInteraction = () => {
+    if (isMobile) {
+      setIsActive((prev) => {
+        const newState = !prev;
+        if (newState) {
+          animationInstance.current?.goToAndPlay(0, true);
+        } else {
+          animationInstance.current?.stop();
+        }
+        return newState;
+      });
+    }
+  };
 
-    return (
-      <div
-        className={`h-[300px] w-[450px] group overflow-hidden relative ${className}`}
-        onMouseEnter={handleMouseEnter}
-        onMouseLeave={handleMouseLeave}
-      >
-        {/* Ensure animation container doesn't block text */}
+  return (
+    <div
+      className={`h-[300px] md:w-[450px] w-full group overflow-hidden relative ${className}`}
+      onMouseEnter={!isMobile ? () => animationInstance.current?.goToAndPlay(0, true) : undefined}
+      onMouseLeave={!isMobile ? () => animationInstance.current?.stop() : undefined}
+      onClick={handleInteraction}
+    >
+      <div ref={animationContainer} className="absolute inset-0 pointer-events-none"></div>
+
+      {/* Card Content */}
+      <div className="absolute inset-0">
+        {/* Title */}
         <div
-          ref={animationContainer}
-          className="absolute inset-0 pointer-events-none"
-        ></div>
+          className={`h-full flex items-end p-6 pb-8 transition-transform duration-700 ease-in-out
+          ${isActive ? "-translate-y-[300px]" : "translate-y-0"}
+          group-hover:-translate-y-[300px]`}
+        >
+          <h2 className="md:text-3xl text-2xl">{title}</h2>
+        </div>
 
-        <div className="absolute inset-0">
-          <div className="h-full translate-y-0 group-hover:-translate-y-[350px] duration-1000 transition-all ease-in-out flex items-end p-6 pb-8">
-            <h2 className="text-3xl">{title}</h2>
-          </div>
-
-          <div className="translate-y-[200px] group-hover:-translate-y-[300px] duration-1000 transition-all ease-in-out h-full p-6 pt-8">
-            <p className="text-lg">{description}</p>
-          </div>
+        {/* Description */}
+        <div
+          className={`p-6 pt-8 transition-transform duration-700 ease-in-out
+          ${isActive ? "-translate-y-[300px]" : "translate-y-[200px]"}
+          group-hover:-translate-y-[300px]`}
+        >
+          <p className="md:text-lg text-sm">{description}</p>
         </div>
       </div>
-    );
-  };
+    </div>
+  );
+};
 
 export default EthicalCard;

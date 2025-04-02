@@ -4,9 +4,9 @@ import EthicalCard from "../card/EthicalCard";
 
 const Ethics = () => {
   return (
-    <div className="relative bg-[#02000F] md:pb-20 pb-12">
+    <div className="relative bg-[#02000F] md:pb-20 ">
       <div className="container">
-        <div className="text-center sticky top-80">
+        <div className="md:text-center md:sticky top-80">
           <h2 className="md:text-[35px] text-2xl leading-[24px] md:leading-[35px] mb-5 ">
             Ethical Practices: Upholding Integrity <br /> and Accountability
           </h2>
@@ -19,7 +19,7 @@ const Ethics = () => {
             remains transparent, compliant, and respectful of all stakeholders.
           </p>
         </div>
-        <div className="mt-16 max-w-5xl mx-auto">
+        <div className="md:mt-16 mt-8 max-w-5xl mx-auto">
           {ETHICS.map((item) => (
             <EthicalCard
               key={item.id}

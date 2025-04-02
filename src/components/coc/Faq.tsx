@@ -19,7 +19,7 @@ const Faq = () => {
             action aligns with our core values and legal obligations.
           </p>
         </div>
-        <div className="mt-16 flex flex-col gap-8">
+        <div className="md:mt-16 mt-8 flex flex-col md:gap-8 gap-5">
           {FAQ.map((item) => (
             <FAQcard key={item.id} item={item} />
           ))}

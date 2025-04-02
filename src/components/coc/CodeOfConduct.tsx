@@ -10,7 +10,7 @@ const CodeOfConduct = () => {
           Code of Conduct
         </h2>
 
-        <div className="gap-8 grid-cols-3 grid mt-12">
+        <div className="gap-8 md:grid-cols-3 grid md:mt-16  mt-8">
           {CODE_OF_CONDUCT.map((item) => (
             <div
               key={item.id}
@@ -32,9 +32,9 @@ const CodeOfConduct = () => {
                 </div>
               </div>
 
-              <div className="bg-[#00233C] p-6 rounded-2xl -mt-10 relative">
-                <h3 className="text-4xl mb-4">{item.title}</h3>
-                <p className="font-light">{item.description}</p>
+              <div className="bg-[#00233C] md:p-6 p-4 rounded-2xl -mt-10 relative">
+                <h3 className="md:text-4xl text-2xl md:mb-4 mb-3">{item.title}</h3>
+                <p className="font-light md:text-base text-sm">{item.description}</p>
               </div>
             </div>
           ))}

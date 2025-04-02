@@ -11,7 +11,7 @@ const Commitment = () => {
           and Employees
         </h2>
 
-        <div className="gap-16 grid-cols-3 grid mt-16">
+        <div className="md:gap-16 gap-8 md:grid-cols-3 grid md:mt-16 mt-8">
           {COMMITMENTS.map((item) => (
             <CommitmentCard key={item.id} item={item} />
           ))}

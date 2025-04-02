@@ -54,11 +54,15 @@ const Page = () => {
         </div>
       </div>
 
+      <div className="bg-[#02000F] relative">
+
+     
+
       <CodeOfConduct />
       <Commitment />
       <Ethics />
       <Faq />
-      
+      </div>
     </div>
   );
 };
