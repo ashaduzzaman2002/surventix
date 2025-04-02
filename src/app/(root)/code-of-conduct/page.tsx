@@ -178,30 +178,21 @@ const EthicalCard = ({
   description: string;
   animationFile: Record<string, unknown>;
 }) => {
-
- 
   const animationContainer = useRef<HTMLDivElement>(null);
   const animationInstance = useRef<AnimationItem | null>(null);
 
-  const [isClient, setIsClient] = useState(false);
-
   useEffect(() => {
-    setIsClient(true); // Ensure component runs only in the client
-  }, []);
+    if (typeof window !== "undefined" && animationContainer.current) {
+      console.log("Initializing Lottie..."); // Debugging
 
-
-
-  useEffect(() => {
-    if (animationContainer.current) {
       animationInstance.current = lottie.loadAnimation({
         container: animationContainer.current,
         renderer: "svg",
-        loop: false, // Ensure it doesn't loop
-        autoplay: false, // Don't play initially
+        loop: false,
+        autoplay: false,
         animationData: animationFile,
       });
 
-      // Pause the animation initially
       animationInstance.current.stop();
     }
 
@@ -211,16 +202,14 @@ const EthicalCard = ({
   }, [animationFile]);
 
   const handleMouseEnter = () => {
-    animationInstance.current?.goToAndPlay(0, true); // Play from start
+    console.log("Mouse entered, playing animation...");
+    animationInstance.current?.goToAndPlay(0, true);
   };
 
   const handleMouseLeave = () => {
-    animationInstance.current?.stop(); // Stop instead of resetting to first frame
+    console.log("Mouse left, stopping animation...");
+    animationInstance.current?.stop();
   };
-
-
-  if (!isClient) return null;
-  
 
   return (
     <div
@@ -228,7 +217,6 @@ const EthicalCard = ({
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
-      {/* Ensure animation container doesn't block text */}
       <div ref={animationContainer} className="absolute inset-0 pointer-events-none"></div>
 
       <div className="absolute inset-0">
@@ -243,6 +231,7 @@ const EthicalCard = ({
     </div>
   );
 };
+
 
 const CommitmentCard = ({
   item,
