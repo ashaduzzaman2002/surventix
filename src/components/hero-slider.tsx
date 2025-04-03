@@ -8,17 +8,17 @@ const slides = [
   {
     content: () => (
       <>
-        <h2 className="md:text-5xl text-3xl font-bold md:mb-6 mb-4 font-altitude " >
-          Altitude | ESOMAR Latin America 2025
+        <h2 className="md:text-5xl text-3xl font-bold md:mb-6 mb-4  ">
+          Welcome to Surventix – Your Market Research Partner
         </h2>
 
         <p className="md:mb-8 mb-5 text-sm md:text-base">
           <span className="opacity-80">Why guess when you can know? At </span>
-          <span className="font-bold font-altitude">Surventix</span>
+          <span className="font-bold ">Surventix</span>
           <span className="opacity-80">
             , we turn raw numbers into game-changing insights that fuel smart
-            business moves. Whether you&apos;re chasing hidden industry gems or
-            scanning the global market for bigpicture trends, we&apos;ve got the data
+            business moves. Whether you're chasing hidden industry gems or
+            scanning the global market for bigpicture trends, we've got the data
             magic to keep you ahead of the curve. Accurate, reliable, and packed
             with impact—because in business, the best decisions are the ones
             backed by real intelligence
@@ -31,7 +31,7 @@ const slides = [
         </p>
 
         <p>
-          <span className="font-bold font-altitude">Surventix</span>{" "}
+          <span className="font-bold ">Surventix</span>{" "}
           <span className="opacity-80">
             is a leading online panel company, renowned for its extensive global
             reach and robust panel of 7.5 million active users worldwide
@@ -45,17 +45,15 @@ const slides = [
   {
     content: () => (
       <>
-        <h2 className="md:text-5xl text-3xl font-bold md:mb-6 mb-4 font-altitude">
-          Surventix – Smarter Research, Stronger Decisions, Bigger Impact.
-        </h2>
-
         <p className="mb-8">
+          <span className="font-bold ">Surventix</span>
           <span className=" opacity-80">
             {" "}
-            In today’s fast-moving market, staying ahead requires more than just
-            data—it demands intelligent insights and actionable strategies. At{" "}
+            – Smarter Research. Stronger Decisions. Bigger Impact.In today’s
+            fast-moving market, staying ahead requires more than just data—it
+            demands intelligent insights and actionable strategies. At{" "}
           </span>
-          <span className="font-bold font-altitude">Surventix</span>
+          <span className="font-bold ">Surventix</span>
           <span className=" opacity-80">
             , we empower businesses with cutting-edge market research solutions
             that decode trends, understand consumer behaviour, and drive
@@ -93,7 +91,7 @@ const slides = [
   {
     content: () => (
       <>
-        <h2 className="md:text-5xl text-3xl font-bold md:mb-6 mb-4 font-altitude">
+        <h2 className="md:text-5xl text-3xl font-bold md:mb-6 mb-4 ">
           Find the Trends Before They Find You.
         </h2>
 
@@ -102,7 +100,7 @@ const slides = [
             In a world drowning in data, making sense of it all is the real
             game-changer. That’s where
           </span>
-          <span className="font-bold font-altitude"> Surventix</span>{" "}
+          <span className="font-bold "> Surventix</span>{" "}
           <span className="opacity-80">
             {" "}
             steps in—we don’t just crunch numbers, we decode the story behind
@@ -187,12 +185,14 @@ const HeroSlider = () => {
             exit={{ x: -direction * 100 + "%", opacity: 0 }}
             transition={{ type: "tween", duration: 0.8, ease: "easeInOut" }}
           >
-            <div className="absolute w-full mt:top-0 top-[30%] pt-5 md:pt-0  flex flex-col justify-center">
+            <div className="absolute w-full md:h-full md:top-0 top-[30%] pt-5 md:pt-0  flex flex-col justify-center">
               <div className="container ">
-                <div className="md:w-1/2 md:pr-10">{slides[index].content()}</div>
+                <div className="md:w-1/2 md:pr-10">
+                  {slides[index].content()}
+                </div>
               </div>
             </div>
-            
+
             {/* Text Section */}
             <div className="md:w-1/2 flex-1 md:flex-auto w-full flex flex-col justify-center p-8 bg-[#003B64] text-white md:h-full"></div>
 

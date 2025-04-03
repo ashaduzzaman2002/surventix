@@ -16,7 +16,9 @@ const Page = () => {
       >
         <video
           className="h-full w-full object-cover"
-          muted
+          muted={true}
+          autoPlay={true}
+          loop={true}
           src="/bg-video.mp4"
         ></video>
       </div>
