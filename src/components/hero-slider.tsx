@@ -17,8 +17,8 @@ const slides = [
           <span className="font-bold ">Surventix</span>
           <span className="opacity-80">
             , we turn raw numbers into game-changing insights that fuel smart
-            business moves. Whether you're chasing hidden industry gems or
-            scanning the global market for bigpicture trends, we've got the data
+            business moves. Whether you&apos;re chasing hidden industry gems or
+            scanning the global market for bigpicture trends, we&apos;ve got the data
             magic to keep you ahead of the curve. Accurate, reliable, and packed
             with impact—because in business, the best decisions are the ones
             backed by real intelligence
