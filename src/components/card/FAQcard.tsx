@@ -13,7 +13,7 @@ const FAQcard = ({
     id: number;
     title: string;
     description: string;
-    image: string;
+    image?: string;
   };
 }) => {
   const [open, setOpen] = useState(false);
@@ -23,29 +23,36 @@ const FAQcard = ({
         className="flex justify-between "
         onClick={() => setOpen((prev) => !prev)}
       >
-        <h2 className="md:text-2xl text-lg md:font-bold font-semibold">{item.title}</h2>{" "}
+        <h2 className="md:text-2xl text-lg md:font-bold font-semibold">
+          {item.title}
+        </h2>{" "}
         <motion.button animate={{ rotate: open ? 180 : 0 }}>
           {open ? <Minus /> : <Plus />}
         </motion.button>
       </div>
 
       <motion.div
-        className={cn(open ? "mt-6" : "", "overflow-hidden flex md:flex-row flex-col  md:gap-10 gap-8")}
+        className={cn(
+          open ? "mt-6" : "",
+          "overflow-hidden flex md:flex-row flex-col  md:gap-10 gap-8"
+        )}
         initial={{ height: 0 }}
         animate={{ height: open ? "auto" : 0 }}
       >
-        <p className="md:text-lg text-sm">{item.description}</p>
-        <div>
-          <div className="md:w-[300px] w-full h-[200px]">
-            <Image
-              className="w-full h-full"
-              src={item.image}
-              alt={item.title}
-              width={300}
-              height={200}
-            />
+        <p className="md:text-lg text-sm text-start">{item.description}</p>
+        {item.image && (
+          <div>
+            <div className="md:w-[300px] w-full h-[200px]">
+              <Image
+                className="w-full h-full"
+                src={item.image}
+                alt={item.title}
+                width={300}
+                height={200}
+              />
+            </div>
           </div>
-        </div>
+        )}
       </motion.div>
     </div>
   );

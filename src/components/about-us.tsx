@@ -6,8 +6,13 @@ import { PlayWhite } from "@/assets/Icon";
 
 const AboutUs = () => {
   return (
-    <div className=" text-white md:py-10 py-8">
-      <div className="container">
+    <div className=" text-white md:py-10 py-8 relative">
+      <div
+        className="absolute bottom-0 w-[436.52px] h-[544.07px] rotate-[-47.46deg] blur-[200px] rounded-[200px] -left-40 bg-gradient-to-tr from-[#1A2980] to-[#26D0CE]"
+       
+      ></div>
+     
+      <div className="container relative">
         <div className="grid md:grid-cols-2 md:gap-20 gap-12 md:mt-16 mt-8">
           <div className="flex flex-col justify-center">
             <div className="md:mb-16 mb-4">

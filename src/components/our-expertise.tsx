@@ -11,8 +11,12 @@ import { EXPERTISE } from "@/constant/data";
 
 const OurExpertise = () => {
   return (
-    <div className=" text-white md:pb-[80px] pb-12 md:pt-10 pt-6">
-      <div className="container">
+    <div className=" text-white md:pb-[80px] pb-12 md:pt-10 pt-6 relative">
+        <div
+        className="absolute bottom-0 w-[436.52px] h-[544.07px] rotate-[47.46deg] blur-[200px] rounded-[200px] -right-40 bg-gradient-to-tr from-[#1A2980] to-[#26D0CE]"
+       
+      ></div>
+      <div className="container relative">
         <h2 className="md:text-5xl text-3xl  md:mb-16 mb-12 ">Our Expertise</h2>
 
         <Carousel  className="w-full">

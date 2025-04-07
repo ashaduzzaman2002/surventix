@@ -34,7 +34,7 @@ const Blog = () => {
                     {/* <div className="bg-[#0E5AA6] w-full h-full absolute top-5 rounded group-hover:left-5"></div> */}
                     <div className="relative">
                       <Image
-                        className="w-full h-[200px] object-cover rounded-t"
+                        className="w-full h-[220px] object-cover rounded"
                         src={item.thumbnail}
                         alt={item.title}
                         width={350}
@@ -42,10 +42,10 @@ const Blog = () => {
                       />
                     </div>
 
-                    <div className="text-[#003B64] relative bg-[#C3ECEE] rounded-b flex h-11 items-center justify-between px-3 uppercase font-bold">
+                    {/* <div className="text-[#003B64] relative bg-[#C3ECEE] rounded-b flex h-11 items-center justify-between px-3 uppercase font-bold">
                       <p>{item.category}</p>
                       <p>{item.date}</p>
-                    </div>
+                    </div> */}
                   </div>
 
                   <div className="mt-12">
@@ -56,10 +56,10 @@ const Blog = () => {
                     <p className="md:mt-16 mt-8 line-clamp-3">{item.description}</p>
                   </div>
                 </div>
-                <div className="border-t border-gray-400 px-6 py-4 flex justify-between items-center">
-                  <button className="bg-[#F05BBE] px-6 py-1.5 rounded font-bold">
+                <div className="border-t border-gray-400 px-6 py-4 flex justify-end items-center">
+                  {/* <button className="bg-[#F05BBE] px-6 py-1.5 rounded font-bold">
                     Join
-                  </button>
+                  </button> */}
                   <Link href="" className="font-bold uppercase">
                     Read More
                   </Link>

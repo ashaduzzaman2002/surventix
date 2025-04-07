@@ -1,8 +1,32 @@
-import { Card, CardContent, CardFooter, CardTitle } from "@/components/ui/card";
-import { JOBS } from "@/constant/data";
+import FAQcard from "@/components/card/FAQcard";
+import JobCard from "@/components/card/JobCard";
+import { OPPORTUNITIES } from "@/constant/data";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import React from "react";
+
+const benefits = [
+  {
+    id: 1,
+    title: "Hands-On Experience",
+    description: "Work on real-world projects and gainpractical insights.",
+  },
+  {
+    id: 2,
+    title: "Expert Guidance",
+    description: "Learn from industry leaders with years of experience.",
+  },
+  {
+    id: 3,
+    title: "Innovation-Driven Environment",
+    description: "Be part of a dynamic team that values fresh ideas.",
+  },
+  {
+    id: 4,
+    title: "Career Growth",
+    description: "Build a strong foundation for long-term success.",
+  },
+];
 
 const Page = () => {
   return (
@@ -48,10 +72,10 @@ const Page = () => {
       </div>
 
       <div className="bg-[#02000F] relative">
-        <div className="container py-16 grid grid-cols-2 gap-20">
+        {/* <div className="container py-16 grid grid-cols-2 gap-20">
           <div className="">
-            <h2 className="md:text-[35px] text-2xl leading-[24px] md:leading-[35px] mb-5">
-              JOIN OUR TEAM
+            <h2 className="md:text-[35px] text-2xl leading-[24px] md:leading-[35px] mb-5 capitalize">
+              Join Our Team
             </h2>
             <p className="text-lg">
               As a global company, we offer exceptional career and development
@@ -64,6 +88,12 @@ const Page = () => {
           </div>
 
           <div>
+            <Image
+              src="/Learning.png"
+              alt="learning"
+              width={554}
+              height={354}
+            />
             <iframe
               width="554"
               height="354"
@@ -75,36 +105,40 @@ const Page = () => {
               allowFullScreen
             ></iframe>
           </div>
-        </div>
+        </div> */}
 
-        <div className="container">
-          <h2 className="md:text-[35px] text-2xl leading-[24px] md:leading-[35px] mb-5">
-            Exciting Opportunity at Surventix
-          </h2>
+        <div className="relative bg-[#02000F] md:pb-20 container pt-20">
+          <div className="container">
+            <div className="md:text-center md:sticky top-80">
+              <h2 className="md:text-[35px] text-2xl leading-[24px] md:leading-[35px] mb-5 ">
+                Join Our Team
+              </h2>
 
-          <div className="grid md:grid-cols-2 gap-8 md:mt-12 mt-6">
-            {JOBS.map((item, i) => (
-              <Card key={i}>
-                <CardContent>
-                  <CardTitle className="text-2xl mb-5">{item.title}</CardTitle>
-                  <div className="flex flex-col gap-4 text-white/80">
-                    {item.content.map((para, i) => (
-                      <p key={i}>{para}</p>
-                    ))}
-                  </div>
-                </CardContent>
-                <CardFooter>
-                  <button className="bg-white text-black py-2.5 px-6 text-base font-medium rounded-3xl">
-                    Apply Now
-                  </button>
-                </CardFooter>
-              </Card>
-            ))}
+              <p className="max-w-[750px] mx-auto text-white/80">
+                As a global company, we offer exceptional career and development
+                opportunities with attractive remuneration for candidates in
+                different roles in our Online Market Reserach services and
+                Consulting businesses in our corporate offices and regional
+                subsidiaries in Asia Pacific, North America, Europe and the
+                Middle East.
+              </p>
+            </div>
+            <div className="md:mt-16 mt-8  mx-auto">
+              {OPPORTUNITIES.map((item) => (
+                <JobCard
+                  key={item.id}
+                  title={item.title}
+                  animationFile={item.animation}
+                  className={item.className}
+                  content={item.content || [""]}
+                />
+              ))}
+            </div>
           </div>
         </div>
 
         <div className="container">
-          <div className="flex items-center justify-center min-h-screen">
+          <div className="flex items-center justify-center ">
             <div className="max-w-3xl shadow-xl rounded-2xl text-center">
               <h2 className="text-3xl font-bold">
                 Kickstart Your Career with{" "}
@@ -116,45 +150,11 @@ const Page = () => {
                 individuals looking to grow, learn, and make an impact in the
                 ever-evolving world of data and advertising.
               </p>
-              <div className="mt-6 space-y-4">
-                <div className="flex items-center gap-3">
-                  <span className="text-green-600 text-xl">✅</span>
-                  <span className="text-white text-lg">
-                    Hands-On Experience – Work on real-world projects and gain
-                    practical insights.
-                  </span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <span className="text-green-600 text-xl">✅</span>
-                  <span className="text-white text-lg">
-                    Expert Guidance – Learn from industry leaders with years of
-                    experience.
-                  </span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <span className="text-green-600 text-xl">✅</span>
-                  <span className="text-white text-lg">
-                    Innovation-Driven Environment – Be part of a dynamic team
-                    that values fresh ideas.
-                  </span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <span className="text-green-600 text-xl">✅</span>
-                  <span className="text-white text-lg">
-                    Career Growth – Build a strong foundation for long-term
-                    success.
-                  </span>
-                </div>
+              <div className="mt-10 flex flex-col gap-4">
+                {benefits.map((item) => (
+                  <FAQcard key={item.id} item={item} />
+                ))}
               </div>
-              <p className="mt-6 text-white/80 text-lg">
-                Join us and shape the future of market research!
-              </p>
-              <a
-                href="mailto:careers@surventix.com"
-                className="mt-6 inline-block px-6 py-3  font-semibold rounded-3xl shadow-md transition text-black bg-white"
-              >
-                Send Your CV Now
-              </a>
             </div>
           </div>
         </div>

@@ -3,32 +3,38 @@
 import { useEffect, useRef, useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { motion, useScroll } from "framer-motion";
+import Image from "next/image";
 
 const sections = [
   {
     title: "Surventix: Pioneering the Future of Market Intelligence",
     content:
       "At Surventix, we are committed to redefining the paradigm of market research by integrating advanced analytical frameworks, cutting-edge technological ecosystems, and data-driven methodologies to construct a research infrastructure that is both rigorous and adaptive.",
+    image: "/vission-1.jpg",
   },
   {
     title: "Innovating for Impact",
     content:
       "We continuously refine our approach and reimagine solutions to address evolving marketplace challenges, ensuring impactful and sustainable outcomes.",
+    image: "/vission-2.jpg",
   },
   {
     title: "Empowering Businesses of All Sizes",
     content:
       "From India’s largest corporations striving for global leadership to agile startups driving transformative change, we support organizations in achieving sustainable, inclusive growth.",
+    image: "/vission-3.png",
   },
   {
     title: "Strategic Industry Partnerships",
     content:
       "Our collaborations with leading market research firms enable us to foster growth, enhance capabilities, and deliver exceptional value to our clients.",
+    image: "/vission-4.png",
   },
   {
     title: "Data-Driven Excellence",
     content:
       "Leveraging advanced digital tools, analytics, and decades of experience, we provide insights that drive meaningful and measurable impact.",
+    image: "/vission-5.png",
   },
 ];
 
@@ -57,7 +63,7 @@ export default function OurVission() {
   }, []);
 
   return (
-    <div ref={containerRef} className="relative text-white">
+    <div ref={containerRef} className="relative text-white container">
       <motion.h2
         className="md:text-5xl text-3xl sticky top-28 max-w-[300px] text-center font-semibold mx-auto"
         animate={
@@ -74,22 +80,33 @@ export default function OurVission() {
         <span className="bg-gradient-to-r from-yellow-500 via-purple-500 to bg-pink-500 bg-clip-text text-transparent">
           and
         </span>{" "}
-        Mission:
+        Mission
       </motion.h2>
       {sections.map((section, index) => {
         return (
           <motion.div
             key={index}
-            className={`sticky md:top-[210px] top-[180px] left-0 w-full md:h-[60vh] h-[50vh] flex items-center justify-center px-6 `}
+            className={`sticky md:top-[210px] top-[180px] left-0 w-full md:h-[70vh] h-[65vh] flex items-center justify-center `}
             style={{ zIndex: sections.length + index }}
           >
-            <motion.div style={{}}>
-              <Card className="max-w-2xl md:h-[240px] h-[260px] bg-gray-800 md:p-6 rounded-2xl shadow-xl">
-                <CardContent>
-                  <h2 className="md:text-2xl text-xl font-bold mb-4">
-                    {section.title}
-                  </h2>
-                  <p className="md:text-lg text-sm">{section.content}</p>
+            <motion.div className="">
+              <Card className="md:h-[330px] h-[450px] bg-gray-800 rounded-2xl shadow-xl">
+                <CardContent className="md:grid md:grid-cols-2 flex flex-col gap-4 items-center h-full">
+                  <div className="md:h-full h-[200px] ">
+                    <Image
+                      width={500}
+                      height={260}
+                      src={section.image || "/vission-3.png"}
+                      alt={section.title}
+                      className="h-full rounded-2xl  object-cover"
+                    />
+                  </div>
+                  <div>
+                    <h2 className="md:text-2xl text-xl font-bold mb-4">
+                      {section.title}
+                    </h2>
+                    <p className="md:text-lg text-sm">{section.content}</p>
+                  </div>
                 </CardContent>
               </Card>
             </motion.div>

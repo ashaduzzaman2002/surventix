@@ -10,7 +10,7 @@ const Client = () => {
   return (
     <div className="md:py-16 py-8">
       <h2 className="md:text-5xl text-3xl  text-center md:mb-16 mb-8">
-        Our reach spans across
+        Our reach <br /> spans across
       </h2>
 
       <div className="relative">
@@ -35,7 +35,7 @@ const Client = () => {
                       "bg-gradient-to-b from-muted/50 to-muted/10",
                       "p-4 text-start sm:p-6",
                       "hover:from-muted/60 hover:to-muted/20",
-                      "max-w-[320px] sm:max-w-[320px]",
+                      " sm:max-w-[320px]",
                       "transition-colors duration-300 h-32"
                     )}
                   >

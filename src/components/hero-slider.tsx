@@ -175,7 +175,7 @@ const HeroSlider = () => {
 
   return (
     <div className="relative w-full mx-auto overflow-hidden" {...bind()}>
-      <div className="relative w-full h-screen flex items-center justify-center">
+      <div className="relative w-full md:h-screen h-[110vh] flex items-center justify-center">
         <AnimatePresence initial={false} custom={direction}>
           <motion.div
             key={index}

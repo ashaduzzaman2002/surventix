@@ -101,7 +101,7 @@ const Header = () => {
         ))}
         <Link
           href="/signup"
-          className="border-[1.5px] border-white text-white hover:bg-white hover:text-[#04021d] duration-300 transition-all ease-in-out px-6 py-2 rounded-4xl"
+          className="border-[1.5px] border-white text-white capitalize hover:bg-white hover:text-[#04021d] duration-300 transition-all ease-in-out px-6 py-2 rounded-4xl"
           onClick={() => setMenuOpen(false)}
         >
           join our panel

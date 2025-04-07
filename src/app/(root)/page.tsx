@@ -8,7 +8,6 @@ import OurJourney from "@/components/our-journey";
 import Client from "@/components/Client";
 import CompanyValues from "@/components/companyValues";
 import JoinUs from "@/components/JoinUs";
-import Social from "@/components/Social";
 
 const sectionVariants = {
   hidden: { opacity: 0, y: 50 },
@@ -17,7 +16,7 @@ const sectionVariants = {
 
 export default function Home() {
   return (
-    <div>
+    <div className="overflow-hidden">
       <HeroSection />
 
       {/* Wrapped each section in motion.div for animation */}
@@ -60,7 +59,7 @@ export default function Home() {
       <Client />
       <JoinUs />
       <CompanyValues />
-      <Social />
+      {/* <Social /> */}
     </div>
   );
 }
