@@ -1,17 +1,28 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { about1, about2 } from "@/assets";
-import { PlayWhite } from "@/assets/Icon";
+import { about1 } from "@/assets";
+// import { PlayWhite } from "@/assets/Icon";
 
 const AboutUs = () => {
+  // const videoRef = useRef<HTMLVideoElement | null>(null);
+// const [isPlaying, setIsPlaying] = useState(false);
+
+// const toggleVideoPlayback = () => {
+//   if (!videoRef.current) return;
+
+//   if (isPlaying) {
+//     videoRef.current.pause();
+//   } else {
+//     videoRef.current.play();
+//   }
+//   setIsPlaying(!isPlaying);
+// };
+
   return (
     <div className=" text-white md:py-10 py-8 relative">
-      <div
-        className="absolute bottom-0 w-[436.52px] h-[544.07px] rotate-[-47.46deg] blur-[200px] rounded-[200px] -left-40 bg-gradient-to-tr from-[#1A2980] to-[#26D0CE]"
-       
-      ></div>
-     
+      <div className="absolute bottom-0 w-[436.52px] h-[544.07px] rotate-[-47.46deg] blur-[200px] rounded-[200px] -left-40 bg-gradient-to-tr from-[#1A2980] to-[#26D0CE]"></div>
+
       <div className="container relative">
         <div className="grid md:grid-cols-2 md:gap-20 gap-12 md:mt-16 mt-8">
           <div className="flex flex-col justify-center">
@@ -54,16 +65,20 @@ const AboutUs = () => {
                 />
               </div>
               <div className="w-[50%] aspect-square absolute bottom-0 right-0 rounded-[10px] border-[5px] border-[#F7F9FC]">
-                <Image
-                  src={about2}
+             
+                <video
+                  src="/about.mp4"
                   className="h-full w-full rounded-[10px] object-cover"
-                  alt="image"
-                />
-                <div className="absolute flex items-center justify-center top-0 left-0 right-0 rounded-[10px] bottom-0 bg-[#222d3960]">
+                  preload="metadata"
+                  muted
+                  autoPlay
+                  loop
+                ></video>
+                {/* <button onClick={toggleVideoPlayback} className="absolute flex items-center justify-center top-0 left-0 right-0 rounded-[10px] bottom-0 bg-[#222d3960]">
                   <div className="h-[55px] w-[55px]">
                     <PlayWhite />
                   </div>
-                </div>
+                </button> */}
               </div>
             </div>
           </div>

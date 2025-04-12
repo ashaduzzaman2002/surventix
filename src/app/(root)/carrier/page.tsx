@@ -131,6 +131,7 @@ const Page = () => {
                   animationFile={item.animation}
                   className={item.className}
                   content={item.content || [""]}
+                  bg={item.bg}
                 />
               ))}
             </div>

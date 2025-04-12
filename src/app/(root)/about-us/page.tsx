@@ -1,19 +1,11 @@
 "use client";
 
-import { about1, about2 } from "@/assets";
-import { PlayWhite } from "@/assets/Icon";
+import { about1 } from "@/assets";
 import OurVission from "@/components/about/our-vission";
 import Image from "next/image";
 import React from "react";
-import { motion } from "framer-motion";
 import WhyChooseUs from "@/components/about/why-choose-us";
 import MeetOurTeam from "@/components/about/team";
-// import CompanyOverview from "@/components/about/company-overview";
-
-const sectionVariants = {
-  hidden: { opacity: 0, y: 50 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } },
-};
 
 const AboutUs = () => {
   return (
@@ -62,17 +54,26 @@ const AboutUs = () => {
                 </div>
 
                 <div className="w-[50%] aspect-square absolute bottom-0 right-0 rounded-[10px] border-[5px] border-[#F7F9FC]">
-                  <Image
+                  {/* <Image
                     src={about2}
                     className="h-full w-full rounded-[10px] object-cover"
                     alt="image"
-                  />
+                  /> */}
 
-                  <div className="absolute flex items-center justify-center top-0 left-0 right-0 rounded-[10px] bottom-0 bg-[#222d3960]">
+                  <video
+                    src="/about1.mp4"
+                    className="h-full w-full rounded-[10px] object-cover"
+                    preload="metadata"
+                    muted
+                    autoPlay
+                    loop
+                  ></video>
+
+                  {/* <div className="absolute flex items-center justify-center top-0 left-0 right-0 rounded-[10px] bottom-0 bg-[#222d3960]">
                     <div className="h-[55px] w-[55px]">
                       <PlayWhite />
                     </div>
-                  </div>
+                  </div> */}
                 </div>
               </div>
 
@@ -96,14 +97,8 @@ const AboutUs = () => {
       </section>
       {/* <CompanyOverview /> */}
 
-      <motion.div
-        variants={sectionVariants}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.2 }}
-      >
+  
         <OurVission />
-      </motion.div>
 
       <WhyChooseUs />
       <MeetOurTeam />

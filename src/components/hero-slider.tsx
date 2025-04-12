@@ -18,10 +18,10 @@ const slides = [
           <span className="opacity-80">
             , we turn raw numbers into game-changing insights that fuel smart
             business moves. Whether you&apos;re chasing hidden industry gems or
-            scanning the global market for bigpicture trends, we&apos;ve got the data
-            magic to keep you ahead of the curve. Accurate, reliable, and packed
-            with impact—because in business, the best decisions are the ones
-            backed by real intelligence
+            scanning the global market for bigpicture trends, we&apos;ve got the
+            data magic to keep you ahead of the curve. Accurate, reliable, and
+            packed with impact—because in business, the best decisions are the
+            ones backed by real intelligence
           </span>
         </p>
 
@@ -45,13 +45,13 @@ const slides = [
   {
     content: () => (
       <>
+        <h2 className="md:text-5xl text-3xl font-bold md:mb-6 mb-4 ">
+          Surventix – Smarter Research. Stronger Decisions. Bigger Impact.
+        </h2>
         <p className="mb-8">
-          <span className="font-bold ">Surventix</span>
           <span className=" opacity-80">
-            {" "}
-            – Smarter Research. Stronger Decisions. Bigger Impact.In today’s
-            fast-moving market, staying ahead requires more than just data—it
-            demands intelligent insights and actionable strategies. At{" "}
+            In today’s fast-moving market, staying ahead requires more than just
+            data—it demands intelligent insights and actionable strategies. At{" "}
           </span>
           <span className="font-bold ">Surventix</span>
           <span className=" opacity-80">
@@ -73,11 +73,9 @@ const slides = [
         </p>
 
         <div className="flex gap-4 md:mt-10 mt-5">
-          <button className="bg-[#FF1479] h-10 px-6 rounded cursor-pointer border border-[#FF1479] transition-all ease-in-out duration-200 hover:bg-transparent hover:border-white">
-            Get Started
-          </button>
+         
           <a
-            href="#"
+            href="mailto:sales@surventix.com"
             className="border-white border flex justify-center items-center h-10 px-6 rounded transition-all ease-in-out duration-200 hover:bg-[#FF1479] hover:border-[#FF1479]"
           >
             Contact Us
@@ -115,11 +113,9 @@ const slides = [
         </p>
 
         <div className="flex gap-4 md:mt-10 mt-5">
-          <button className="bg-[#FF1479] h-10 px-6 rounded cursor-pointer border border-[#FF1479] transition-all ease-in-out duration-200 hover:bg-transparent hover:border-white">
-            Get Started
-          </button>
+          
           <a
-            href="#"
+            href="mailto:sales@surventix.com"
             className="border-white border flex justify-center items-center h-10 px-6 rounded transition-all ease-in-out duration-200 hover:bg-[#FF1479] hover:border-[#FF1479]"
           >
             Contact Us

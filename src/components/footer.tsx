@@ -82,7 +82,7 @@ const Footer = () => {
               <a target="_blank" href="#">
                 <X />
               </a>
-              <a target="_blank" href="#">
+              <a target="_blank" href="https://www.linkedin.com/company/surventix/">
                 <LinkedIn />
               </a>
               <a target="_blank" href="#">

@@ -20,7 +20,7 @@ export default function ServiceModal({
           Read More
         </button>
       </DialogTrigger>
-      <DialogContent className="sm:max-w-2xl max-h-[90vh] overflow-y-auto">
+      <DialogContent className="sm:max-w-2xl max-h-[90vh] overflow-y-auto bg-[#00233C]">
         <DialogHeader>
           <DialogTitle className="text-2xl">{title}</DialogTitle>
           {/* <DialogDescription>

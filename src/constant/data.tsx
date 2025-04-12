@@ -58,42 +58,42 @@ export const teamMembers = [
     designation: "Founder & CEO",
     description:
       "Meet Gourav – The Driving Force Behind Innovation & Client Success",
-    image: "https://www.surventix.com/wp-content/uploads/2025/03/1-5.jpg",
+    image: "/team1.jpg",
   },
   {
     name: "Priyanka Desai",
     designation: "Co-Founder",
     description:
       "Meet Priyanka – The Data Dynamo Powering Insights & Innovation",
-    image: "https://www.surventix.com/wp-content/uploads/2025/03/3-5.jpg",
+    image: "/team2.jpg",
   },
   {
     name: "Nikita Bhatt",
     designation: "Managing Director of client & sales",
     description:
       "Meet Nikita – A Strategic Leader in Business Growth & Customer-Centric Innovation",
-    image: "https://www.surventix.com/wp-content/uploads/2025/03/5-2.jpg",
+    image: "/team3.jpg",
   },
   {
     name: "Renu Yadav",
     designation: "President, Research & Insights Platform",
     description:
       "Meet Renu – Innovating Insights, Elevating Brands & Powering Smarter Connections",
-    image: "https://www.surventix.com/wp-content/uploads/2025/03/2-5.jpg",
+    image: "/team4.jpg",
   },
   {
     name: "Shivam Verma",
     designation: "Sr. project manager",
     description:
       "Meet Shivam – Leading High-Impact Projects with Precision & Passion",
-    image: "https://www.surventix.com/wp-content/uploads/2025/03/hb.jpg",
+    image: "/team5.jpg",
   },
   {
     name: "Ved grover",
     designation: "Project manager",
     description:
       "Meet Ved grover – Driving Seamless Execution & Impactful Insights",
-    image: "https://www.surventix.com/wp-content/uploads/2025/03/5-3.jpg",
+    image: "/team6.jpg",
   },
 ];
 
@@ -128,7 +128,7 @@ and demographics. Using advanced tools and methodologies, we ensure accurate and
 responses, making each sample both representative and comprehensive
 `,
 
-    image: "https://www.surventix.com/wp-content/uploads/2025/01/surv-a1.jpg",
+    image: "/surv-a1.jpg",
     slug: "online-sampling",
     content: `<div >
     
@@ -191,7 +191,7 @@ real-time access to critical insights.
 
     image:
       "https://images.unsplash.com/photo-1623282033815-40b05d96c903?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      content: `<div >
+    content: `<div >
     
       <p class="mb-4">At Surventix, we offer sophisticated API solutions designed to optimize data integration,
 streamline operations, and enhance interoperability across platforms. Our APIs facilitate
@@ -318,7 +318,7 @@ Surventix, we provide comprehensive SEO solutions designed to enhance your websi
 search engine rankings, increase organic traffic, and strengthen your online presence.
 `,
 
-    image: "https://www.surventix.com/wp-content/uploads/2025/01/surv-a13.jpg",
+    image: "/surv-a13.jpg",
 
     content: `<div >
     
@@ -345,7 +345,7 @@ into long-term customers, helping your business thrive in the digital marketplac
     description: `Our technical solution for online sampling is built on a robust infrastructure designed to provide seamless, efficient, and scalable data collection capabilities. At the core of our solution is an advanced sampling platform that integrates cutting-edge technology with our expansive 7.5 million global panel. This platform is engineered to ensure high-quality responses and deliver real-time insights across diverse research sectors.
 `,
 
-    image: "https://www.surventix.com/wp-content/uploads/2025/01/surv-bg2.jpg",
+    image: "/surv-bg2.jpg",
     slug: "technical",
   },
 ];
@@ -355,56 +355,56 @@ export const TECHNICAL_SOLUTIONS = [
     id: 1,
     title: "Global Panel Integration",
     description: `Our system connects seamlessly with a diverse, global panel, providing access to respondents across a wide variety of regions, demographics, and interests. This diversity ensures that your research is both comprehensive and representative of a broad spectrum of opinions.`,
-    image: "https://www.surventix.com/wp-content/uploads/2025/03/1.jpg",
+    image: "/1.jpg",
   },
 
   {
     id: 2,
     title: "Adaptive Sampling Methods",
     description: `We utilize adaptive sampling techniques that allow us to dynamically adjust the selection criteria based on real-time data. This ensures that every sample is highly targeted, relevant, and aligned with the specific needs of your research objectives.`,
-    image: "https://www.surventix.com/wp-content/uploads/2025/03/2.jpg",
+    image: "/2.jpg",
   },
   {
     id: 3,
     title: "Real-time Data Validation and Quality Control",
     description: `Our platform includes advanced algorithms for data validation, ensuring that each response is genuine and accurate. Real-time monitoring checks for response patterns, detecting any anomalies or potential biases, and applying corrective measures to maintain data integrity.`,
-    image: "https://www.surventix.com/wp-content/uploads/2025/03/3.jpg",
+    image: "/3.jpg",
   },
   {
     id: 4,
     title: "Survey Routing and Logic Optimization",
     description: `Our system supports sophisticated survey routing and logic features, enabling customized experiences for each respondent. This ensures that participants only answer relevant questions based on previous responses, reducing survey fatigue and improving data quality.`,
-    image: "https://www.surventix.com/wp-content/uploads/2025/03/4.jpg",
+    image: "/4.jpg",
   },
   {
     id: 5,
     title: "Data Encryption and Security",
     description: `Protecting the privacy and security of respondents’ information is paramount. Our platform employs end-to-end encryption to safeguard all data in transit and at rest, adhering to industry standards such as GDPR to ensure compliance with global data protection regulations.`,
-    image: "https://www.surventix.com/wp-content/uploads/2025/03/5.jpg",
+    image: "/5.jpg",
   },
   {
     id: 6,
     title: "Real-time Reporting and Analytics",
     description: `Clients can access real-time dashboards that display live data collection results. These interactive dashboards allow for quick analysis and reporting, enabling teams to make data-driven decisions without delay.`,
-    image: "https://www.surventix.com/wp-content/uploads/2025/03/6.jpg",
+    image: "/6.jpg",
   },
   {
     id: 7,
     title: "AI-driven Insights and Predictive Analytics",
     description: `Leveraging machine learning and AI tools, our platform can uncover hidden trends, predict market shifts, and provide actionable insights. These tools support predictive modeling, making it easier for businesses to forecast outcomes and strategize effectively.`,
-    image: "https://www.surventix.com/wp-content/uploads/2025/03/1-1.jpg",
+    image: "/1-1.jpg",
   },
   {
     id: 8,
     title: "Automated Sampling and Panel Management",
     description: `Our platform automates the management of the respondent panel, including recruitment, engagement, and retention. It uses AI to optimize respondent recruitment and manage panel health, ensuring the most relevant individuals are always available for studies.`,
-    image: "https://www.surventix.com/wp-content/uploads/2025/03/2-1.jpg",
+    image: "/2-1.jpg",
   },
   {
     id: 9,
     title: "Multilingual Support",
     description: `To cater to a global audience, our system supports multilingual surveys and questionnaires, ensuring accurate responses across language barriers while maintaining consistency and clarity in data interpretation.`,
-    image: "https://www.surventix.com/wp-content/uploads/2025/03/2-1.jpg",
+    image: "/2-1.jpg",
   },
 ];
 export const SECURITY_CHECK = [
@@ -630,7 +630,7 @@ export const COMMITMENTS = [
   {
     id: 1,
     title: "To Our Panelists",
-    image: "https://www.surventix.com/wp-content/uploads/2025/01/surv-a7.jpg",
+    image: "/surv-a7.jpg",
     lists: [
       `Privacy & Data Protection – We safeguard panelists' personal information in strict
       compliance with GDPR, CCPA, and global data protection laws.`,
@@ -981,6 +981,7 @@ export const OPPORTUNITIES = [
     ],
     className: "mr-auto md:mb-20 mb-10 bg-[#E2062E]",
     animation: timealphared,
+    bg: "bg-[#E2062E]",
   },
   {
     id: 2,
@@ -994,6 +995,7 @@ export const OPPORTUNITIES = [
     ],
     className: "ml-auto md:mb-20 mb-10 bg-[#460073]",
     animation: timealphaviolet,
+    bg: "bg-[#460073]",
   },
   {
     id: 3,
@@ -1003,6 +1005,7 @@ export const OPPORTUNITIES = [
     ],
     className: "mr-auto mb-20 bg-[#0041F0]",
     animation: timealphablue,
+    bg: "bg-[#0041F0]",
   },
 
   {
@@ -1013,6 +1016,7 @@ export const OPPORTUNITIES = [
     ],
     className: "ml-auto md:mb-20 mb-10 bg-[#E2062E]",
     animation: timealphared,
+    bg: "bg-[#E2062E]",
   },
   {
     id: 5,
@@ -1022,6 +1026,7 @@ export const OPPORTUNITIES = [
     ],
     className: "mr-auto md:mb-20 mb-10 bg-[#460073]",
     animation: timealphaviolet,
+    bg: "bg-[#460073]",
   },
   {
     id: 6,
@@ -1031,6 +1036,7 @@ export const OPPORTUNITIES = [
     ],
     className: "ml-auto mb-20 bg-[#0041F0]",
     animation: timealphablue,
+    bg: "bg-[#0041F0]",
   },
 
   {
@@ -1041,6 +1047,7 @@ export const OPPORTUNITIES = [
     ],
     className: "mr-auto md:mb-20 mb-10 bg-[#E2062E]",
     animation: timealphared,
+    bg: "bg-[#E2062E]",
   },
   {
     id: 8,
@@ -1050,5 +1057,6 @@ export const OPPORTUNITIES = [
     ],
     className: "ml-auto md:mb-20 mb-10 bg-[#460073]",
     animation: timealphaviolet,
+    bg: "bg-[#460073]",
   },
 ];

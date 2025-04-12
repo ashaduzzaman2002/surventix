@@ -15,7 +15,7 @@ const Page = () => {
         className="md:h-screen h-[75vh] bg-cover fixed top-0 w-full"
         style={{
           background:
-            "url(https://www.surventix.com/wp-content/uploads/2025/01/surv-bg3.jpg)",
+            "url(/surv-bg3.jpg)",
           backgroundPosition: "center",
         }}
       ></div>

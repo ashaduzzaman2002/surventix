@@ -1,5 +1,4 @@
-import { about1, about2 } from "@/assets";
-import { PlayWhite } from "@/assets/Icon";
+import { values } from "@/assets";
 import Image from "next/image";
 import React from "react";
 
@@ -35,22 +34,25 @@ const JoinUs = () => {
             <div className="h-full md:min-h-[500px] relative z-10">
               <div className="h-[90%] w-[90%] aspect-square overflow-hidden rounded-[15px]">
                 <Image
-                  src={about1}
+                  src={values}
                   className="h-full object-cover"
                   alt="image"
                 />
               </div>
               <div className="w-[50%] aspect-square absolute bottom-0 right-0 rounded-[10px] border-[5px] border-[#F7F9FC]">
-                <Image
-                  src={about2}
+              <video
+                  src="/sea.mp4"
                   className="h-full w-full rounded-[10px] object-cover"
-                  alt="image"
-                />
-                <div className="absolute flex items-center justify-center top-0 left-0 right-0 rounded-[10px] bottom-0 bg-[#222d3960]">
+                  preload="metadata"
+                  muted
+                  autoPlay
+                  loop
+                ></video>
+                {/* <div className="absolute flex items-center justify-center top-0 left-0 right-0 rounded-[10px] bottom-0 bg-[#222d3960]">
                   <div className="h-[55px] w-[55px]">
                     <PlayWhite />
                   </div>
-                </div>
+                </div> */}
               </div>
             </div>
           </div>

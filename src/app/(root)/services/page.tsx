@@ -12,7 +12,7 @@ const OurServices = () => {
         className="md:h-screen h-[70vh] bg-cover fixed top-0 w-full bg-center"
         style={{
           background:
-            "url(https://www.surventix.com/wp-content/uploads/2025/01/surv-bg4.jpg)",
+            "url(/surv-bg4.jpg)",
             backgroundPosition: 'center'
         }}
       ></div>

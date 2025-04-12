@@ -32,9 +32,9 @@ const Client = () => {
                   <Card
                     className={cn(
                       "flex flex-col justify-center items-center rounded-lg border-t",
-                      "bg-gradient-to-b from-muted/50 to-muted/10",
+                      "bg-gradient-to-b from-[#00233C]/50 to-[#00233C]/10",
                       "p-4 text-start sm:p-6",
-                      "hover:from-muted/60 hover:to-muted/20",
+                      "hover:from-[#00233C]/60 hover:to-[#00233C]/20",
                       " sm:max-w-[320px]",
                       "transition-colors duration-300 h-32"
                     )}

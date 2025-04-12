@@ -1,5 +1,5 @@
-"use client";
-import { motion } from "framer-motion";
+"use client"
+
 import AboutUs from "@/components/about-us";
 import Blog from "@/components/blog";
 import HeroSection from "@/components/hero-section";
@@ -8,58 +8,27 @@ import OurJourney from "@/components/our-journey";
 import Client from "@/components/Client";
 import CompanyValues from "@/components/companyValues";
 import JoinUs from "@/components/JoinUs";
+import Social from "@/components/Social";
+import GetinTouch from "@/components/GetinTouch";
 
-const sectionVariants = {
-  hidden: { opacity: 0, y: 50 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } },
-};
 
 export default function Home() {
   return (
     <div className="overflow-hidden">
       <HeroSection />
 
-      {/* Wrapped each section in motion.div for animation */}
-      <motion.div
-        variants={sectionVariants}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.2 }}
-      >
-        <AboutUs />
-      </motion.div>
+      <AboutUs />
+      <OurExpertise />
 
-      <motion.div
-        variants={sectionVariants}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.2 }}
-      >
-        <OurExpertise />
-      </motion.div>
+      <Blog />
 
-      <motion.div
-        variants={sectionVariants}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.2 }}
-      >
-        <Blog />
-      </motion.div>
-
-      <motion.div
-        variants={sectionVariants}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.2 }}
-      >
-        <OurJourney />
-      </motion.div>
+      <OurJourney />
 
       <Client />
       <JoinUs />
       <CompanyValues />
-      {/* <Social /> */}
+      <Social />
+      <GetinTouch />
     </div>
   );
 }

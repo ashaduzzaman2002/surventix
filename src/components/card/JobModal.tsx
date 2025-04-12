@@ -1,4 +1,3 @@
-import { Button } from "@/components/ui/button";
 import {
   Dialog,
   DialogClose,
@@ -12,9 +11,11 @@ import {
 export default function JobModal({
   title,
   content,
+  bg
 }: {
   title: string;
   content: string[];
+  bg: string
 }) {
   return (
     <Dialog>
@@ -23,7 +24,7 @@ export default function JobModal({
           Read More
         </button>
       </DialogTrigger>
-      <DialogContent className="sm:max-w-2xl">
+      <DialogContent className={"sm:max-w-2xl " + bg}>
         <DialogHeader>
           <DialogTitle className="text-2xl text-start">{title}</DialogTitle>
           {/* <DialogDescription>
@@ -32,14 +33,14 @@ export default function JobModal({
         </DialogHeader>
         <div>
           {content.map((item, index) => (
-            <p key={index} className="md:text-lg text-sm mb-4 opacity-70">
+            <p key={index} className="md:text-lg text-sm mb-4 ">
               {item}
             </p>
           ))}
         </div>
         <DialogFooter>
             <DialogClose className="flex justify-end gap-2">
-          <Button className="" type="submit">Apply Now</Button>
+          <button className="mt-4 border-[1.5px] border-white py-2.5 px-4" type="submit">Apply Now</button>
           </DialogClose>
         </DialogFooter>
       </DialogContent>

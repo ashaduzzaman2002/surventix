@@ -9,11 +9,13 @@ const JobCard = ({
   title,
   animationFile,
   content,
+  bg
 }: {
   className: string;
   title: string;
   content: string[];
   animationFile: Record<string, unknown>;
+  bg: string
 }) => {
   const animationContainer = useRef<HTMLDivElement>(null);
   const animationInstance = useRef<AnimationItem | null>(null);
@@ -97,7 +99,7 @@ const JobCard = ({
         >
           <p className="md:text-lg text-sm mb-2 line-clamp-6">{content[0]}</p>
 
-         <JobModal title={title} content={content} />
+         <JobModal title={title} content={content} bg={bg} />
         </div>
       </div>
     </div>
