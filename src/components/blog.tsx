@@ -60,7 +60,7 @@ const Blog = () => {
                   {/* <button className="bg-[#F05BBE] px-6 py-1.5 rounded font-bold">
                     Join
                   </button> */}
-                  <Link href="" className="font-bold uppercase">
+                  <Link href={`/blog/${item.slug}`} className="font-bold uppercase">
                     Read More
                   </Link>
                 </div>

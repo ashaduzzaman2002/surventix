@@ -788,6 +788,19 @@ export const BLOGS = [
       '"Reaching the World, One Insight at a Time"Surventix stands at the forefront of the online panel industry, renowned for its expansive reach and highly engaged user base. With a robust network of 7.5 million active users worldwide, we bridge the gap between businesses and consumers, ensuring that every research need is met with precision and reliability. Our panel encompasses diverse demographics, making Surventix the ideal choice for companies seeking comprehensive market intelligence on a global scale.',
     category: "tech",
     date: "10 Jan 2025",
+    slug: "surventix-the-power-of-global-insights-at-your-fingertips",
+    content: `<p class="mb-2">
+      A Leading Force in Market Research
+    </p>
+    <h2 class="text-xl text-blue-600 italic mb-6">
+      "Reaching the World, One Insight at a Time"
+    </h2>
+    <p class="mb-4">
+      Surventix stands at the forefront of the online panel industry, renowned for its expansive reach and highly engaged user base. With a robust network of 7.5 million active users worldwide, we bridge the gap between businesses and consumers, ensuring that every research need is met with precision and reliability.
+    </p>
+    <p>
+      Our panel encompasses diverse demographics, making Surventix the ideal choice for companies seeking comprehensive market intelligence on a global scale.
+    </p>`
   },
   {
     thumbnail: "/blog-2.jpg",
@@ -797,6 +810,16 @@ export const BLOGS = [
       "In today’s fast-paced business world, market research isn’t just about gathering data—it’s about understanding people. The success of any research initiative depends on the quality and diversity of its respondents. At Surventix, we believe that insightful decisions are built on a broad spectrum of voices, reflecting different industries, demographics, and perspectives.",
     category: "tech",
     date: "10 Jan 2025",
+    slug: "a-spectrum-of-voices-a-world-of-knowledge-the-power-of-a-diverse-respondent-panel",
+    content: `<p class="mb-2">
+      From Niche Studies to Global Surveys
+    </p>
+    <p class="mb-4">
+      In today’s fast-paced business world, market research isn’t just about gathering data—it’s about understanding people. The success of any research initiative depends on the quality and diversity of its respondents.
+    </p>
+    <p>
+      At Surventix, we believe that insightful decisions are built on a broad spectrum of voices, reflecting different industries, demographics, and perspectives.
+    </p>`
   },
   {
     thumbnail: "/blog-3.png",
@@ -806,24 +829,60 @@ export const BLOGS = [
       "In today’s fast-changing marketplace, businesses can’t afford to rely on outdated data or guesswork. Success comes from understanding real people, real trends, and real behaviors. That’s where Surventix comes in. With access to millions of authentic voices, we provide data-driven insights that help businesses stay ahead of industry shifts, predict market trends, and make smarter decisions. Whether you’re conducting a niche study or a global survey, our high-quality, real-world data fuels innovation, growth, and success. Don’t leave your next big decision to chance. Partner with Surventix today and turn insights into impact!",
     category: "tech",
     date: "10 Jan 2025",
+    slug: "the-power-of-real-people-in-market-research-real-people-real-data-real-impact",
+    content: `<p class="mb-4">
+      Turning Insights into Impact
+    </p>
+    <p class="mb-4">
+      In today’s fast-changing marketplace, businesses can’t afford to rely on outdated data or guesswork. Success comes from understanding real people, real trends, and real behaviors. That’s where Surventix comes in.
+    </p>
+    <p class="mb-4">
+      With access to millions of authentic voices, we provide data-driven insights that help businesses stay ahead of industry shifts, predict market trends, and make smarter decisions. Whether you’re conducting a niche study or a global survey, our high-quality, real-world data fuels innovation, growth, and success.
+    </p>
+    <p class="font-semibold text-blue-700">
+      Don’t leave your next big decision to chance. Partner with Surventix today and turn insights into impact!
+    </p>`
   },
   {
     thumbnail: "/blog-4.png",
     title:
-      "More Than Numbers: How Surventix Turns Data into Your Secret Weapon ",
+      "More Than Numbers: How Surventix Turns Data into Your Secret Weapon",
     description: `Let’s be real—data is everywhere. But great decisions? Those come from smart insights, not just spreadsheets
 full of numbers. At Surventix, we’re not just another data provider; we’re your strategic co-pilot in the everevolving world of market research.`,
     category: "tech",
     date: "10 Jan 2025",
+    slug: "more-than-numbers-how-surventix-turns-data-into-your-secret-weapon",
+    content: `<p class="mb-4">
+      Smart Insights for Smarter Decisions
+    </p>
+    <p class="mb-4">
+      Let’s be real—data is everywhere. But great decisions? Those come from smart insights, not just spreadsheets full of numbers. At Surventix, we’re not just another data provider; we’re your strategic co-pilot in the ever-evolving world of market research.
+    </p>
+    <p class="mb-4">
+      Need lightning-fast surveys? We’ve got you. Looking for deep-dive market segmentation? Done. Whether you're a startup testing the waters or an industry giant refining your next move, we deliver data with purpose—so you can make bold, confident decisions.
+    </p>
+    <p class="font-semibold text-blue-700">
+      Because in business, the right data isn’t just power—it’s profit. Let’s grow together.
+    </p>`
   },
   {
     thumbnail: "/blog-5.png",
-    title: "Fueling Strategies with the Voice of Millions ",
+    title: "Fueling Strategies with the Voice of Millions",
     description: `In business, guessing is risky—but listening is powerful. At Surventix, we tap into millions of real voices, turning
 raw opinions into golden insights that keep you ahead of the game. Whether you're spotting trends, finetuning strategies, or chasing the next big breakthrough, our data-driven intelligence ensures you make smart
 moves, not wild guesses. `,
     category: "tech",
     date: "10 Jan 2025",
+    slug: "fueling-strategies-with-the-voice-of-millions",
+    content: `<p class="mb-4">
+      Listening for Success
+    </p>
+    <p class="mb-4">
+      In business, guessing is risky—but listening is powerful. At Surventix, we tap into millions of real voices, turning raw opinions into golden insights that keep you ahead of the game. Whether you're spotting trends, fine-tuning strategies, or chasing the next big breakthrough, our data-driven intelligence ensures you make smart moves, not wild guesses.
+    </p>
+    <p class="font-semibold text-blue-700">
+      Why settle for assumptions when you can have real-world proof? Partner with Surventix today—because success isn’t about luck, it’s about listening to the right people.
+    </p>`
   },
   {
     thumbnail: "/blog-6.png",
@@ -834,6 +893,16 @@ needed to become visionary leaders in a fast-evolving world.
 `,
     category: "tech",
     date: "10 Jan 2025",
+    slug: "surventix-where-innovation-meets-impact",
+    content: `<p class="mb-4">
+      Driving Change with Visionary Leadership
+    </p>
+    <p class="mb-4">
+      At Surventix, we don’t just adapt to change—we drive it. Our mission? To create cutting-edge solutions that fuel success, and that starts with our people. We equip our team with the skills, tools, and bold mindsets needed to become visionary leaders in a fast-evolving world.
+    </p>
+    <p class="mb-4">
+      Here, careers aren’t one-size-fits-all—they’re as unique as the people who shape them. Whether you’re pushing boundaries in research or redefining industry standards, we’re committed to helping you build an exceptional journey at Surventix.
+    </p>`
   },
   {
     thumbnail: "/blog-7.jpg",
@@ -844,6 +913,19 @@ fuels growth, creativity, and success.
 `,
     category: "tech",
     date: "10 Jan 2025",
+    slug: "surventix-powered-by-people-driven-by-diversity",
+    content: `<p class="mb-4">
+      Innovation Through Diversity
+    </p>
+    <p class="mb-4">
+      At Surventix, we believe that innovation thrives on diverse minds and bold ideas. With a growing network of talented professionals and alumni, we cultivate a culture where inspiration meets impact—where every voice fuels growth, creativity, and success.
+    </p>
+    <p class="mb-4">
+      Our team’s unique perspectives shape the way we deliver exceptional value to our clients. Because when inclusivity and innovation work hand in hand, progress isn’t just possible—it’s inevitable.
+    </p>
+    <p class="font-semibold text-blue-700">
+      Great ideas don’t come from one voice—they come from millions. Ready to add yours?
+    </p>`
   },
   {
     thumbnail: "/blog-8.png",
@@ -854,6 +936,19 @@ institutions
 `,
     category: "tech",
     date: "10 Jan 2025",
+    slug: "surventix-powered-by-people-driven-by-diversity",
+    content: `<p class="mb-4">
+      Preparing for the Future
+    </p>
+    <p class="mb-4">
+      At Surventix, we don’t just embrace the future—we prepare for it. That’s why we’re investing in cutting-edge professional development, including our Surventix Tech MBA, created in partnership with top educational institutions.
+    </p>
+    <p class="mb-4">
+      From technology and sustainability to leadership and innovation, we’re equipping our team with the skills that matter most. Because progress isn’t just about staying ahead—it’s about leading the way.
+    </p>
+    <p class="font-semibold text-blue-700">
+      The future is calling. At Surventix, we’re making sure our people are ready to answer.
+    </p>`
   },
 ];
 

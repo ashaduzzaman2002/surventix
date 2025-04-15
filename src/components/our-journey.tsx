@@ -33,7 +33,7 @@ const Counter = ({ target }: { target: number }) => {
   return (
     <span ref={ref} className="md:text-5xl text-3xl font-bold">
       {displayValue.toLocaleString()}
-      {target >= 100000 ? "L" : "+"}
+      { "+"}
     </span>
   );
 };

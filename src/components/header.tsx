@@ -38,7 +38,7 @@ const Header = () => {
       )}
     >
       <div className="container flex justify-between items-center ">
-        <div className="flex items-center gap-2">
+        <Link href='/' className="flex items-center gap-2">
           <div className="relative ">
             <div className="absolute flex justify-center items-center top-0 bottom-0 left-0 right-0">
               <div className="bg-white md:w-[40px] md:h-[40px] h-[29px] w-[30px]"></div>
@@ -59,7 +59,7 @@ const Header = () => {
               Driven By Discovery
             </p>
           </div>
-        </div>
+        </Link>
 
         <nav className="hidden md:flex gap-7">
           {NAV_LINKS.map((item, i) => (

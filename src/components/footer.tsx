@@ -92,7 +92,7 @@ const Footer = () => {
 
             <div>
               <h3 className="text-xl font-semibold mb-6">
-                Download Panel Book
+              Update Panel book
               </h3>
 
               <div>
