@@ -1,9 +1,7 @@
 "use client";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import {
-  signInWithEmailAndPassword,
-} from "firebase/auth";
+import { signInWithEmailAndPassword } from "firebase/auth";
 import Link from "next/link";
 import React from "react";
 import { auth } from "../../../firebase";
@@ -12,26 +10,39 @@ import * as Yup from "yup";
 import { useRouter } from "next/navigation";
 
 const Signin = () => {
+  const router = useRouter();
 
-   const router = useRouter();
-  
   const formik = useFormik({
     initialValues: {
       email: "",
       password: "",
     },
     validationSchema: Yup.object({
-      email: Yup.string().email("Invalid email address").required("Email is required"),
-      password: Yup.string().min(6, "Password must be at least 6 characters").required("Password is required"),
+      email: Yup.string()
+        .email("Invalid email address")
+        .required("Email is required"),
+      password: Yup.string()
+        .min(6, "Password must be at least 6 characters")
+        .required("Password is required"),
     }),
     onSubmit: async (values, { setSubmitting, setErrors }) => {
       try {
-        await signInWithEmailAndPassword(auth, values.email, values.password);
-        // Redirect or show success message
-        console.log("Signed in successfully");
-        router.push('/dashboard')
+        const userCredential = await signInWithEmailAndPassword(
+          auth,
+          values.email,
+          values.password
+        );
+        const user = userCredential.user;
+
+        if (!user.emailVerified) {
+          alert("Please verify your email before logging in.");
+          return; // Prevent redirecting if email is not verified
+        }
+        console.log(user, "HUHUIHUI");
+
+        router.push("/dashboard");
       } catch (err) {
-        console.log(err)
+        console.log(err);
         setErrors({ password: "Invalid email or password" });
       } finally {
         setSubmitting(false);
@@ -57,7 +68,11 @@ const Signin = () => {
               name="email"
               type="email"
               placeholder="Enter your email"
-              className={`border ${formik.errors.email && formik.touched.email ? "border-red-500" : "border-[#02000F]/20"} h-11`}
+              className={`border ${
+                formik.errors.email && formik.touched.email
+                  ? "border-red-500"
+                  : "border-[#02000F]/20"
+              } h-11`}
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
               value={formik.values.email}
@@ -74,7 +89,11 @@ const Signin = () => {
               name="password"
               type="password"
               placeholder="Enter password"
-              className={`border ${formik.errors.password && formik.touched.password ? "border-red-500" : "border-[#02000F]/20"} h-11`}
+              className={`border ${
+                formik.errors.password && formik.touched.password
+                  ? "border-red-500"
+                  : "border-[#02000F]/20"
+              } h-11`}
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
               value={formik.values.password}

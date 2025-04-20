@@ -3,7 +3,10 @@
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { auth, db } from "@/firebase";
-import { createUserWithEmailAndPassword } from "firebase/auth";
+import {
+  createUserWithEmailAndPassword,
+  sendEmailVerification,
+} from "firebase/auth";
 import { doc, setDoc } from "firebase/firestore";
 import Link from "next/link";
 import React from "react";
@@ -20,11 +23,15 @@ const Signup = () => {
     },
     validationSchema: Yup.object({
       name: Yup.string().required("Name is required"),
-      email: Yup.string().email("Invalid email address").required("Email is required"),
+      email: Yup.string()
+        .email("Invalid email address")
+        .required("Email is required"),
       phoneNumber: Yup.string()
         .matches(/^[0-9]{6,14}$/, "Phone number is not valid")
         .required("Phone number is required"),
-      password: Yup.string().min(6, "Password must be at least 6 characters").required("Password is required"),
+      password: Yup.string()
+        .min(6, "Password must be at least 6 characters")
+        .required("Password is required"),
     }),
     onSubmit: async (values, { setSubmitting, setErrors, resetForm }) => {
       try {
@@ -35,6 +42,7 @@ const Signup = () => {
         );
 
         const user = userCredential.user;
+        await sendEmailVerification(user);
 
         await setDoc(doc(db, "users", user.uid), {
           name: values.name,
@@ -71,7 +79,11 @@ const Signup = () => {
               id="name"
               name="name"
               placeholder="Enter your name"
-              className={`border ${formik.touched.name && formik.errors.name ? "border-red-500" : "border-[#02000F]/20"} h-11`}
+              className={`border ${
+                formik.touched.name && formik.errors.name
+                  ? "border-red-500"
+                  : "border-[#02000F]/20"
+              } h-11`}
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
               value={formik.values.name}
@@ -88,7 +100,11 @@ const Signup = () => {
               name="email"
               type="email"
               placeholder="Enter your email"
-              className={`border ${formik.touched.email && formik.errors.email ? "border-red-500" : "border-[#02000F]/20"} h-11`}
+              className={`border ${
+                formik.touched.email && formik.errors.email
+                  ? "border-red-500"
+                  : "border-[#02000F]/20"
+              } h-11`}
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
               value={formik.values.email}
@@ -104,13 +120,19 @@ const Signup = () => {
               id="phoneNumber"
               name="phoneNumber"
               placeholder="Enter your phone number"
-              className={`border ${formik.touched.phoneNumber && formik.errors.phoneNumber ? "border-red-500" : "border-[#02000F]/20"} h-11`}
+              className={`border ${
+                formik.touched.phoneNumber && formik.errors.phoneNumber
+                  ? "border-red-500"
+                  : "border-[#02000F]/20"
+              } h-11`}
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
               value={formik.values.phoneNumber}
             />
             {formik.touched.phoneNumber && formik.errors.phoneNumber && (
-              <p className="text-sm text-red-500">{formik.errors.phoneNumber}</p>
+              <p className="text-sm text-red-500">
+                {formik.errors.phoneNumber}
+              </p>
             )}
           </div>
 
@@ -121,7 +143,11 @@ const Signup = () => {
               name="password"
               type="password"
               placeholder="Enter password"
-              className={`border ${formik.touched.password && formik.errors.password ? "border-red-500" : "border-[#02000F]/20"} h-11`}
+              className={`border ${
+                formik.touched.password && formik.errors.password
+                  ? "border-red-500"
+                  : "border-[#02000F]/20"
+              } h-11`}
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
               value={formik.values.password}
