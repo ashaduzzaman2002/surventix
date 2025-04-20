@@ -53,12 +53,8 @@ const AboutUs = () => {
                   />
                 </div>
 
-                <div className="w-[50%] aspect-square absolute bottom-0 right-0 rounded-[10px] border-[5px] border-[#F7F9FC]">
-                  {/* <Image
-                    src={about2}
-                    className="h-full w-full rounded-[10px] object-cover"
-                    alt="image"
-                  /> */}
+                {/* <div className="w-[50%] aspect-square absolute bottom-0 right-0 rounded-[10px] border-[5px] border-[#F7F9FC]">
+          
 
                   <video
                     src="/about1.mp4"
@@ -69,12 +65,12 @@ const AboutUs = () => {
                     loop
                   ></video>
 
-                  {/* <div className="absolute flex items-center justify-center top-0 left-0 right-0 rounded-[10px] bottom-0 bg-[#222d3960]">
+                  <div className="absolute flex items-center justify-center top-0 left-0 right-0 rounded-[10px] bottom-0 bg-[#222d3960]">
                     <div className="h-[55px] w-[55px]">
                       <PlayWhite />
                     </div>
-                  </div> */}
-                </div>
+                  </div>
+                </div> */}
               </div>
 
               <img

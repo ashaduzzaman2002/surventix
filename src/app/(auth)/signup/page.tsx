@@ -1,46 +1,62 @@
+"use client";
+
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-// import { auth, db } from "@/firebase";
-// import { createUserWithEmailAndPassword } from "firebase/auth";
-// import { doc, setDoc } from "firebase/firestore";
+import { auth, db } from "@/firebase";
+import { createUserWithEmailAndPassword } from "firebase/auth";
+import { doc, setDoc } from "firebase/firestore";
 import Link from "next/link";
 import React from "react";
+import { useFormik } from "formik";
+import * as Yup from "yup";
 
 const Signup = () => {
-  // const handleCreateAccount = async () => {
-  //   console.log("JO");
-  //   // e.preventDefault();
-  //   try {
-  //     const userCredential = await createUserWithEmailAndPassword(
-  //       auth,
-  //       "Aj@yopmail.com",
-  //       "123456"
-  //     );
+  const formik = useFormik({
+    initialValues: {
+      name: "",
+      email: "",
+      phoneNumber: "",
+      password: "",
+    },
+    validationSchema: Yup.object({
+      name: Yup.string().required("Name is required"),
+      email: Yup.string().email("Invalid email address").required("Email is required"),
+      phoneNumber: Yup.string()
+        .matches(/^[0-9]{6,14}$/, "Phone number is not valid")
+        .required("Phone number is required"),
+      password: Yup.string().min(6, "Password must be at least 6 characters").required("Password is required"),
+    }),
+    onSubmit: async (values, { setSubmitting, setErrors, resetForm }) => {
+      try {
+        const userCredential = await createUserWithEmailAndPassword(
+          auth,
+          values.email,
+          values.password
+        );
 
-  //     // Add user to Firestore
-  //     const user = userCredential.user;
-  //     await setDoc(doc(db, "users", user.uid), {
-  //       name: "AJ",
-  //       email: user.email,
-  //       phoneNumber: "7976",
-  //       createdAt: new Date().toISOString(),
-  //     });
-  //     console.log("CALLED");
+        const user = userCredential.user;
 
-  //     // setLoading(false);
-  //     // navigate("/");
-  //     alert("Sign-up successful! Welcome!");
-  //   } catch (err) {
-  //     console.log(err, "EENBN");
+        await setDoc(doc(db, "users", user.uid), {
+          name: values.name,
+          email: user.email,
+          phoneNumber: values.phoneNumber,
+          createdAt: new Date().toISOString(),
+        });
 
-  //     // setLoading(false);
-  //     // const errorMessage = getFriendlyErrorMessage(err.code);
-  //     // setError(errorMessage);
-  //   }
-  // };
+        alert("Sign-up successful! Welcome!");
+        resetForm();
+      } catch (err) {
+        console.error(err);
+        setErrors({ email: "Email already in use or invalid" });
+      } finally {
+        setSubmitting(false);
+      }
+    },
+  });
+
   return (
-    <div className="bg-white h-full text-[#02000F] rounded-tl-4xl rounded-bl-4xl flex justify-center items-center">
-      <div className="max-w-[400px] ">
+    <div className="bg-white h-full text-[#02000F] md:rounded-tl-4xl md:rounded-bl-4xl flex justify-center items-center">
+      <div className="max-w-[400px] w-full px-4">
         <h1 className="text-center text-3xl font-semibold leading-tight sm:text-4xl sm:leading-tight">
           Welcome to Surventix
         </h1>
@@ -48,43 +64,80 @@ const Signup = () => {
           Register to create your first account on Surventix and start exploring
         </p>
 
-        <form className="flex flex-col gap-4">
+        <form onSubmit={formik.handleSubmit} className="flex flex-col gap-4">
           <div className="flex flex-col gap-2">
-            <Label>Name</Label>
+            <Label htmlFor="name">Name</Label>
             <Input
-              className="border border-[#02000F]/20 h-11"
+              id="name"
+              name="name"
               placeholder="Enter your name"
+              className={`border ${formik.touched.name && formik.errors.name ? "border-red-500" : "border-[#02000F]/20"} h-11`}
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              value={formik.values.name}
             />
+            {formik.touched.name && formik.errors.name && (
+              <p className="text-sm text-red-500">{formik.errors.name}</p>
+            )}
           </div>
+
           <div className="flex flex-col gap-2">
-            <Label>Email</Label>
+            <Label htmlFor="email">Email</Label>
             <Input
-              className="border border-[#02000F]/20 h-11"
-              placeholder="Enter your email"
+              id="email"
+              name="email"
               type="email"
+              placeholder="Enter your email"
+              className={`border ${formik.touched.email && formik.errors.email ? "border-red-500" : "border-[#02000F]/20"} h-11`}
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              value={formik.values.email}
             />
+            {formik.touched.email && formik.errors.email && (
+              <p className="text-sm text-red-500">{formik.errors.email}</p>
+            )}
           </div>
+
           <div className="flex flex-col gap-2">
-            <Label>Phone Number</Label>
+            <Label htmlFor="phoneNumber">Phone Number</Label>
             <Input
-              className="border border-[#02000F]/20 h-11"
+              id="phoneNumber"
+              name="phoneNumber"
               placeholder="Enter your phone number"
+              className={`border ${formik.touched.phoneNumber && formik.errors.phoneNumber ? "border-red-500" : "border-[#02000F]/20"} h-11`}
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              value={formik.values.phoneNumber}
             />
+            {formik.touched.phoneNumber && formik.errors.phoneNumber && (
+              <p className="text-sm text-red-500">{formik.errors.phoneNumber}</p>
+            )}
           </div>
+
           <div className="flex flex-col gap-2">
-            <Label>Password</Label>
+            <Label htmlFor="password">Password</Label>
             <Input
-              className="border border-[#02000F]/20 h-11"
+              id="password"
+              name="password"
+              type="password"
               placeholder="Enter password"
+              className={`border ${formik.touched.password && formik.errors.password ? "border-red-500" : "border-[#02000F]/20"} h-11`}
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              value={formik.values.password}
             />
+            {formik.touched.password && formik.errors.password && (
+              <p className="text-sm text-red-500">{formik.errors.password}</p>
+            )}
           </div>
 
           <div>
             <button
               type="submit"
               className="bg-[#003B64] w-full text-white h-11 rounded-lg mt-4"
+              disabled={formik.isSubmitting}
             >
-              Register
+              {formik.isSubmitting ? "Registering..." : "Register"}
             </button>
           </div>
 

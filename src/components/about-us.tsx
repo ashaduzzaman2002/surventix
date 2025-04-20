@@ -67,12 +67,13 @@ const AboutUs = () => {
               <div className="w-[50%] aspect-square absolute bottom-0 right-0 rounded-[10px] border-[5px] border-[#F7F9FC]">
              
                 <video
-                  src="/about.mp4"
+                  src="/home.mp4"
                   className="h-full w-full rounded-[10px] object-cover"
                   preload="metadata"
                   muted
                   autoPlay
                   loop
+                  poster="/thumnail.png"
                 ></video>
                 {/* <button onClick={toggleVideoPlayback} className="absolute flex items-center justify-center top-0 left-0 right-0 rounded-[10px] bottom-0 bg-[#222d3960]">
                   <div className="h-[55px] w-[55px]">

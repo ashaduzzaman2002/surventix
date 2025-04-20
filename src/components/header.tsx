@@ -38,8 +38,8 @@ const Header = () => {
       )}
     >
       <div className="container flex justify-between items-center ">
-        <Link href='/' className="flex items-center gap-2">
-          <div className="relative ">
+        <Link href='/' className="flex items-center gap-2 py-2">
+          {/* <div className="relative ">
             <div className="absolute flex justify-center items-center top-0 bottom-0 left-0 right-0">
               <div className="bg-white md:w-[40px] md:h-[40px] h-[29px] w-[30px]"></div>
             </div>
@@ -58,12 +58,13 @@ const Header = () => {
             <p className="md:text-xs text-[10px] opacity-80">
               Driven By Discovery
             </p>
-          </div>
+          </div> */}
+          <Image src='/SURVENTIX.png' alt="SURVENTIX" width={100} height={70} />
         </Link>
 
         <nav className="hidden md:flex gap-7">
           {NAV_LINKS.map((item, i) => (
-            <li key={i} className="nav-links list-none">
+            <li key={i} className="nav-links list-none capitalize">
               <Link href={item.href}>{item.label}</Link>
             </li>
           ))}

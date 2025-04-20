@@ -1,5 +1,6 @@
 import { TestimonialsSection } from "@/components/testimonials-with-marquee";
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 const testimonials = [
@@ -36,26 +37,11 @@ const testimonials = [
 
 const AuthLayout = ({ children }: { children: React.ReactNode }) => {
   return (
-    <div className="grid grid-cols-2 h-screen">
-      <div className="relative flex flex-col justify-between overflow-hidden">
-        <div className="flex items-center gap-2 px-8 py-4">
-          <div className="relative">
-            <div className="absolute flex justify-center items-center top-0 bottom-0 left-0 right-0">
-              <div className="bg-white w-[40px] h-[40px]"></div>
-            </div>
-            <Image
-              className="relative"
-              src="/logo.png"
-              alt="logo"
-              width={74}
-              height={74}
-            />
-          </div>
-          <div>
-            <p className="uppercase font-bold text-lg">Surventix</p>
-            <p className="text-xs opacity-80">Driven By Discovery</p>
-          </div>
-        </div>
+    <div className="grid md:grid-cols-2 h-screen">
+      <div className="relative hidden md:flex flex-col justify-between overflow-hidden">
+        <Link href='/' className="flex items-center gap-2 px-8 py-4">
+        <Image src='/SURVENTIX.png' alt="SURVENTIX" width={100} height={70} />
+        </Link>
 
         <TestimonialsSection
           title="Trusted by developers worldwide"

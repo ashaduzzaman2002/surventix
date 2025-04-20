@@ -4,5 +4,5 @@ export const NAV_LINKS = [
   { label: "Our Services", href: "/services" },
   { label: "Code of Conduct", href: "/code-of-conduct" },
   { label: "Security Check", href: "/security-check" },
-  { label: "Carrier", href: "/carrier" },
+  { label: "career", href: "/career" },
 ];

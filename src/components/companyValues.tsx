@@ -2,6 +2,8 @@ import { companyValues } from "@/constant/data";
 import React from "react";
 import { Card } from "./ui/card";
 import { cn } from "@/lib/utils";
+import Image from "next/image";
+import { v1 } from "@/assets";
 
 const CompanyValues = () => {
   return (
@@ -25,7 +27,18 @@ const CompanyValues = () => {
             </p>
           </div>
 
-          <div className="absolute inset-0 bg-[#3961DC] translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-in-out"></div>
+          <div className="absolute inset-0 bg-[#3961DC] translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-in-out">
+            <div className="absolute inset-0 bg-black/45">
+
+            </div>
+            <Image
+              src={item.image || v1}
+              alt={item.title}
+              width={260}
+              height={150}
+              className="w-full h-full object-cover"
+            />
+          </div>
         </Card>
       ))}
     </div>

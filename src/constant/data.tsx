@@ -1,4 +1,4 @@
-import { timealphablue, timealphared, timealphaviolet } from "@/assets";
+import { learning1, learning2, learning3, timealphablue, timealphared, timealphaviolet, v1, v10, v2, v3, v4, v5, v6, v8, v9 } from "@/assets";
 import { Award, Handshake, HeartHandshake } from "lucide-react";
 
 export const WHY_CHOOSE_US = [
@@ -1012,54 +1012,63 @@ export const companyValues = [
     description:
       "At Surventix, integrity is our foundation. We don’t cut corners or play the numbers game—we deliver real, transparent, and ethical insights.",
     icon: "shield-check",
+    image: v1
   },
   {
     title: "Diversity",
     description:
       "Market research thrives on diversity, and so do we. With a global network spanning industries, demographics, and perspectives, Surventix ensures that no insight is one-dimensional.",
     icon: "users",
+    image: v2
   },
   {
     title: "Respect for the Individual",
     description:
       "At Surventix, we recognize that behind every data point is a real person. We value the expertise, aspirations, and individuality of our team and respondents alike.",
     icon: "user-heart",
+    image: v3
   },
   {
     title: "Clients Come First",
     description:
       "Your business goals are our priority. Whether you need real-time market intelligence or a deep dive into consumer behavior, Surventix ensures you get the right insights—fast, accurate, and actionable.",
     icon: "handshake",
+    image: v4
   },
   {
     title: "The Strategic Perspective",
     description:
       "Data is just numbers without the right perspective. At Surventix, we don’t just collect information—we analyze it through a strategic lens to drive smarter decisions.",
     icon: "chart-bar",
+    image: v5
   },
   {
     title: "Value Delivered",
     description:
       "Every data set should serve a purpose, and at Surventix, we ensure that insights translate into impact. Our research is designed to drive real business results.",
     icon: "check-circle",
+    image: v6
   },
   {
     title: "Partnership",
     description:
       "We don’t just offer research; we build long-term collaborations. Surventix partners with businesses, research firms, and industry leaders to create lasting value.",
     icon: "handshake",
+    image: v8
   },
   {
     title: "Expanding the Art of the Possible",
     description:
       "Innovation in market research is what sets Surventix apart. We embrace new methodologies, emerging technologies, and forward-thinking strategies to redefine what's possible.",
     icon: "lightbulb",
+    image: v9
   },
   {
     title: "Social Impact",
     description:
       "At Surventix, we believe in the power of responsible research. Ethical data collection, fair respondent engagement, and sustainability initiatives are at the core of what we do.",
     icon: "globe",
+    image: v10
   },
 ];
 
@@ -1077,6 +1086,8 @@ export const OPPORTUNITIES = [
     className: "mr-auto md:mb-20 mb-10 bg-[#E2062E]",
     animation: timealphared,
     bg: "bg-[#E2062E]",
+    image: learning1,
+    icon: () => <HeartHandshake />,
   },
   {
     id: 2,
@@ -1091,6 +1102,8 @@ export const OPPORTUNITIES = [
     className: "ml-auto md:mb-20 mb-10 bg-[#460073]",
     animation: timealphaviolet,
     bg: "bg-[#460073]",
+    image: learning2,
+    icon: () => <Award />,
   },
   {
     id: 3,
@@ -1101,6 +1114,8 @@ export const OPPORTUNITIES = [
     className: "mr-auto mb-20 bg-[#0041F0]",
     animation: timealphablue,
     bg: "bg-[#0041F0]",
+    image: learning3,
+    icon: () => <Handshake />,
   },
 
   {
@@ -1109,7 +1124,7 @@ export const OPPORTUNITIES = [
     content: [
       `Join the Surventix community and explore exciting opportunities to participate in engaging surveys and research projects. By sharing your valuable insights, you'll not only help shape the future of products and services but also get rewarded for your time and input. Collaborate with leading brands and businesses, and make a real impact while enjoying the benefits of being part of a dynamic, forward-thinking research network. Your opinions matter at Surventix, and together, we can drive innovation and growth across industries.`,
     ],
-    className: "ml-auto md:mb-20 mb-10 bg-[#E2062E]",
+    className: "mr-auto md:mb-20 mb-10 bg-[#E2062E]",
     animation: timealphared,
     bg: "bg-[#E2062E]",
   },
@@ -1119,7 +1134,7 @@ export const OPPORTUNITIES = [
     content: [
       `At Surventix, your opinions have the power to influence real-world product development and marketing strategies. By sharing your genuine consumer feedback, you directly contribute to shaping the future of industries, helping brands create products and services that truly meet the needs of their customers. Join a movement that values your voice, where your insights play a crucial role in driving meaningful change across various sectors. With Surventix, you're not just participating in research—you're making a difference.`,
     ],
-    className: "mr-auto md:mb-20 mb-10 bg-[#460073]",
+    className: "ml-auto md:mb-20 mb-10 bg-[#460073]",
     animation: timealphaviolet,
     bg: "bg-[#460073]",
   },
@@ -1129,7 +1144,7 @@ export const OPPORTUNITIES = [
     content: [
       `At Surventix, we prioritize your experience every step of the way. Our dedicated team is committed to providing seamless support, ensuring you have everything you need to participate with confidence. We operate with complete transparency, adhering to ethical research practices to guarantee your trust. Whether you have a query or need assistance, we offer quick resolution and fair compensation for your time and insights. With Surventix, you can be assured of reliable, supportive, and ethical involvement in every research project.`,
     ],
-    className: "ml-auto mb-20 bg-[#0041F0]",
+    className: "mr-auto mb-20 bg-[#0041F0]",
     animation: timealphablue,
     bg: "bg-[#0041F0]",
   },
@@ -1140,7 +1155,7 @@ export const OPPORTUNITIES = [
     content: [
       `Surventix offers you the unique opportunity to gain exposure to a wide range of industries and market trends, expanding your understanding of the business world. By participating in our research projects, you’ll enhance your knowledge of consumer behavior and business strategies, staying ahead of the curve. Additionally, as a member, you’ll receive exclusive insights and reports on emerging market trends, giving you a valuable edge in understanding what’s next in the marketplace. With Surventix, your learning journey never stops—empowering you with knowledge that can shape both your professional and personal growth.`,
     ],
-    className: "mr-auto md:mb-20 mb-10 bg-[#E2062E]",
+    className: "ml-auto md:mb-20 mb-10 bg-[#E2062E]",
     animation: timealphared,
     bg: "bg-[#E2062E]",
   },
@@ -1150,7 +1165,7 @@ export const OPPORTUNITIES = [
     content: [
       `Surventix provides an excellent platform to build your reputation as a trusted survey respondent and market expert. By consistently sharing valuable insights, you’ll establish credibility and become a respected voice in the research community. You'll also gain access to exclusive networking opportunities, connecting with professionals across marketing, research, and analytics sectors. Additionally, participating in Surventix can open doors to potential career prospects in research, insights, and data-driven roles, offering a pathway for professional advancement and growth. With Surventix, your contributions can take your career to new heights.`,
     ],
-    className: "ml-auto md:mb-20 mb-10 bg-[#460073]",
+    className: "mr-auto md:mb-20 mb-10 bg-[#460073]",
     animation: timealphaviolet,
     bg: "bg-[#460073]",
   },
