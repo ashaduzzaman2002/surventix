@@ -2,7 +2,7 @@ import React from "react";
 
 const GetinTouch = () => {
   return (
-    <div className="md:py-16 py-8 md:my-16 my-8  bg-[#003B64]">
+    <div id="contact" className="md:py-16 py-8 md:my-16 my-8  bg-[#003B64]">
       <div className="container grid md:grid-cols-2 gap-10">
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13337.457255597996!2d77.09743300000001!3d28.451407!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d196a9219452f%3A0x2b7db4e11e0c29d1!2sWeWork%20Two%20Horizon%20Centre!5e1!3m2!1sen!2sus!4v1744348407832!5m2!1sen!2sus"

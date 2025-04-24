@@ -1,4 +1,20 @@
-import { learning1, learning2, learning3, timealphablue, timealphared, timealphaviolet, v1, v10, v2, v3, v4, v5, v6, v8, v9 } from "@/assets";
+import {
+  learning1,
+  learning2,
+  learning3,
+  timealphablue,
+  timealphared,
+  timealphaviolet,
+  v1,
+  v10,
+  v2,
+  v3,
+  v4,
+  v5,
+  v6,
+  v8,
+  v9,
+} from "@/assets";
 import { Award, Handshake, HeartHandshake } from "lucide-react";
 
 export const WHY_CHOOSE_US = [
@@ -407,6 +423,46 @@ export const TECHNICAL_SOLUTIONS = [
     image: "/2-1.jpg",
   },
 ];
+
+export const surventixHighlights = [
+  {
+    title: "Purpose-Driven, Privacy-Led",
+    description:
+      "At Surventix, every research initiative starts with a sharp objective—and an even sharper security framework. From project setup to data delivery, we design every touchpoint with privacy in mind. Your goals stay protected, and your insights remain untouched by noise, breaches, or bad actors.",
+    image: "/Inno_feature_card_innovative.png",
+  },
+  {
+    title: "Real People, Not Robots",
+    description:
+      "We don’t do data from mystery clicks or digital ghosts. Surventix uses smart filters, fraud detection tools, and respondent validation to ensure you only hear from real, qualified individuals. That means cleaner data, richer insights, and results you can trust—without second-guessing who’s on the other end.",
+    image: "/Inno_feature_card_optimize.png",
+  },
+  {
+    title: "Built-In Protection, Not Bolt-On Patches",
+    description:
+      "Our platform doesn’t just “have” security—it lives and breathes it. End-to-end encryption, secure data hosting, access control, and ongoing system audits keep your research environment airtight. No outdated add-ons, no patchwork fixes—just modern protection built from the ground up.",
+    image: "/Inno_feature_card_learn_over_time.png",
+  },
+  {
+    title: "Fully Compliant, Totally Transparent",
+    description:
+      "We don’t just follow global privacy laws—we align with their spirit. Surventix is built to comply with GDPR, CCPA, and other regional regulations, ensuring respondent rights are respected and client data remains protected. Transparency is key—because real trust can’t be faked.",
+    image: "/Inno_feature_card_quality.png",
+  },
+  {
+    title: "Clean Data = Clear Insights",
+    description:
+      "Secure platforms lead to confident participants. And confident participants lead to better data. Our tools minimize response bias, eliminate fraudulent entries, and uphold data integrity—so you’re working with insights that are not only clean, but credible enough to guide serious business decisions.",
+    image: "/Inno_feature_card_flexible.png",
+  },
+  {
+    title: "Research That Moves the Needle",
+    description:
+      "When you combine smart targeting, ethical practices, and secure technology, the result is research that drives results. Surventix empowers you to explore consumer behavior without the risk, helping you move faster from insight to impact—with confidence at every step.",
+    image: "/Inno_feature_card_collab.png",
+  },
+];
+
 export const SECURITY_CHECK = [
   {
     id: 1,
@@ -421,7 +477,7 @@ that all responses remain protected from unauthorized access.
 `,
     ],
 
-    image: "/Learning-2.png",
+    image: "/Advanced Data.png",
   },
   {
     id: 2,
@@ -443,7 +499,7 @@ a respondent’s score falls below a predefined threshold, they are temporarily 
 integrity of our data.`,
     ],
 
-    image: "/Learning-1.png",
+    image: "/Verified Respondent Identities.png",
   },
 
   {
@@ -458,7 +514,7 @@ how their data is collected and used.`,
 to minimize privacy risks.`,
     ],
 
-    image: "/Learning-3.png",
+    image: "/Strict Data Privacy.png",
   },
   {
     id: 4,
@@ -475,7 +531,7 @@ unique and reliable.`,
 solution, to block automated and fraudulent survey attempts,
 safeguarding the integrity of our data.`,
     ],
-    image: "/Learning-4.png",
+    image: "/Advanced API Solutions.png",
   },
   {
     id: 5,
@@ -489,7 +545,7 @@ identify and address potential vulnerabilities.`,
 granted based on user roles and responsibilities.`,
     ],
 
-    image: "/Learning-5.png",
+    image: "/Robust System Security.png",
   },
   {
     id: 6,
@@ -506,7 +562,7 @@ authenticity of survey completions, ensuring that responses come
 from legitimate participants and trusted platforms.`,
     ],
 
-    image: "/Learning-6.png",
+    image: "/Secure Data Storage.png",
   },
   {
     id: 7,
@@ -518,7 +574,7 @@ participating from their declared locations.`,
       `Our system flags any discrepancies in location data, ensuring that
 only genuine respondents are included in our research.`,
     ],
-    image: "/Learning-7.png",
+    image: "/Geo-Tagging & Location Verification.png",
   },
 
   {
@@ -532,7 +588,7 @@ identified, allowing us to take immediate action to maintain data
 integrity.`,
     ],
 
-    image: "/Learning-8.png",
+    image: "/Real-Time Monitoring & Alerts.png",
   },
   {
     id: 9,
@@ -548,7 +604,7 @@ our strict security and privacy standards.`,
     ],
 
     image:
-      "https://images.unsplash.com/photo-1590650516494-0c8e4a4dd67e?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "/Transparency & Accountability.png",
   },
   {
     id: 10,
@@ -569,7 +625,7 @@ low-quality or inattentive responses.`,
     ],
 
     image:
-      "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "/Digital Security Measures.png",
   },
   {
     id: 11,
@@ -800,7 +856,7 @@ export const BLOGS = [
     </p>
     <p>
       Our panel encompasses diverse demographics, making Surventix the ideal choice for companies seeking comprehensive market intelligence on a global scale.
-    </p>`
+    </p>`,
   },
   {
     thumbnail: "/blog-2.jpg",
@@ -819,7 +875,7 @@ export const BLOGS = [
     </p>
     <p>
       At Surventix, we believe that insightful decisions are built on a broad spectrum of voices, reflecting different industries, demographics, and perspectives.
-    </p>`
+    </p>`,
   },
   {
     thumbnail: "/blog-3.png",
@@ -841,7 +897,7 @@ export const BLOGS = [
     </p>
     <p class="font-semibold text-blue-700">
       Don’t leave your next big decision to chance. Partner with Surventix today and turn insights into impact!
-    </p>`
+    </p>`,
   },
   {
     thumbnail: "/blog-4.png",
@@ -863,7 +919,7 @@ full of numbers. At Surventix, we’re not just another data provider; we’re y
     </p>
     <p class="font-semibold text-blue-700">
       Because in business, the right data isn’t just power—it’s profit. Let’s grow together.
-    </p>`
+    </p>`,
   },
   {
     thumbnail: "/blog-5.png",
@@ -882,7 +938,7 @@ moves, not wild guesses. `,
     </p>
     <p class="font-semibold text-blue-700">
       Why settle for assumptions when you can have real-world proof? Partner with Surventix today—because success isn’t about luck, it’s about listening to the right people.
-    </p>`
+    </p>`,
   },
   {
     thumbnail: "/blog-6.png",
@@ -902,7 +958,7 @@ needed to become visionary leaders in a fast-evolving world.
     </p>
     <p class="mb-4">
       Here, careers aren’t one-size-fits-all—they’re as unique as the people who shape them. Whether you’re pushing boundaries in research or redefining industry standards, we’re committed to helping you build an exceptional journey at Surventix.
-    </p>`
+    </p>`,
   },
   {
     thumbnail: "/blog-7.jpg",
@@ -925,7 +981,7 @@ fuels growth, creativity, and success.
     </p>
     <p class="font-semibold text-blue-700">
       Great ideas don’t come from one voice—they come from millions. Ready to add yours?
-    </p>`
+    </p>`,
   },
   {
     thumbnail: "/blog-8.png",
@@ -948,7 +1004,7 @@ institutions
     </p>
     <p class="font-semibold text-blue-700">
       The future is calling. At Surventix, we’re making sure our people are ready to answer.
-    </p>`
+    </p>`,
   },
 ];
 
@@ -1012,63 +1068,63 @@ export const companyValues = [
     description:
       "At Surventix, integrity is our foundation. We don’t cut corners or play the numbers game—we deliver real, transparent, and ethical insights.",
     icon: "shield-check",
-    image: v1
+    image: v1,
   },
   {
     title: "Diversity",
     description:
       "Market research thrives on diversity, and so do we. With a global network spanning industries, demographics, and perspectives, Surventix ensures that no insight is one-dimensional.",
     icon: "users",
-    image: v2
+    image: v2,
   },
   {
     title: "Respect for the Individual",
     description:
       "At Surventix, we recognize that behind every data point is a real person. We value the expertise, aspirations, and individuality of our team and respondents alike.",
     icon: "user-heart",
-    image: v3
+    image: v3,
   },
   {
     title: "Clients Come First",
     description:
       "Your business goals are our priority. Whether you need real-time market intelligence or a deep dive into consumer behavior, Surventix ensures you get the right insights—fast, accurate, and actionable.",
     icon: "handshake",
-    image: v4
+    image: v4,
   },
   {
     title: "The Strategic Perspective",
     description:
       "Data is just numbers without the right perspective. At Surventix, we don’t just collect information—we analyze it through a strategic lens to drive smarter decisions.",
     icon: "chart-bar",
-    image: v5
+    image: v5,
   },
   {
     title: "Value Delivered",
     description:
       "Every data set should serve a purpose, and at Surventix, we ensure that insights translate into impact. Our research is designed to drive real business results.",
     icon: "check-circle",
-    image: v6
+    image: v6,
   },
   {
     title: "Partnership",
     description:
       "We don’t just offer research; we build long-term collaborations. Surventix partners with businesses, research firms, and industry leaders to create lasting value.",
     icon: "handshake",
-    image: v8
+    image: v8,
   },
   {
     title: "Expanding the Art of the Possible",
     description:
       "Innovation in market research is what sets Surventix apart. We embrace new methodologies, emerging technologies, and forward-thinking strategies to redefine what's possible.",
     icon: "lightbulb",
-    image: v9
+    image: v9,
   },
   {
     title: "Social Impact",
     description:
       "At Surventix, we believe in the power of responsible research. Ethical data collection, fair respondent engagement, and sustainability initiatives are at the core of what we do.",
     icon: "globe",
-    image: v10
+    image: v10,
   },
 ];
 

@@ -1,6 +1,9 @@
-import { SECURITY_CHECK } from "@/constant/data";
-import { ArrowRight } from "lucide-react";
-import Image from "next/image";
+import SecurityFlowChart from "@/components/SecurityFlowChart";
+import StepForm from "@/components/StepForm";
+import SmartivityTimeline from "@/components/Timeliner";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { surventixHighlights } from "@/constant/data";
+import { ArrowRight, Mail } from "lucide-react";
 import Link from "next/link";
 import React from "react";
 
@@ -10,9 +13,8 @@ const Page = () => {
       <div
         className="md:h-screen h-[75vh] bg-cover fixed top-0 w-full"
         style={{
-          background:
-            "url(/surv-bg6.jpg)",
-            backgroundPosition: 'center'
+          background: "url(/surv-bg6.jpg)",
+          backgroundPosition: "center",
         }}
       ></div>
 
@@ -46,68 +48,119 @@ const Page = () => {
       </div>
 
       <div id="online" className="relative bg-[#02000F] md:py-20 py-12">
-        <div className="container mb-16 text-center">
-          <h2 className="md:text-[35px] text-2xl leading-[24px] md:leading-[35px] mb-5  text-center">
-            Online Market Research
-          </h2>
+        <div className="container mb-20 grid md:grid-cols-2 gap-10">
+          <div>
+            <h1 className="text-6xl font-bold mb-7">
+              Online Market Research Security at{" "}
+              <span className="text-[#EF742C]">Surventix</span>
+            </h1>
+            <p className="text-white/80">
+              At Surventix, we prioritize the security and integrity of every
+              data point collected. Our online market research platform is built
+              with advanced security protocols, including end-to-end encryption,
+              secure data storage, and multi-layered authentication to protect
+              respondent privacy and client information. We strictly adhere to
+              global data protection standards like GDPR and CCPA, ensuring
+              compliance and peace of mind. Our systems actively detect and
+              prevent survey fraud, bots, and duplicate responses. By combining
+              technology with trust, Surventix delivers insights that are not
+              only accurate but also ethically and securely sourced—because your
+              data deserves the highest level of protection.
+            </p>
+          </div>
 
-          <p className="max-w-[800px] mx-auto mb-10 opacity-80 md:text-base text-sm">
-            At Surventix, safeguarding data integrity and privacy is at the core
-            of our operations. We have implemented industry-leading security
-            measures to protect sensitive information, ensure respondent
-            authenticity, and maintain compliance with global regulations. Our
-            comprehensive approach guarantees reliable insights while upholding
-            the highest standards of confidentiality.
-          </p>
-
-          <Link
-            href="/our-services"
-            className="border-[1.5px] border-white md:py-3 py-2.5 md:px-8 px-6 text-sm md:text-base "
-          >
-            Explore More
-          </Link>
+          <div className="h-full">
+            <video
+              poster="/video-poster.png"
+              autoPlay
+              loop
+              muted
+              src="/about.mp4"
+              className="h-full object-cover w-full rounded-4xl"
+            ></video>
+          </div>
         </div>
 
-        {SECURITY_CHECK.map((item, index) => (
-          <div key={index} className="relative md:h-[550px] h-[600px] group overflow-hidden">
-            <div className="absolute inset-0">
-              <Image
-                className="w-full h-full object-cover group-hover:scale-125 transition-all duration-300 ease-in-out"
-                src={item.image}
-                width={1200}
-                height={550}
-                alt={item.title || ""}
-              />
-            </div>
+        <div className="bg-[#EF742C] mb-20">
+          <div className="container py-20">
+            <h1 className="text-center text-5xl font-bold mb-4">
+              At Surventix, Security Is Success
+            </h1>
+            <p className="max-w-4xl mx-auto text-center mb-10">
+              In today’s digital world, great research isn’t just smart—it’s
+              secure. At Surventix, we believe the backbone of insightful,
+              actionable research is trust, and that starts with airtight online
+              market research security.
+            </p>
 
-            <div className="relative h-full w-full bg-gradient-to-t from-black/80 to-black/40 flex flex-col justify-center">
-              <div className="container ">
-                <h3 className="text-2xl font-medium md:mb-5 mb-3">{item.title}</h3>
-
-                {item.description ? (
-                  <p className="md:mb-10 mb-7 max-w-[700px] text-white/80 group-hover:text-white md:text-base text-sm  ">
-                    {item.description}
-                  </p>
-                ) : (
-                  <ul className="max-w-[700px] flex flex-col md:gap-4 gap-2 md:mb-10 mb-7">
-                    {item.items?.map((value, i) => (
-                      <li
-                        className="text-white/80 group-hover:text-white md:text-base text-sm"
-                        key={i}
-                      >
-                        • {value}
-                      </li>
-                    ))}
-                  </ul>
-                )}
-
-                <button className="border-[1.5px] border-white md:py-3 py-2.5 md:px-8 px-6 text-sm md:text-base">
-                  Know More
-                </button>
-              </div>
+            <div className="grid md:grid-cols-3 gap-4">
+              {surventixHighlights.map((item, i) => (
+                <div
+                  key={i}
+                  className="bg-[#0032C7] flex relative p-6 rounded-4xl"
+                >
+                  <div className="">
+                    <h3 className="text-2xl font-semibold mb-4">
+                      {item.title}
+                    </h3>
+                    <p className="text-white/80">{item.description}</p>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
-        ))}
+        </div>
+
+        <div>
+          <StepForm />
+        </div>
+
+        <div className="container">
+          <SmartivityTimeline />
+        </div>
+
+        <div>
+          <SecurityFlowChart />
+        </div>
+
+        <div className="container mx-auto py-12">
+          <Card className="max-w-3xl mx-auto bg-[#1F2937] backdrop-blur-sm border border-primary/10">
+            <CardHeader className="text-center space-y-2">
+              <CardTitle className="text-3xl font-bold bg-gradient-to-r from-primary to-purple-400 bg-clip-text text-transparent">
+                Want to Know More About Us?
+              </CardTitle>
+              <div className="h-1 w-20 bg-gradient-to-r from-primary to-purple-400 mx-auto rounded-full" />
+            </CardHeader>
+            <CardContent className="space-y-6">
+              <p className="text-lg text-center leading-relaxed text-muted-foreground">
+                We&lsquo;re more than just surveys and data — we&lsquo;re all about smart
+                insights, seamless experiences, and making meaningful
+                connections.
+              </p>
+
+              <p className="text-center leading-relaxed text-muted-foreground">
+                Whether you&lsquo;re curious about what we do, have a question, or
+                just want to explore potential opportunities — we&lsquo;d love to hear
+                from you!
+              </p>
+
+              <div className="flex flex-col items-center space-y-3 mt-8">
+                <p className="font-semibold">Get in touch with us at:</p>
+                <a
+                  href="mailto:Sales@surventix.com"
+                  className="flex items-center gap-2 text-primary hover:text-primary/80 transition-colors"
+                >
+                  <Mail className="h-4 w-4" />
+                  Sales@surventix.com
+                </a>
+              </div>
+
+              <p className="text-center italic mt-6 text-muted-foreground">
+                Let&lsquo;s connect and create something impactful together.
+              </p>
+            </CardContent>
+          </Card>
+        </div>
       </div>
     </div>
   );

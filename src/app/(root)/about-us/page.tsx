@@ -6,6 +6,8 @@ import Image from "next/image";
 import React from "react";
 import WhyChooseUs from "@/components/about/why-choose-us";
 import MeetOurTeam from "@/components/about/team";
+import GetinTouch from "@/components/GetinTouch";
+import Link from "next/link";
 
 const AboutUs = () => {
   return (
@@ -33,11 +35,11 @@ const AboutUs = () => {
                 improves. �✨
               </p>
               <div className="flex mb-0 gap-[30px] items-center">
-                <button className="uppercase text-xs py-2.5 px-4 bg-white text-[#02000F] rounded-3xl">
-                  JOIN OUR Penel
-                </button>
+                <Link href='/signup' className="uppercase text-xs py-2.5 px-4 bg-white text-[#02000F] rounded-3xl">
+                  JOIN OUR panel
+                </Link>
 
-                <a className="btn-anchor mt-0 mb-0 " href="#">
+                <a className="btn-anchor mt-0 mb-0 " href="#contact">
                   Contact Us
                 </a>
               </div>
@@ -98,6 +100,7 @@ const AboutUs = () => {
 
       <WhyChooseUs />
       <MeetOurTeam />
+      <GetinTouch />
     </div>
   );
 };

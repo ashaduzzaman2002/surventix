@@ -96,7 +96,7 @@ const Header = () => {
         )}
       >
         {NAV_LINKS.map((item, i) => (
-          <Link key={i} href={item.href} onClick={() => setMenuOpen(false)}>
+          <Link key={i} href={item.href} className="capitalize" onClick={() => setMenuOpen(false)}>
             {item.label}
           </Link>
         ))}

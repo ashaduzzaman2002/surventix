@@ -5,9 +5,11 @@ import Link from "next/link";
 import React from "react";
 import { Facebook, LinkedIn, X, YouTube } from "@/assets/Icon";
 import { NAV_LINKS } from "@/constant/path";
-import { Input } from "./ui/input";
+import PanelBook from "./PanelBook";
 
 const Footer = () => {
+  
+
   return (
     <div
       className="flex flex-col text-white py-9 bg-[#02000F]"
@@ -79,22 +81,7 @@ const Footer = () => {
               </a>
             </div>
 
-            <div>
-              <h3 className="text-xl font-semibold mb-6">Update Panel book</h3>
-
-              <div>
-                <Input
-                  className="h-12"
-                  placeholder="Enter Your Email Address"
-                />
-              </div>
-
-              <div>
-                <button className="w-full bg-[#5CE1F2] border border-[#5CE1F2] duration-300 transition-all ease-in-out hover:bg-transparent hover:text-[#5CE1F2] mt-6 h-12 rounded-lg text-[#04021d] font-medium text-lg">
-                  Download
-                </button>
-              </div>
-            </div>
+            <PanelBook />
           </div>
         </div>
 

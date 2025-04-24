@@ -9,6 +9,7 @@ const nextConfig: NextConfig = {
       "plus.unsplash.com",
       "scontent-den2-1.cdninstagram.com",
       "media.licdn.com",
+      'hebbkx1anhila5yf.public.blob.vercel-storage.com'
     ],
   },
 };
