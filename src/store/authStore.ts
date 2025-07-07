@@ -6,6 +6,7 @@ type User = {
   email: string | null;
   displayName: string | null;
   photoURL: string | null;
+  referralCode?: string;
 } | null;
 
 type AuthState = {

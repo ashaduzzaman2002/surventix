@@ -1,3 +1,4 @@
+import CareerModal from "@/components/card/CareerModal";
 import FAQcard from "@/components/card/FAQcard";
 import JobCard from "@/components/card/JobCard";
 import { OPPORTUNITIES } from "@/constant/data";
@@ -73,56 +74,33 @@ const Page = () => {
       </div>
 
       <div className="bg-[#02000F] relative">
-        {/* <div className="container py-16 grid grid-cols-2 gap-20">
-          <div className="">
-            <h2 className="md:text-[35px] text-2xl leading-[24px] md:leading-[35px] mb-5 capitalize">
-              Join Our Team
-            </h2>
-            <p className="text-lg">
-              As a global company, we offer exceptional career and development
-              opportunities with attractive remuneration for candidates in
-              different roles in our Online Market Reserach services and
-              Consulting businesses in our corporate offices and regional
-              subsidiaries in Asia Pacific, North America, Europe and the Middle
-              East.
-            </p>
-          </div>
-
-          <div>
-            <Image
-              src="/Learning.png"
-              alt="learning"
-              width={554}
-              height={354}
-            />
-            <iframe
-              width="554"
-              height="354"
-              src="https://www.youtube.com/embed/L1Z_dn3QYSA"
-              title="At TCS, a career means more than just a job"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              referrerPolicy="strict-origin-when-cross-origin"
-              allowFullScreen
-            ></iframe>
-          </div>
-        </div> */}
-
         <div className="relative bg-[#02000F] md:pb-20 container pt-20">
           <div className="container">
-            <div className="md:text-center">
-              <h2 className="md:text-[35px] text-2xl leading-[24px] md:leading-[35px] mb-5 ">
-                Join Our Team
-              </h2>
+            <div className="grid md:grid-cols-2 gap-8 items-center">
+              <div className="">
+                <h2 className="md:text-[35px] text-2xl leading-[24px] md:leading-[35px] mb-5 ">
+                  Join Our Team
+                </h2>
 
-              <p className="max-w-[750px] mx-auto text-white/80">
-                As a global company, we offer exceptional career and development
-                opportunities with attractive remuneration for candidates in
-                different roles in our Online Market Reserach services and
-                Consulting businesses in our corporate offices and regional
-                subsidiaries in Asia Pacific, North America, Europe and the
-                Middle East.
-              </p>
+                <p className="max-w-[750px] mx-auto text-white/80">
+                  As a global company, we offer exceptional career and
+                  development opportunities with attractive remuneration for
+                  candidates in different roles in our Online Market Reserach
+                  services and Consulting businesses in our corporate offices
+                  and regional subsidiaries in Asia Pacific, North America,
+                  Europe and the Middle East.
+                </p>
+              </div>
+              <div>
+                <video
+                  muted
+                  autoPlay
+                  loop
+                  className="rounded-4xl"
+                  src="/career.mp4"
+                  poster="/career.png"
+                ></video>
+              </div>
             </div>
 
             <div className="gap-8 md:grid-cols-3 grid md:mt-16  mt-8">
@@ -134,21 +112,27 @@ const Page = () => {
                   <div className="w-full aspect-video relative">
                     <Image
                       className="w-full h-full object-cover"
-                      src={item.image || ''}
+                      src={item.image || ""}
                       width={400}
                       height={400}
                       alt={item.title}
                     />
-                   
                   </div>
 
                   <div className="bg-[#00233C] md:p-6 p-4 rounded-2xl -mt-10 relative">
-                    <h3 className="md:text-4xl text-2xl md:mb-4 mb-3">
-                      {item.title}
-                    </h3>
-                    <p className="font-light md:text-base text-sm">
-                      {item.content}
-                    </p>
+                    <div>
+                      <h3 className="md:text-3xl text-2xl md:mb-4 mb-3 font-semibold truncate">
+                        {item.title}
+                      </h3>
+                      <p className="font-light md:text-base text-sm line-clamp-4 text-justify">
+                        {item.content.join(" ")}
+                      </p>
+                    </div>
+                    <CareerModal
+                      title={item.title}
+                      content={item.content}
+                      bg={"bg-[#00233C]"}
+                    />
                   </div>
                 </div>
               ))}
@@ -187,6 +171,14 @@ const Page = () => {
                 ))}
               </div>
             </div>
+          </div>
+
+          <div className="flex justify-center items-center mt-16 gap-2">
+            Share your updated CV at
+            <a href="mailto:HR@surventix.com" className="text-blue-600">
+              {" "}
+              HR@surventix.com
+            </a>
           </div>
         </div>
       </div>

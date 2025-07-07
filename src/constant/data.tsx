@@ -15,7 +15,7 @@ import {
   v8,
   v9,
 } from "@/assets";
-import { Award, Handshake, HeartHandshake } from "lucide-react";
+import { Award, CheckCheck, Database, Eye, FileKey, Handshake, HeartHandshake, Lock, Shield } from "lucide-react";
 
 export const WHY_CHOOSE_US = [
   {
@@ -430,36 +430,43 @@ export const surventixHighlights = [
     description:
       "At Surventix, every research initiative starts with a sharp objective—and an even sharper security framework. From project setup to data delivery, we design every touchpoint with privacy in mind. Your goals stay protected, and your insights remain untouched by noise, breaches, or bad actors.",
     image: "/Inno_feature_card_innovative.png",
+    icon: Shield
   },
   {
     title: "Real People, Not Robots",
     description:
       "We don’t do data from mystery clicks or digital ghosts. Surventix uses smart filters, fraud detection tools, and respondent validation to ensure you only hear from real, qualified individuals. That means cleaner data, richer insights, and results you can trust—without second-guessing who’s on the other end.",
     image: "/Inno_feature_card_optimize.png",
+     icon: CheckCheck
   },
   {
     title: "Built-In Protection, Not Bolt-On Patches",
     description:
       "Our platform doesn’t just “have” security—it lives and breathes it. End-to-end encryption, secure data hosting, access control, and ongoing system audits keep your research environment airtight. No outdated add-ons, no patchwork fixes—just modern protection built from the ground up.",
     image: "/Inno_feature_card_learn_over_time.png",
+     icon: Lock
   },
   {
     title: "Fully Compliant, Totally Transparent",
     description:
       "We don’t just follow global privacy laws—we align with their spirit. Surventix is built to comply with GDPR, CCPA, and other regional regulations, ensuring respondent rights are respected and client data remains protected. Transparency is key—because real trust can’t be faked.",
     image: "/Inno_feature_card_quality.png",
+     icon: FileKey
   },
   {
     title: "Clean Data = Clear Insights",
     description:
       "Secure platforms lead to confident participants. And confident participants lead to better data. Our tools minimize response bias, eliminate fraudulent entries, and uphold data integrity—so you’re working with insights that are not only clean, but credible enough to guide serious business decisions.",
     image: "/Inno_feature_card_flexible.png",
+    icon: Database
+
   },
   {
     title: "Research That Moves the Needle",
     description:
       "When you combine smart targeting, ethical practices, and secure technology, the result is research that drives results. Surventix empowers you to explore consumer behavior without the risk, helping you move faster from insight to impact—with confidence at every step.",
     image: "/Inno_feature_card_collab.png",
+     icon: Eye
   },
 ];
 

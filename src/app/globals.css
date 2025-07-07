@@ -213,3 +213,7 @@ body {
   width: 2px;
   background: #1F2937;
 }
+
+.glass-card {
+  @apply backdrop-blur-lg bg-white/5 border border-white/10 shadow-lg;
+}

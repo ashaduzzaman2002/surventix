@@ -72,7 +72,7 @@ const Header = () => {
 
         <div className="hidden md:block">
           <Link
-            href="/signup"
+            href="/signin"
             className="border-[1.5px] border-white text-white hover:bg-white hover:text-[#04021d] duration-300 transition-all ease-in-out px-8 text-lg capitalize py-2.5 rounded-4xl"
           >
             join our panel
@@ -101,7 +101,7 @@ const Header = () => {
           </Link>
         ))}
         <Link
-          href="/signup"
+          href="/signin"
           className="border-[1.5px] border-white text-white capitalize hover:bg-white hover:text-[#04021d] duration-300 transition-all ease-in-out px-6 py-2 rounded-4xl"
           onClick={() => setMenuOpen(false)}
         >

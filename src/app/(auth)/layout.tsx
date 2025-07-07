@@ -1,7 +1,14 @@
+'use client'
+
 import { TestimonialsSection } from "@/components/testimonials-with-marquee";
+import { auth } from "@/firebase";
+import { useAuthStore } from "@/store/authStore";
+import { onAuthStateChanged } from "firebase/auth";
+import { Loader2 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+import { useRouter } from "next/navigation";
+import React, { useEffect, useState } from "react";
 
 const testimonials = [
   {
@@ -36,6 +43,43 @@ const testimonials = [
 ];
 
 const AuthLayout = ({ children }: { children: React.ReactNode }) => {
+  const { user, setUser } = useAuthStore();
+    const router = useRouter();
+    const [loading, setLoading] = useState(true);
+  
+    useEffect(() => {
+      const unsubscribe = onAuthStateChanged(auth, (firebaseUser) => {
+        if (firebaseUser) {
+          setUser({
+            uid: firebaseUser.uid,
+            email: firebaseUser.email,
+            displayName: firebaseUser.displayName,
+            photoURL: firebaseUser.photoURL,
+          });
+          router.replace("/dashboard");
+        } else {
+          setUser(null);
+        }
+
+        setLoading(false);
+      });
+  
+      return () => unsubscribe();
+    }, [setUser, router]);
+  
+  
+    
+    if (loading) {
+      return (
+        <div className="flex justify-center items-center h-screen">
+          <Loader2 className="animate-spin" />
+        </div>
+      );
+    }
+  
+    if (user) {
+      return null;
+    }
   return (
     <div className="grid md:grid-cols-2 h-screen">
       <div className="relative hidden md:flex flex-col justify-between overflow-hidden">

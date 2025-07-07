@@ -12,8 +12,15 @@ import Link from "next/link";
 import React from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
+import { useRouter } from "next/navigation";
+
+function generateRandomReferralCode(length = 8): string {
+  return Math.random().toString(36).substring(2, 2 + length).toUpperCase();
+} 
 
 const Signup = () => {
+
+  const router = useRouter();
   const formik = useFormik({
     initialValues: {
       name: "",
@@ -43,16 +50,20 @@ const Signup = () => {
 
         const user = userCredential.user;
         await sendEmailVerification(user);
+        const referralCode = generateRandomReferralCode();
+
 
         await setDoc(doc(db, "users", user.uid), {
           name: values.name,
           email: user.email,
           phoneNumber: values.phoneNumber,
+          referralCode: referralCode,
           createdAt: new Date().toISOString(),
         });
 
-        alert("Sign-up successful! Welcome!");
+        alert("A verification link has been sent to your email!");
         resetForm();
+        router.push("/signin");
       } catch (err) {
         console.error(err);
         setErrors({ email: "Email already in use or invalid" });

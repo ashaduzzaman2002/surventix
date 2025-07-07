@@ -81,10 +81,18 @@ const Page = () => {
           </div>
         </div>
 
-        <div className="bg-[#EF742C] mb-20">
+        <div className="mb-20">
           <div className="container py-20">
             <h1 className="text-center text-5xl font-bold mb-4">
-              At Surventix, Security Is Success
+              At{" "}
+              <span className="bg-gradient-to-r from-purple-500 via-pink-500 to bg-yellow-500 bg-clip-text text-transparent">
+                Surventix,
+              </span>{" "}
+              Security Is{" "}
+              <span className="bg-gradient-to-r from-yellow-500 via-purple-500 to bg-pink-500 bg-clip-text text-transparent">
+                {" "}
+                Success
+              </span>
             </h1>
             <p className="max-w-4xl mx-auto text-center mb-10">
               In today’s digital world, great research isn’t just smart—it’s
@@ -93,18 +101,19 @@ const Page = () => {
               market research security.
             </p>
 
-            <div className="grid md:grid-cols-3 gap-4">
+            <div className="grid md:grid-cols-3 gap-4 mt-10">
               {surventixHighlights.map((item, i) => (
-                <div
-                  key={i}
-                  className="bg-[#0032C7] flex relative p-6 rounded-4xl"
-                >
-                  <div className="">
-                    <h3 className="text-2xl font-semibold mb-4">
-                      {item.title}
-                    </h3>
-                    <p className="text-white/80">{item.description}</p>
+                <div key={i} className="bg-[#00233c] relative p-6 rounded-4xl">
+                  <div className="card-highlight"></div>
+                  <div className="mb-6 inline-flex p-3 rounded-xl bg-surventix-lightGray dark:bg-[#1c384c]">
+                    <item.icon className="h-6 w-6 text-surventix-blue" />
                   </div>
+                  <h3 className="text-xl font-bold mb-3 group-hover:text-surventix-orange transition-colors">
+                    {item.title}
+                  </h3>
+                  <p className="text-gray-600 dark:text-gray-300">
+                    {item.description}
+                  </p>
                 </div>
               ))}
             </div>
@@ -124,24 +133,24 @@ const Page = () => {
         </div>
 
         <div className="container mx-auto py-12">
-          <Card className="max-w-3xl mx-auto bg-[#1F2937] backdrop-blur-sm border border-primary/10">
+          <Card className="max-w-3xl mx-auto bg-[#003C65] backdrop-blur-sm border border-primary/10">
             <CardHeader className="text-center space-y-2">
-              <CardTitle className="text-3xl font-bold bg-gradient-to-r from-primary to-purple-400 bg-clip-text text-transparent">
+              <CardTitle className="text-3xl font-bold ">
                 Want to Know More About Us?
               </CardTitle>
               <div className="h-1 w-20 bg-gradient-to-r from-primary to-purple-400 mx-auto rounded-full" />
             </CardHeader>
             <CardContent className="space-y-6">
-              <p className="text-lg text-center leading-relaxed text-muted-foreground">
-                We&lsquo;re more than just surveys and data — we&lsquo;re all about smart
-                insights, seamless experiences, and making meaningful
-                connections.
+              <p className="text-lg text-center leading-relaxed text-white/95">
+                We&lsquo;re more than just surveys and data — we&lsquo;re all
+                about smart insights, seamless experiences, and making
+                meaningful connections.
               </p>
 
-              <p className="text-center leading-relaxed text-muted-foreground">
-                Whether you&lsquo;re curious about what we do, have a question, or
-                just want to explore potential opportunities — we&lsquo;d love to hear
-                from you!
+              <p className="text-center leading-relaxed text-white/95">
+                Whether you&lsquo;re curious about what we do, have a question,
+                or just want to explore potential opportunities — we&lsquo;d
+                love to hear from you!
               </p>
 
               <div className="flex flex-col items-center space-y-3 mt-8">
@@ -155,7 +164,7 @@ const Page = () => {
                 </a>
               </div>
 
-              <p className="text-center italic mt-6 text-muted-foreground">
+              <p className="text-center italic mt-6 text-white/95">
                 Let&lsquo;s connect and create something impactful together.
               </p>
             </CardContent>
