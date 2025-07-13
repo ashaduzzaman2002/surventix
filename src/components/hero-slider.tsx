@@ -3,136 +3,112 @@
 import { useEffect, useState, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useDrag } from "react-use-gesture";
+import { useTranslation } from "react-i18next";
 
-const slides = [
-  {
-    content: () => (
-      <>
-        <h2 className="md:text-5xl text-3xl font-bold md:mb-6 mb-4  ">
-          Welcome to Surventix – Your Market Research Partner
-        </h2>
 
-        <p className="md:mb-8 mb-5 text-sm md:text-base">
-          <span className="opacity-80">Why guess when you can know? At </span>
-          <span className="font-bold ">Surventix</span>
-          <span className="opacity-80">
-            , we turn raw numbers into game-changing insights that fuel smart
-            business moves. Whether you&apos;re chasing hidden industry gems or
-            scanning the global market for bigpicture trends, we&apos;ve got the
-            data magic to keep you ahead of the curve. Accurate, reliable, and
-            packed with impact—because in business, the best decisions are the
-            ones backed by real intelligence
-          </span>
-        </p>
-
-        <p className="mb-4 font-bold md:text-xl text-lg">
-          Innovative research and tech services - Smart Research. Smarter
-          Strategies. Stronger Results
-        </p>
-
-        <p>
-          <span className="font-bold ">Surventix</span>{" "}
-          <span className="opacity-80">
-            is a leading online panel company, renowned for its extensive global
-            reach and robust panel of 7.5 million active users worldwide
-          </span>
-        </p>
-      </>
-    ),
-    image:
-      "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  },
-  {
-    content: () => (
-      <>
-        <h2 className="md:text-5xl text-3xl font-bold md:mb-6 mb-4 ">
-          Surventix – Smarter Research. Stronger Decisions. Bigger Impact.
-        </h2>
-        <p className="mb-8">
-          <span className=" opacity-80">
-            In today’s fast-moving market, staying ahead requires more than just
-            data—it demands intelligent insights and actionable strategies. At{" "}
-          </span>
-          <span className="font-bold ">Surventix</span>
-          <span className=" opacity-80">
-            , we empower businesses with cutting-edge market research solutions
-            that decode trends, understand consumer behaviour, and drive
-            game-changing decisions.
-          </span>
-        </p>
-
-        <p className="mb-4 font-bold md:text-xl text-lg">
-          Turn Insights into Action with Surventix
-        </p>
-
-        <p>
-          <span className="opacity-80">
-            Let’s unlock opportunities, fuel growth, and shape the future—
-          </span>
-          <span className="font-bold">together</span>.
-        </p>
-
-        <div className="flex gap-4 md:mt-10 mt-5">
-         
-          <a
-            href="mailto:sales@surventix.com"
-            className="border-white border flex justify-center items-center h-10 px-6 rounded transition-all ease-in-out duration-200 hover:bg-[#FF1479] hover:border-[#FF1479]"
-          >
-            Contact Us
-          </a>
-        </div>
-      </>
-    ),
-    image:
-      "https://images.unsplash.com/photo-1497366811353-6870744d04b2?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  },
-  {
-    content: () => (
-      <>
-        <h2 className="md:text-5xl text-3xl font-bold md:mb-6 mb-4 ">
-          Find the Trends Before They Find You.
-        </h2>
-
-        <p className="mb-8">
-          <span className="opacity-80">
-            In a world drowning in data, making sense of it all is the real
-            game-changer. That’s where
-          </span>
-          <span className="font-bold "> Surventix</span>{" "}
-          <span className="opacity-80">
-            {" "}
-            steps in—we don’t just crunch numbers, we decode the story behind
-            them. Whether you’re eyeing the next big market shift or trying to
-            outsmart the competition, we bring you insights that actually
-            matter.
-          </span>
-        </p>
-
-        <p className="mb-4 font-bold md:text-xl text-lg">
-          Surventix – Because Guesswork is So Last Season
-        </p>
-
-        <div className="flex gap-4 md:mt-10 mt-5">
-          
-          <a
-            href="mailto:sales@surventix.com"
-            className="border-white border flex justify-center items-center h-10 px-6 rounded transition-all ease-in-out duration-200 hover:bg-[#FF1479] hover:border-[#FF1479]"
-          >
-            Contact Us
-          </a>
-        </div>
-      </>
-    ),
-    image:
-      "https://images.unsplash.com/photo-1606857521015-7f9fcf423740?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  },
-];
 
 const HeroSlider = () => {
+  const { t } = useTranslation();
   const [index, setIndex] = useState(0);
   const [direction, setDirection] = useState(1);
   const [isPaused, setIsPaused] = useState(false);
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+
+  const slides = [
+    {
+      content: () => (
+        <>
+          <h2 className="md:text-5xl text-3xl font-bold md:mb-6 mb-4">
+            {t("slides.slide1.heading")}
+          </h2>
+          <p className="md:mb-8 mb-5 text-sm md:text-base">
+            <span className="opacity-80">
+              {t("slides.slide1.intro1")}&nbsp;
+            </span>
+            <span className="font-bold">Surventix</span>
+            <span className="opacity-80">
+              ,&nbsp;{t("slides.slide1.intro2")}
+            </span>
+          </p>
+          <p className="mb-4 font-bold md:text-xl text-lg">
+            {t("slides.slide1.tagline")}
+          </p>
+          <p>
+            <span className="font-bold">Surventix</span>&nbsp;
+            <span className="opacity-80">{t("slides.slide1.detail")}</span>
+          </p>
+        </>
+      ),
+      image:
+        "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80...",
+    },
+    {
+      content: () => (
+        <>
+          <h2 className="md:text-5xl text-3xl font-bold md:mb-6 mb-4">
+            {t("slides.slide2.heading")}
+          </h2>
+          <p className="mb-8">
+            <span className="opacity-80">
+              {t("slides.slide2.intro1")}&nbsp;
+            </span>
+            <span className="font-bold">Surventix</span>
+            <span className="opacity-80">
+              ,&nbsp;{t("slides.slide2.intro2")}
+            </span>
+          </p>
+          <p className="mb-4 font-bold md:text-xl text-lg">
+            {t("slides.slide2.tagline")}
+          </p>
+          <p>
+            <span className="opacity-80">
+              {t("slides.slide2.detail1")}&nbsp;
+            </span>
+            <span className="font-bold">{t("slides.slide2.detail2")}</span>
+          </p>
+          <div className="flex gap-4 md:mt-10 mt-5">
+            <a
+              href="mailto:sales@surventix.com"
+              className="border-white border flex justify-center items-center h-10 px-6 rounded transition-all ease-in-out duration-200 hover:bg-[#FF1479] hover:border-[#FF1479]"
+            >
+              {t("slides.contact")}
+            </a>
+          </div>
+        </>
+      ),
+      image:
+        "https://images.unsplash.com/photo-1497366811353-6870744d04b2?q=80...",
+    },
+    {
+      content: () => (
+        <>
+          <h2 className="md:text-5xl text-3xl font-bold md:mb-6 mb-4">
+            {t("slides.slide3.heading")}
+          </h2>
+          <p className="mb-8">
+            <span className="opacity-80">
+              {t("slides.slide3.intro1")}&nbsp;
+            </span>
+            <span className="font-bold">Surventix</span>&nbsp;
+            <span className="opacity-80">{t("slides.slide3.intro2")}</span>
+          </p>
+          <p className="mb-4 font-bold md:text-xl text-lg">
+            {t("slides.slide3.tagline")}
+          </p>
+          <div className="flex gap-4 md:mt-10 mt-5">
+            <a
+              href="mailto:sales@surventix.com"
+              className="border-white border flex justify-center items-center h-10 px-6 rounded transition-all ease-in-out duration-200 hover:bg-[#FF1479] hover:border-[#FF1479]"
+            >
+              {t("slides.contact")}
+            </a>
+          </div>
+        </>
+      ),
+      image:
+        "https://images.unsplash.com/photo-1606857521015-7f9fcf423740?q=80...",
+    },
+  ];
 
   const changeSlide = (newIndex: number) => {
     setDirection(newIndex > index ? 1 : -1);

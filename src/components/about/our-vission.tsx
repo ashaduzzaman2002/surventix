@@ -4,47 +4,45 @@ import { useEffect, useRef, useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { motion, useScroll } from "framer-motion";
 import Image from "next/image";
+import { useTranslation } from "react-i18next";
 
-const sections = [
+const sections = (t: any) => [
   {
-    title: "Surventix: Pioneering the Future of Market Intelligence",
-    content:
-      "At Surventix, we are committed to redefining the paradigm of market research by integrating advanced analytical frameworks, cutting-edge technological ecosystems, and data-driven methodologies to construct a research infrastructure that is both rigorous and adaptive.",
+    title: t("sections.0.title"),
+    content: t("sections.0.content"),
     image: "/vission-1.jpg",
   },
   {
-    title: "Innovating for Impact",
-    content:
-      "We continuously refine our approach and reimagine solutions to address evolving marketplace challenges, ensuring impactful and sustainable outcomes.",
+    title: t("sections.1.title"),
+    content: t("sections.1.content"),
     image: "/vission-2.jpg",
   },
   {
-    title: "Empowering Businesses of All Sizes",
-    content:
-      "From India’s largest corporations striving for global leadership to agile startups driving transformative change, we support organizations in achieving sustainable, inclusive growth.",
+    title: t("sections.2.title"),
+    content: t("sections.2.content"),
     image: "/vission-3.png",
   },
   {
-    title: "Strategic Industry Partnerships",
-    content:
-      "Our collaborations with leading market research firms enable us to foster growth, enhance capabilities, and deliver exceptional value to our clients.",
+    title: t("sections.3.title"),
+    content: t("sections.3.content"),
     image: "/vission-4.png",
   },
   {
-    title: "Data-Driven Excellence",
-    content:
-      "Leveraging advanced digital tools, analytics, and decades of experience, we provide insights that drive meaningful and measurable impact.",
+    title: t("sections.4.title"),
+    content: t("sections.4.content"),
     image: "/vission-5.png",
   },
 ];
 
 export default function OurVission() {
+  const { t } = useTranslation();
+  const translatedSections = sections(t);
   const containerRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll();
   const [activeIndex, setActiveIndex] = useState(0);
 
-  console.log(activeIndex);
-  console.log(scrollYProgress);
+  // console.log(activeIndex);
+  // console.log(scrollYProgress);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -74,15 +72,16 @@ export default function OurVission() {
         transition={{ duration: 0.5 }}
       >
         Our{" "}
-        <span className="bg-gradient-to-r from-purple-500 via-pink-500 to bg-yellow-500 bg-clip-text text-transparent">
+        <span className="bg-gradient-to-r from-purple-500 via-pink-500 to-yellow-500 bg-clip-text text-transparent">
           Vision
         </span>{" "}
-        <span className="bg-gradient-to-r from-yellow-500 via-purple-500 to bg-pink-500 bg-clip-text text-transparent">
+        <span className="bg-gradient-to-r from-yellow-500 via-purple-500 to-pink-500 bg-clip-text text-transparent">
           and
         </span>{" "}
         Mission
       </motion.h2>
-      {sections.map((section, index) => {
+
+      {translatedSections.map((section, index) => {
         return (
           <motion.div
             key={index}

@@ -1,6 +1,8 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 const GetinTouch = () => {
+  const { t } = useTranslation();
   return (
     <div id="contact" className="md:py-16 py-8 md:my-16 my-8  bg-[#003B64]">
       <div className="container grid md:grid-cols-2 gap-10">
@@ -15,37 +17,37 @@ const GetinTouch = () => {
         ></iframe>
 
         <div className="bg-[#003B64] rounded-2xl p-6">
-          <h3 className="text-4xl font-medium">Get In Touch With Us</h3>
+          <h3 className="text-4xl font-medium">{t("getInTouch")}</h3>
           <form className="mt-10 flex flex-col gap-5">
             <div>
               <input
                 className="w-full h-11 px-4 border-white/20 border outline-0 rounded"
-                placeholder="Your Name"
+                placeholder={t("yourEmail")}
               />
             </div>
             <div>
               <input
                 className="w-full h-11 px-4 border-white/20 border outline-0 rounded"
-                placeholder="Your Email"
+                placeholder={t("yourName")}
               />
             </div>
             <div>
               <input
                 className="w-full h-11 px-4 border-white/20 border outline-0 rounded"
-                placeholder="Subject"
+                placeholder={t("subject")}
               />
             </div>
 
             <div>
               <textarea
                 className="w-full h-24 py-2 px-4 border-white/20 border outline-0 resize-none rounded"
-                placeholder="Your Message"
+                placeholder={t("message")}
               />
             </div>
 
             <div>
               <button className="h-11 border border-white px-6 hover:bg-white hover:text-[#003B64] duration-300 transition-all ease-in-out">
-                Submit
+                {t("submit")}
               </button>
             </div>
           </form>

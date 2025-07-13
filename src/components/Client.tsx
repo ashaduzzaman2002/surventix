@@ -5,12 +5,14 @@ import { cn } from "@/lib/utils";
 import { OUR_REACH } from "@/constant/data";
 import { Carousel, CarouselContent, CarouselItem } from "./ui/carousel";
 import Flag from "react-world-flags";
+import { useTranslation } from "react-i18next";
 
 const Client = () => {
+  const { t } = useTranslation(); 
   return (
     <div className="md:py-16 py-8">
       <h2 className="md:text-5xl text-3xl  text-center md:mb-16 mb-8">
-        Our reach <br /> spans across
+        {t("reach")} <br /> {t("spanacross")}
       </h2>
 
       <div className="relative">

@@ -8,9 +8,11 @@ import { auth } from "../../../firebase";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import { useRouter } from "next/navigation";
+import { useTranslation } from "react-i18next";
 
 const Signin = () => {
   const router = useRouter();
+  const { t } = useTranslation();
 
   const formik = useFormik({
     initialValues: {
@@ -19,11 +21,11 @@ const Signin = () => {
     },
     validationSchema: Yup.object({
       email: Yup.string()
-        .email("Invalid email address")
-        .required("Email is required"),
+        .email(t("signin.errors.invalidEmail"))
+        .required(t("signin.errors.emailRequired")),
       password: Yup.string()
-        .min(6, "Password must be at least 6 characters")
-        .required("Password is required"),
+        .min(6, t("signin.errors.passwordMin"))
+        .required(t("signin.errors.passwordRequired")),
     }),
     onSubmit: async (values, { setSubmitting, setErrors }) => {
       try {
@@ -35,15 +37,13 @@ const Signin = () => {
         const user = userCredential.user;
 
         if (!user.emailVerified) {
-          alert("Please verify your email before logging in.");
-          return; // Prevent redirecting if email is not verified
+          alert(t("signin.alert.verifyEmail"));
+          return;
         }
-        console.log(user, "HUHUIHUI");
 
         router.push("/dashboard");
       } catch (err) {
-        console.log(err);
-        setErrors({ password: "Invalid email or password" });
+        setErrors({ password: t("signin.errors.invalidCredentials") });
       } finally {
         setSubmitting(false);
       }
@@ -54,20 +54,20 @@ const Signin = () => {
     <div className="bg-white h-full text-[#02000F] md:rounded-tl-4xl md:rounded-bl-4xl flex justify-center items-center">
       <div className="max-w-[400px] w-full px-4">
         <h1 className="text-center text-3xl font-semibold leading-tight sm:text-4xl sm:leading-tight">
-          Welcome back
+          {t("signin.title")}
         </h1>
         <p className="text-center text-md text-background/70 sm:text-lg mb-10 mt-2">
-          Login to your account on Surventix and start exploring
+          {t("signin.subtitle")}
         </p>
 
         <form onSubmit={formik.handleSubmit} className="flex flex-col gap-4">
           <div className="flex flex-col gap-2">
-            <Label htmlFor="email">Email</Label>
+            <Label htmlFor="email">{t("signin.emailLabel")}</Label>
             <Input
               id="email"
               name="email"
               type="email"
-              placeholder="Enter your email"
+              placeholder={t("signin.emailPlaceholder")}
               className={`border ${
                 formik.errors.email && formik.touched.email
                   ? "border-red-500"
@@ -83,12 +83,12 @@ const Signin = () => {
           </div>
 
           <div className="flex flex-col gap-2">
-            <Label htmlFor="password">Password</Label>
+            <Label htmlFor="password">{t("signin.passwordLabel")}</Label>
             <Input
               id="password"
               name="password"
               type="password"
-              placeholder="Enter password"
+              placeholder={t("signin.passwordPlaceholder")}
               className={`border ${
                 formik.errors.password && formik.touched.password
                   ? "border-red-500"
@@ -102,7 +102,7 @@ const Signin = () => {
               <p className="text-sm text-red-500">{formik.errors.password}</p>
             )}
             <Link className="text-md sm:text-base" href="#">
-              Forgot password?
+              {t("signin.forgotPassword")}
             </Link>
           </div>
 
@@ -112,14 +112,14 @@ const Signin = () => {
               className="bg-[#003B64] w-full text-white h-11 rounded-lg mt-4"
               disabled={formik.isSubmitting}
             >
-              {formik.isSubmitting ? "Logging in..." : "Login"}
+              {formik.isSubmitting ? t("signin.loggingIn") : t("signin.login")}
             </button>
           </div>
 
           <div className="text-center text-md text-background/70 sm:text-base mt-2">
-            Don&apos;t have an account?{" "}
+            {t("signin.noAccount")}{" "}
             <Link href="/signup" className="text-[#003B64] font-semibold">
-              Register
+              {t("signin.register")}
             </Link>
           </div>
         </form>

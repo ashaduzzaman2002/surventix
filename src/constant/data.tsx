@@ -15,647 +15,393 @@ import {
   v8,
   v9,
 } from "@/assets";
-import { Award, CheckCheck, Database, Eye, FileKey, Handshake, HeartHandshake, Lock, Shield } from "lucide-react";
+import {
+  Award,
+  CheckCheck,
+  Database,
+  Eye,
+  FileKey,
+  Handshake,
+  HeartHandshake,
+  Lock,
+  Shield,
+} from "lucide-react";
+import { useTranslation } from "react-i18next";
 
-export const WHY_CHOOSE_US = [
+export const WHY_CHOOSE_US = (t: any) => [
   {
     id: 1,
-    title: "Data-Driven Excellence",
-    description:
-      "Our proprietary research methodologies and AI-powered analytical frameworks transform raw data into high-impact, actionable intelligence, fostering informed decision-making.",
+    title: t("whyChooseUs.item1.title"),
+    description: t("whyChooseUs.item1.description"),
     image:
       "https://images.unsplash.com/photo-1579226905180-636b76d96082?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
     id: 2,
-    title: "Future-Ready Innovation",
-    description:
-      "By integrating predictive analytics, machine learning models, and industry foresight, we don’t just interpret trends—we anticipate them, equipping businesses with a competitive edge in evolving markets.",
+    title: t("whyChooseUs.item2.title"),
+    description: t("whyChooseUs.item2.description"),
     image:
       "https://images.unsplash.com/photo-1519493442754-8eb0a6cec050?q=80&w=1965&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
     id: 3,
-    title: "Unparalleled Industry Expertise",
-    description:
-      "Backed by a team of seasoned strategists, data scientists, and domain specialists, we deliver research that is both methodologically rigorous and commercially relevant.",
+    title: t("whyChooseUs.item3.title"),
+    description: t("whyChooseUs.item3.description"),
     image:
       "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
     id: 4,
-    title: "Scalability & Customization",
-    description:
-      "Our solutions are designed to adapt and evolve alongside organizations, whether they are multinational corporations seeking global expansion or agile startups aiming for disruptive innovation.",
+    title: t("whyChooseUs.item4.title"),
+    description: t("whyChooseUs.item4.description"),
     image:
       "https://images.unsplash.com/photo-1676911809788-5b9ee7f145fe?q=80&w=1949&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
     id: 5,
-    title: "End-to-End Research Ecosystem",
-    description:
-      "From data acquisition and multifaceted analysis to strategic implementation, we provide a seamless research continuum that drives measurable business impact.",
+    title: t("whyChooseUs.item5.title"),
+    description: t("whyChooseUs.item5.description"),
     image:
       "https://images.unsplash.com/photo-1587440871875-191322ee64b0?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
     id: 6,
-    title: "Proven Strategic Impact",
-    description:
-      "At Surventix, research is not just an academic exercise—it’s a catalyst for growth, resilience, and sustained market leadership.",
+    title: t("whyChooseUs.item6.title"),
+    description: t("whyChooseUs.item6.description"),
     image:
       "https://images.unsplash.com/photo-1628434752727-28e7d8061435?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
 ];
 
-export const teamMembers = [
+export const teamMembers = (t: any) => [
   {
     name: "Gourav Chahal",
-    designation: "Founder & CEO",
-    description:
-      "Meet Gourav – The Driving Force Behind Innovation & Client Success",
+    designation: t("team.gourav.designation"),
+    description: t("team.gourav.description"),
     image: "/team1.jpg",
   },
   {
     name: "Priyanka Desai",
-    designation: "Co-Founder",
-    description:
-      "Meet Priyanka – The Data Dynamo Powering Insights & Innovation",
+    designation: t("team.priyanka.designation"),
+    description: t("team.priyanka.description"),
     image: "/team2.jpg",
   },
   {
     name: "Nikita Bhatt",
-    designation: "Managing Director of client & sales",
-    description:
-      "Meet Nikita – A Strategic Leader in Business Growth & Customer-Centric Innovation",
+    designation: t("team.nikita.designation"),
+    description: t("team.nikita.description"),
     image: "/team3.jpg",
   },
   {
     name: "Renu Yadav",
-    designation: "President, Research & Insights Platform",
-    description:
-      "Meet Renu – Innovating Insights, Elevating Brands & Powering Smarter Connections",
+    designation: t("team.renu.designation"),
+    description: t("team.renu.description"),
     image: "/team4.jpg",
   },
   {
     name: "Shivam Verma",
-    designation: "Sr. project manager",
-    description:
-      "Meet Shivam – Leading High-Impact Projects with Precision & Passion",
+    designation: t("team.shivam.designation"),
+    description: t("team.shivam.description"),
     image: "/team5.jpg",
   },
   {
-    name: "Ved grover",
-    designation: "Project manager",
-    description:
-      "Meet Ved grover – Driving Seamless Execution & Impactful Insights",
+    name: "Ved Grover",
+    designation: t("team.ved.designation"),
+    description: t("team.ved.description"),
     image: "/team6.jpg",
   },
 ];
 
-export const OUR_SERVICES = [
+export const OUR_SERVICES = (t: any) => [
   {
     id: 1,
-    title: "Data Collection",
-    description: `Gain a competitive edge by leveraging data collection and processing services that keep you
-in sync with evolving market trends. Accessing real-time insights allows you to make wellinformed decisions, reducing risks and enhancing overall business performance.
-`,
-
+    title: t("services.items.item1.title"),
+    description: t("services.items.item1.description"),
     image:
-      "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?q=80&w=2076&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?q=80&w=2076&auto=format&fit=crop",
     slug: "data-collection",
-    content: `<div ><p class="mb-4">Gain a competitive edge by leveraging data collection and processing services that keep you
-in sync with evolving market trends. Accessing real-time insights allows you to make wellinformed decisions, reducing risks and enhancing overall business performance.</p><p class="mb-4">
-Expertly managed data helps streamline operations by structuring key information,
-recognizing patterns, and refining strategic planning. Continuous data gathering and analysis
-enable businesses to anticipate market changes, optimize workflows, and improve decisionmaking.</p>
-<p>By automating routine data collection tasks, organizations can free up valuable
-resources, allowing teams to focus on innovation and growth. Improve resource
-allocation, implement proactive maintenance strategies, monitor assets
-effectively, and strengthen customer engagement with advanced data solutions.</p></div>`,
+    content: t("services.items.item1.content"),
   },
   {
     id: 2,
-    title: "Online Sampling",
-    description: `Online sampling is at the heart of our services, providing the foundation for high-quality data
-collection. With a global panel of over 7.5 million members, we offer market researchers,
-consultants, and businesses seamless access to diverse and reliable data from various regions
-and demographics. Using advanced tools and methodologies, we ensure accurate and timely
-responses, making each sample both representative and comprehensive
-`,
-
+    title: t("services.items.item2.title"),
+    description: t("services.items.item2.description"),
     image: "/surv-a1.jpg",
     slug: "online-sampling",
-    content: `<div >
-    
-    <p class="mb-4">Online sampling is at the heart of our services, providing the foundation for high-quality data
-collection. With a global panel of over 7.5 million members, we offer market researchers,
-consultants, and businesses seamless access to diverse and reliable data from various regions
-and demographics. Using advanced tools and methodologies, we ensure accurate and timely
-responses, making each sample both representative and comprehensive.</p>
-
-<p class="mb-4">
-To uphold data integrity, we implement strict quality control measures throughout the
-sampling process. This includes real-time monitoring, data validation, and rigorous checks to
-detect and eliminate inconsistencies or biases. Our dedication to precision ensures that the
-insights generated are not only meaningful but also actionable, enabling clients to make
-informed decisions that drive strategic growth.</p>
-
-
-<p>By continuously refining our techniques and adopting the latest advancements
-in online sampling, we empower businesses with dependable data that
-accurately represents their target audience, helping them stay ahead in a
-dynamic market.</p>
-</div>`,
+    content: t("services.items.item2.content"),
   },
-
   {
     id: 3,
-    title: "Survey Programming and hosting",
-    description: `At Surventix, we specialize in delivering end-to-end survey programming and hosting
-solutions tailored to the specific needs of our clients. Our team of experts utilizes industryleading platforms such as Qualtrics, Confirmit, Decipher, and Sawtooth to create seamless,
-interactive, and engaging surveys that yield precise and valuable insights.
-`,
-
+    title: t("services.items.item3.title"),
+    description: t("services.items.item3.description"),
     image:
-      "https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=2072&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=2072&auto=format&fit=crop",
     slug: "survey-programming-and-hosting",
-    content: `<div >
-    
-    <p class="mb-4">At Surventix, we specialize in delivering end-to-end survey programming and hosting
-solutions tailored to the specific needs of our clients. Our team of experts utilizes industryleading platforms such as Qualtrics, Confirmit, Decipher, and Sawtooth to create seamless,
-interactive, and engaging surveys that yield precise and valuable insights.</p>
-
-<p>We design our survey programming services to transform research objectives
-into user-friendly and intuitive survey experiences. With advanced logic,
-dynamic question branching, and multilingual support, we ensure that surveys
-are accessible and relevant to diverse audiences. By integrating multimedia
-elements, gamification, and other innovative features, we enhance respondent
-engagement, leading to higher-quality data collection.
-</p>
-</div>`,
+    content: t("services.items.item3.content"),
   },
   {
     id: 4,
-    slug: "advanced-api-solutions",
-    title: "Advanced API Solutions",
-    description: `At Surventix, we offer sophisticated API solutions designed to optimize data integration,
-streamline operations, and enhance interoperability across platforms. Our APIs facilitate
-seamless communication between disparate systems, ensuring efficient data exchange and
-real-time access to critical insights.
-`,
-
+    title: t("services.items.item4.title"),
+    description: t("services.items.item4.description"),
     image:
-      "https://images.unsplash.com/photo-1623282033815-40b05d96c903?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    content: `<div >
-    
-      <p class="mb-4">At Surventix, we offer sophisticated API solutions designed to optimize data integration,
-streamline operations, and enhance interoperability across platforms. Our APIs facilitate
-seamless communication between disparate systems, ensuring efficient data exchange and
-real-time access to critical insights.</p>
-
-      <p class="mb-4">We specialize in developing custom APIs that cater to diverse business requirements,
-enabling secure, scalable, and automated interactions between applications. Whether
-integrating survey data with enterprise software, automating reporting workflows, or
-establishing seamless third-party connections, our solutions are built to support dynamic and
-evolving digital ecosystems</p>
-
-<p class="mb-4 font-medium text-xl">Key Capabilities:</p>
-<p class="mb-4">Our quantitative research approach focuses on numerical data collection and statistical
-
-<ul class="mb-4 flex flex-col gap-2">
-<li>• <strong>Survey Data Integration</strong> – Synchronize survey platforms with CRM systems, analytics
-tools, and data warehouses.</li>
-<li>• <strong>Real-Time Data Exchange</strong> – Enable instantaneous data retrieval for enhanced decisionmaking and responsiveness.</li>
-<li>• <strong>Process Automation</strong> – Minimize manual intervention by automating data collection,
-validation, and reporting.</li>
-<li>• <strong>Secure & Scalable Infrastructure </strong> – Ensure robust data security while supporting highvolume transactions and system growth.</li>
-</ul>
-
-
-  <p>By leveraging our advanced API solutions, businesses can achieve greater efficiency,
-improve data accuracy, and unlock new opportunities for digital transformation.
-  </p>
-  </div>`,
+      "https://images.unsplash.com/photo-1623282033815-40b05d96c903?q=80&w=2070&auto=format&fit=crop",
+    slug: "advanced-api-solutions",
+    content: t("services.items.item4.content"),
   },
   {
     id: 5,
-    slug: "qualitative-and-quantitative-research",
-    title: "Qualitative and Quantitative Research",
-    description: `At Surventix, we specialize in both qualitative and quantitative research, providing
-businesses and researchers with comprehensive insights to drive informed decision-making.
-By leveraging a blend of in-depth analysis and statistical precision, we help organizations
-extract meaningful patterns, understand consumer behavior, and refine strategies based on
-reliable data.
-`,
-
+    title: t("services.items.item5.title"),
+    description: t("services.items.item5.description"),
     image:
-      "https://images.unsplash.com/photo-1588600878108-578307a3cc9d?q=80&w=2076&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-
-    content: `<div >
-    
-      <p class="mb-4">At Surventix, we specialize in both qualitative and quantitative research, providing
-businesses and researchers with comprehensive insights to drive informed decision-making.
-By leveraging a blend of in-depth analysis and statistical precision, we help organizations
-extract meaningful patterns, understand consumer behavior, and refine strategies based on
-reliable data.</p>
-
-<p class="mb-4 font-medium text-xl">Quantitative Research: Data-Driven Precision</p>
-<p class="mb-4">Our quantitative research approach focuses on numerical data collection and statistical
-analysis to measure trends, correlations, and market dynamics. Using structured surveys,
-large-scale polling, and data modeling, we ensure robust, objective, and scalable insights. Our
-methodologies include:</p>
-<ul class="mb-4 flex flex-col gap-2">
-<li>• <strong>Surveys & Polls</strong> – Structured questionnaires to capture large-scale responses.</li>
-<li>• <strong>Experimental Research</strong> – Controlled studies to test hypotheses and measure outcomes</li>
-<li>• <strong>Statistical Analysis</strong> – Advanced data modeling to identify trends and correlations.</li>
-</ul>
-
-<p class="mb-4 font-medium text-xl">Qualitative Research: In-Depth Understanding</p>
-<p class="mb-4">For a deeper exploration of behaviors, perceptions, and motivations, our qualitative research
-methods uncover the “why” behind consumer actions. We employ:</p>
-<ul class="mb-4 flex flex-col gap-2">
-<li>• <strong>Focus Groups</strong> – Facilitated discussions to explore opinions and preferences.</li>
-<li>• <strong>In-Depth Interviews</strong> – One-on-one conversations for detailed insights.</li>
-<li>• <strong>Observational Research</strong> – Real-world behavior analysis in natural settings.</li>
-</ul>
-  
-  <p>By combining both research methodologies, we offer a holistic perspective,
-allowing businesses to validate theories with hard data while understanding the
-emotions and motivations that drive customer decisions.
-  </p>
-  </div>`,
+      "https://images.unsplash.com/photo-1588600878108-578307a3cc9d?q=80&w=2076&auto=format&fit=crop",
+    slug: "qualitative-and-quantitative-research",
+    content: t("services.items.item5.content"),
   },
   {
     id: 6,
-    slug: "website-software-development",
-    title: "Website & Software Development",
-    description: `At Surventix, we specialize in developing innovative website and software solutions
-designed to empower businesses in today’s fast-evolving digital landscape.
-`,
-
+    title: t("services.items.item6.title"),
+    description: t("services.items.item6.description"),
     image:
-      "https://plus.unsplash.com/premium_photo-1722945683602-fa3b05086316?q=80&w=2037&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-
-    content: `<div >
-    
-      <p class="mb-4">At Surventix, we specialize in developing innovative website and software solutions
-designed to empower businesses in today’s fast-evolving digital landscape.</p>
-    
-      <p class="mb-4 italic">Website Development: Engaging & High-Performance Solutions.</p>
-  
-  <p class="mb-4">
-  Our website development services focus on creating visually compelling, dynamic, and fully
-responsive websites that align with your brand identity while ensuring a seamless user
-experience. Whether you require an interactive landing page, a feature-rich e-commerce
-platform, or a corporate website, we design each project with speed, security, and mobile
-optimization in mind. Our goal is to build scalable, high-performing websites that enhance
-engagement and drive business growth.</p>
-
- <p class="mb-4 italic">Software Development: Custom-Built for Efficiency & Scalability</p>
-  
-  
-  <p class="mb-4">In software development, we craft tailored solutions to streamline operations, enhance
-productivity, and support business expansion. Our expertise ranges from developing userfriendly mobile and desktop applications to designing complex enterprise systems that
-optimize workflows. By leveraging the latest technologies, we create secure and reliable
-applications, including CRMs, ERP systems, and industry-specific software that improve
-efficiency and provide a competitive edge.</p>
-
-<p>At Surventix, our mission is to deliver functional, forward-thinking digital
-solutions that drive measurable success and long-term business impact.</p>
-  </div>`,
+      "https://plus.unsplash.com/premium_photo-1722945683602-fa3b05086316?q=80&w=2037&auto=format&fit=crop",
+    slug: "website-software-development",
+    content: t("services.items.item6.content"),
   },
   {
     id: 7,
-    title: "Digital SEO Solutions",
-    slug: "digital-seo-solutions",
-    description: `In today’s competitive digital landscape, online visibility is essential for business growth. At
-Surventix, we provide comprehensive SEO solutions designed to enhance your website’s
-search engine rankings, increase organic traffic, and strengthen your online presence.
-`,
-
+    title: t("services.items.item7.title"),
+    description: t("services.items.item7.description"),
     image: "/surv-a13.jpg",
-
-    content: `<div >
-    
-    <p class="mb-4">In today’s competitive digital landscape, online visibility is essential for business growth. At
-Surventix, we provide comprehensive SEO solutions designed to enhance your website’s
-search engine rankings, increase organic traffic, and strengthen your online presence.</p>
-
-<p class="mb-4">
-Our SEO specialists employ a data-driven approach, conducting in-depth keyword
-research, optimizing on-page elements (such as meta tags, content, and images), and
-implementing strategic backlink-building techniques to improve your site’s authority.</p>
-
-
-<p>We take a holistic approach to SEO, integrating technical optimization, content strategy,
-and user experience enhancements to deliver sustainable, measurable results. Our goal is to
-boost your search engine rankings, attract highly targeted traffic, and convert visitors
-into long-term customers, helping your business thrive in the digital marketplace.</p>
-</div>`,
+    slug: "digital-seo-solutions",
+    content: t("services.items.item7.content"),
   },
-
   {
     id: 8,
-    title: "Technical Solutions",
-    description: `Our technical solution for online sampling is built on a robust infrastructure designed to provide seamless, efficient, and scalable data collection capabilities. At the core of our solution is an advanced sampling platform that integrates cutting-edge technology with our expansive 7.5 million global panel. This platform is engineered to ensure high-quality responses and deliver real-time insights across diverse research sectors.
-`,
-
+    title: t("services.items.item8.title"),
+    description: t("services.items.item8.description"),
     image: "/surv-bg2.jpg",
     slug: "technical",
+    content: t("services.items.item8.content"),
   },
 ];
 
-export const TECHNICAL_SOLUTIONS = [
+export const TECHNICAL_SOLUTIONS = (t: any) => [
   {
     id: 1,
-    title: "Global Panel Integration",
-    description: `Our system connects seamlessly with a diverse, global panel, providing access to respondents across a wide variety of regions, demographics, and interests. This diversity ensures that your research is both comprehensive and representative of a broad spectrum of opinions.`,
+    title: t("technicalSolutions.items.globalPanelIntegration.title"),
+    description: t(
+      "technicalSolutions.items.globalPanelIntegration.description"
+    ),
     image: "/1.jpg",
   },
-
   {
     id: 2,
-    title: "Adaptive Sampling Methods",
-    description: `We utilize adaptive sampling techniques that allow us to dynamically adjust the selection criteria based on real-time data. This ensures that every sample is highly targeted, relevant, and aligned with the specific needs of your research objectives.`,
+    title: t("technicalSolutions.items.adaptiveSamplingMethods.title"),
+    description: t(
+      "technicalSolutions.items.adaptiveSamplingMethods.description"
+    ),
     image: "/2.jpg",
   },
   {
     id: 3,
-    title: "Real-time Data Validation and Quality Control",
-    description: `Our platform includes advanced algorithms for data validation, ensuring that each response is genuine and accurate. Real-time monitoring checks for response patterns, detecting any anomalies or potential biases, and applying corrective measures to maintain data integrity.`,
+    title: t("technicalSolutions.items.realTimeValidation.title"),
+    description: t("technicalSolutions.items.realTimeValidation.description"),
     image: "/3.jpg",
   },
   {
     id: 4,
-    title: "Survey Routing and Logic Optimization",
-    description: `Our system supports sophisticated survey routing and logic features, enabling customized experiences for each respondent. This ensures that participants only answer relevant questions based on previous responses, reducing survey fatigue and improving data quality.`,
+    title: t("technicalSolutions.items.surveyRouting.title"),
+    description: t("technicalSolutions.items.surveyRouting.description"),
     image: "/4.jpg",
   },
   {
     id: 5,
-    title: "Data Encryption and Security",
-    description: `Protecting the privacy and security of respondents’ information is paramount. Our platform employs end-to-end encryption to safeguard all data in transit and at rest, adhering to industry standards such as GDPR to ensure compliance with global data protection regulations.`,
+    title: t("technicalSolutions.items.dataSecurity.title"),
+    description: t("technicalSolutions.items.dataSecurity.description"),
     image: "/5.jpg",
   },
   {
     id: 6,
-    title: "Real-time Reporting and Analytics",
-    description: `Clients can access real-time dashboards that display live data collection results. These interactive dashboards allow for quick analysis and reporting, enabling teams to make data-driven decisions without delay.`,
+    title: t("technicalSolutions.items.realTimeReporting.title"),
+    description: t("technicalSolutions.items.realTimeReporting.description"),
     image: "/6.jpg",
   },
   {
     id: 7,
-    title: "AI-driven Insights and Predictive Analytics",
-    description: `Leveraging machine learning and AI tools, our platform can uncover hidden trends, predict market shifts, and provide actionable insights. These tools support predictive modeling, making it easier for businesses to forecast outcomes and strategize effectively.`,
+    title: t("technicalSolutions.items.aiInsights.title"),
+    description: t("technicalSolutions.items.aiInsights.description"),
     image: "/1-1.jpg",
   },
   {
     id: 8,
-    title: "Automated Sampling and Panel Management",
-    description: `Our platform automates the management of the respondent panel, including recruitment, engagement, and retention. It uses AI to optimize respondent recruitment and manage panel health, ensuring the most relevant individuals are always available for studies.`,
+    title: t("technicalSolutions.items.automatedPanel.title"),
+    description: t("technicalSolutions.items.automatedPanel.description"),
     image: "/2-1.jpg",
   },
   {
     id: 9,
-    title: "Multilingual Support",
-    description: `To cater to a global audience, our system supports multilingual surveys and questionnaires, ensuring accurate responses across language barriers while maintaining consistency and clarity in data interpretation.`,
+    title: t("technicalSolutions.items.multilingualSupport.title"),
+    description: t("technicalSolutions.items.multilingualSupport.description"),
     image: "/2-1.jpg",
   },
 ];
 
-export const surventixHighlights = [
+export const surventixHighlights = (t: any) => [
   {
-    title: "Purpose-Driven, Privacy-Led",
-    description:
-      "At Surventix, every research initiative starts with a sharp objective—and an even sharper security framework. From project setup to data delivery, we design every touchpoint with privacy in mind. Your goals stay protected, and your insights remain untouched by noise, breaches, or bad actors.",
+    title: t("surventixHighlights.purposeDriven.title"),
+    description: t("surventixHighlights.purposeDriven.description"),
     image: "/Inno_feature_card_innovative.png",
-    icon: Shield
+    icon: Shield,
   },
   {
-    title: "Real People, Not Robots",
-    description:
-      "We don’t do data from mystery clicks or digital ghosts. Surventix uses smart filters, fraud detection tools, and respondent validation to ensure you only hear from real, qualified individuals. That means cleaner data, richer insights, and results you can trust—without second-guessing who’s on the other end.",
+    title: t("surventixHighlights.realPeople.title"),
+    description: t("surventixHighlights.realPeople.description"),
     image: "/Inno_feature_card_optimize.png",
-     icon: CheckCheck
+    icon: CheckCheck,
   },
   {
-    title: "Built-In Protection, Not Bolt-On Patches",
-    description:
-      "Our platform doesn’t just “have” security—it lives and breathes it. End-to-end encryption, secure data hosting, access control, and ongoing system audits keep your research environment airtight. No outdated add-ons, no patchwork fixes—just modern protection built from the ground up.",
+    title: t("surventixHighlights.builtInProtection.title"),
+    description: t("surventixHighlights.builtInProtection.description"),
     image: "/Inno_feature_card_learn_over_time.png",
-     icon: Lock
+    icon: Lock,
   },
   {
-    title: "Fully Compliant, Totally Transparent",
-    description:
-      "We don’t just follow global privacy laws—we align with their spirit. Surventix is built to comply with GDPR, CCPA, and other regional regulations, ensuring respondent rights are respected and client data remains protected. Transparency is key—because real trust can’t be faked.",
+    title: t("surventixHighlights.compliance.title"),
+    description: t("surventixHighlights.compliance.description"),
     image: "/Inno_feature_card_quality.png",
-     icon: FileKey
+    icon: FileKey,
   },
   {
-    title: "Clean Data = Clear Insights",
-    description:
-      "Secure platforms lead to confident participants. And confident participants lead to better data. Our tools minimize response bias, eliminate fraudulent entries, and uphold data integrity—so you’re working with insights that are not only clean, but credible enough to guide serious business decisions.",
+    title: t("surventixHighlights.cleanData.title"),
+    description: t("surventixHighlights.cleanData.description"),
     image: "/Inno_feature_card_flexible.png",
-    icon: Database
-
+    icon: Database,
   },
   {
-    title: "Research That Moves the Needle",
-    description:
-      "When you combine smart targeting, ethical practices, and secure technology, the result is research that drives results. Surventix empowers you to explore consumer behavior without the risk, helping you move faster from insight to impact—with confidence at every step.",
+    title: t("surventixHighlights.researchImpact.title"),
+    description: t("surventixHighlights.researchImpact.description"),
     image: "/Inno_feature_card_collab.png",
-     icon: Eye
+    icon: Eye,
   },
 ];
 
-export const SECURITY_CHECK = [
+export const SECURITY_CHECK = (t: any) => [
   {
-    id: 1,
-    title: "Advanced Data Encryption",
+    id: 1 ,
+    title: t("securityCheck.advancedEncryption.title"),
     items: [
-      `We use End-to-End Encryption (E2EE) with SSL/TLS protocols to
-secure data during transmission and AES-256 encryption for
-storage.`,
-
-      `Our survey platforms are built with robust encryption to ensure
-that all responses remain protected from unauthorized access.
-`,
+      t("securityCheck.advancedEncryption.item1"),
+      t("securityCheck.advancedEncryption.item2"),
     ],
-
     image: "/Advanced Data.png",
   },
   {
     id: 2,
-    title: "Verified Respondent Identities",
+    title: t("securityCheck.verifiedIdentities.title"),
     items: [
-      `We leverage Imperium’s RelevantID® to validate participant
-identities and prevent fraudulent responses.`,
-      `CAPTCHA and ReCAPTCHA mechanisms block automated bots,
-ensuring only genuine respondents participate.`,
-      `Device Fingerprinting helps us detect and prevent duplicate
-submissions from the same device.`,
-      `By leveraging the Surventix Digital Score, we assess and filter
-respondents based on their historical behaviour, ensuring that only
-trustworthy participants are included in our research`,
-      `We use an internal Respondent Quality Score (RQS) system to
-monitor the quality of responses. Participants are assigned scores
-based on their response patterns, attentiveness, and consistency. If
-a respondent’s score falls below a predefined threshold, they are temporarily banned from accessing surveys, maintaining the overall
-integrity of our data.`,
+      t("securityCheck.verifiedIdentities.item1"),
+      t("securityCheck.verifiedIdentities.item2"),
+      t("securityCheck.verifiedIdentities.item3"),
+      t("securityCheck.verifiedIdentities.item4"),
+      t("securityCheck.verifiedIdentities.item5"),
     ],
-
     image: "/Verified Respondent Identities.png",
   },
-
   {
     id: 3,
-    title: "Strict Data Privacy & Compliance",
+    title: t("securityCheck.dataPrivacy.title"),
     items: [
-      `Surventix adheres to global regulations, including GDPR, CCPA, and
-other local privacy laws.`,
-      `We prioritize informed consent, ensuring participants understand
-how their data is collected and used.`,
-      `Personal data is anonymized or pseudonymized whenever possible
-to minimize privacy risks.`,
+      t("securityCheck.dataPrivacy.item1"),
+      t("securityCheck.dataPrivacy.item2"),
+      t("securityCheck.dataPrivacy.item3"),
     ],
-
     image: "/Strict Data Privacy.png",
   },
   {
     id: 4,
-    title: "Advanced API Solutions",
+    title: t("securityCheck.apiSolutions.title"),
     items: [
-      `Using Fraud Probability Scores and AI-driven tools
-like Fraudience, we monitor behavioral patterns to detect
-suspicious activities.`,
-      `IP Address Monitoring helps us identify and block proxy servers
-and suspicious locations.`,
-      `Our deduplication scoring system ensures that each response is
-unique and reliable.`,
-      `Our system integrates DataDome, a leading bot protection
-solution, to block automated and fraudulent survey attempts,
-safeguarding the integrity of our data.`,
+      t("securityCheck.apiSolutions.item1"),
+      t("securityCheck.apiSolutions.item2"),
+      t("securityCheck.apiSolutions.item3"),
+      t("securityCheck.apiSolutions.item4"),
     ],
     image: "/Advanced API Solutions.png",
   },
   {
     id: 5,
-    title: "Robust System Security",
+    title: t("securityCheck.systemSecurity.title"),
     items: [
-      `Our systems are protected with advanced firewalls and intrusion
-detection systems (IDS) to prevent unauthorized access`,
-      `We conduct regular security audits and penetration testing to
-identify and address potential vulnerabilities.`,
-      `Access to sensitive data is strictly controlled, with permissions
-granted based on user roles and responsibilities.`,
+      t("securityCheck.systemSecurity.item1"),
+      t("securityCheck.systemSecurity.item2"),
+      t("securityCheck.systemSecurity.item3"),
     ],
-
     image: "/Robust System Security.png",
   },
   {
     id: 6,
-    title: "Secure Data Storage & Transfer",
+    title: t("securityCheck.dataStorage.title"),
     items: [
-      `We partner with trusted cloud service providers that offer
-advanced security measures and compliance certifications.`,
-      `Data minimization principles guide our processes, ensuring we
-collect only the information essential for research.`,
-      `Sensitive data is transferred using secure protocols like SFTP to
-maintain confidentiality.`,
-      `We use secure server-to-server validation to verify the
-authenticity of survey completions, ensuring that responses come
-from legitimate participants and trusted platforms.`,
+      t("securityCheck.dataStorage.item1"),
+      t("securityCheck.dataStorage.item2"),
+      t("securityCheck.dataStorage.item3"),
+      t("securityCheck.dataStorage.item4"),
     ],
-
     image: "/Secure Data Storage.png",
   },
   {
     id: 7,
-    title: "Geo-Tagging & Location Verification",
+    title: t("securityCheck.geoTagging.title"),
     items: [
-      `Surventix uses Geo-Tagging, IP checks, IP browser language
-checks, and Country checks to verify that respondents are
-participating from their declared locations.`,
-      `Our system flags any discrepancies in location data, ensuring that
-only genuine respondents are included in our research.`,
+      t("securityCheck.geoTagging.item1"),
+      t("securityCheck.geoTagging.item2"),
     ],
     image: "/Geo-Tagging & Location Verification.png",
   },
-
   {
     id: 8,
-    title: "Real-Time Monitoring & Alerts",
+    title: t("securityCheck.realTimeMonitoring.title"),
     items: [
-      `Our platform continuously monitors survey activity in real time to
-detect unusual patterns or behaviors.`,
-      `Automated alerts are triggered when suspicious activities are
-identified, allowing us to take immediate action to maintain data
-integrity.`,
+      t("securityCheck.realTimeMonitoring.item1"),
+      t("securityCheck.realTimeMonitoring.item2"),
     ],
-
     image: "/Real-Time Monitoring & Alerts.png",
   },
   {
     id: 9,
-    title: "Transparency & Accountability",
+    title: t("securityCheck.transparency.title"),
     items: [
-      `Our clear privacy policies outline how data is collected, stored,
-and used, ensuring full transparency with respondents and clients.`,
-      `We maintain detailed audit trails that log data access and
-modifications for enhanced accountability.
-`,
-      `All third-party vendors and partners are required to comply with
-our strict security and privacy standards.`,
+      t("securityCheck.transparency.item1"),
+      t("securityCheck.transparency.item2"),
+      t("securityCheck.transparency.item3"),
     ],
-
-    image:
-      "/Transparency & Accountability.png",
+    image: "/Transparency & Accountability.png",
   },
   {
     id: 10,
-    title: "Digital Security Measures",
+    title: t("securityCheck.digitalSecurity.title"),
     items: [
-      `Our Verify Callback system ensures that survey completions are
-validated through direct communication with trusted platforms,
-reducing the risk of unauthorized submissions.`,
-      `Strategically placed Trap Questions help us identify inattentive or
-dishonest respondents, ensuring that only high-quality responses
-are considered.`,
-      `To maintain data reliability, we perform Payout Validation to
-ensure that respondents are rewarded only after meeting all survey
-completion criteria, reducing fraudulent attempts.`,
-      `Our platform includes a Speeder Check mechanism that identifies
-respondents who complete surveys too quickly, indicating potential
-low-quality or inattentive responses.`,
+      t("securityCheck.digitalSecurity.item1"),
+      t("securityCheck.digitalSecurity.item2"),
+      t("securityCheck.digitalSecurity.item3"),
+      t("securityCheck.digitalSecurity.item4"),
     ],
-
-    image:
-      "/Digital Security Measures.png",
+    image: "/Digital Security Measures.png",
   },
   {
     id: 11,
-    title: "Panelist Dupe Score & Duplication Check",
-    description: `At Surventix, we maintain data integrity through a rigorous Panelist Score System,
-designed to assess response quality. Each participant is assigned a score based on response
-patterns, attentiveness, and consistency. If a respondent’s score falls below a set threshold,
-they are temporarily restricted from surveys, ensuring only reliable and high-quality data is
-collected. With these measures in place, we uphold the credibility of every research project,
-providing businesses with accurate, trustworthy, and actionable insights.`,
-
+    title: t("securityCheck.dupeScore.title"),
+    description: t("securityCheck.dupeScore.description"),
     image:
       "https://images.unsplash.com/photo-1523961131990-5ea7c61b2107?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
 ];
 
-export const CODE_OF_CONDUCT = [
+
+export const CODE_OF_CONDUCT = (t: any) => [
   {
     id: 1,
-    title: "Integrity",
-    description: `We don’t cut corners—unless it's on a pie chart. Every interaction, decision,
-and data point is handled with honesty, ethics, and full transparency, ensuring that trust is not
-just earned but consistently reinforced.`,
+    title: t("codeOfConduct.items.integrity.title"),
+    description: t("codeOfConduct.items.integrity.description"),
     image:
       "https://images.unsplash.com/photo-1607000975509-de2f74eb8d36?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     icon: () => <HeartHandshake />,
@@ -664,10 +410,8 @@ just earned but consistently reinforced.`,
   },
   {
     id: 2,
-    title: "Quality",
-    description: `In a world overflowing with data, we separate the insights from the noise. Our
-commitment to accuracy, reliability, and analytical rigor ensures that every piece of
-information we deliver is not just insightful, but impactful.`,
+    title: t("codeOfConduct.items.quality.title"),
+    description: t("codeOfConduct.items.quality.description"),
     image:
       "https://plus.unsplash.com/premium_photo-1683749809341-23a70a91b195?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     icon: () => <Award />,
@@ -676,11 +420,8 @@ information we deliver is not just insightful, but impactful.`,
   },
   {
     id: 3,
-    title: "Respect",
-    description: `Whether it’s our clients, panelists, or colleagues, we believe brilliant ideas
-thrive in an environment of fairness, inclusivity, and mutual respect. At Surventix, every
-voice matters—because diverse perspectives lead to smarter decisions and better
-outcomes.`,
+    title: t("codeOfConduct.items.respect.title"),
+    description: t("codeOfConduct.items.respect.description"),
     image:
       "https://images.unsplash.com/photo-1529546628049-75f334518ab5?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     icon: () => <Handshake />,
@@ -689,331 +430,239 @@ outcomes.`,
   },
 ];
 
-export const COMMITMENTS = [
+export const COMMITMENTS = (t: any) => [
   {
     id: 1,
-    title: "To Our Panelists",
+    title: t("commitments.items.panelists.title"),
     image: "/surv-a7.jpg",
     lists: [
-      `Privacy & Data Protection – We safeguard panelists' personal information in strict
-      compliance with GDPR, CCPA, and global data protection laws.`,
-      `Fair Compensation & Transparency – We ensure equitable rewards for participation
-      and maintain clear survey objectives.`,
-      `Enhanced Participant Experience – We prevent over-surveying and uphold high
-      standards for engagement and satisfaction.`,
+      t("commitments.items.panelists.privacy"),
+      t("commitments.items.panelists.compensation"),
+      t("commitments.items.panelists.experience"),
     ],
   },
   {
     id: 2,
-    title: "To Our Clients",
+    title: t("commitments.items.clients.title"),
     image:
       "https://images.unsplash.com/photo-1524758870432-af57e54afa26?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     lists: [
-      `Accurate & Actionable Insights – We deliver unbiased, high-quality data tailored to
-client needs.`,
-      `Professionalism & Confidentiality – We ensure secure, timely, and ethical research
-practices.`,
-      `Commitment to Integrity – We strictly avoid data misrepresentation or any unethical
-research conduct.`,
+      t("commitments.items.clients.insights"),
+      t("commitments.items.clients.professionalism"),
+      t("commitments.items.clients.integrity"),
     ],
   },
   {
     id: 3,
-    title: "To Our Employees",
+    title: t("commitments.items.employees.title"),
     image:
       "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     lists: [
-      `Inclusive & Supportive Culture – We cultivate a positive workplace where every
-employee feels valued.`,
-      `Encouraging Innovation & Growth – We foster a spirit of collaboration, creativity,
-and continuous learning.`,
-      `Diversity, Equity & Inclusion – We champion equal opportunities and respect for all
-perspectives.`,
+      t("commitments.items.employees.culture"),
+      t("commitments.items.employees.innovation"),
+      t("commitments.items.employees.diversity"),
     ],
   },
 ];
 
-export const ETHICS = [
+export const ETHICS = (t: any) => [
   {
     id: 1,
-    title: "Ensuring Transparency in Decision-Making",
-    description: `We proactively identify and mitigate any
-situations that may create bias or undue influence. Should a potential issue arise, we ensure
-full transparency and disclosure, maintaining trust and fairness in all professional dealings`,
+    title: t("ethics.items.transparency.title"),
+    description: t("ethics.items.transparency.description"),
     className: "mr-auto md:mb-20 mb-10 bg-[#E2062E]",
     animation: timealphared,
   },
   {
     id: 2,
-    title: "Adhering to Legal and Industry Standards",
-    description: `Our work aligns with the strictest legal
-and industry regulations, including ESOMAR and MRS guidelines. By following these
-internationally recognized ethical frameworks, we guarantee responsible research practices
-and data integrity.`,
+    title: t("ethics.items.legal.title"),
+    description: t("ethics.items.legal.description"),
     className: "ml-auto md:mb-20 mb-10 bg-[#460073]",
     animation: timealphaviolet,
   },
   {
     id: 3,
-    title: "Rejecting Discrimination and Unethical Behavior",
-    description: `We maintain a zero-tolerance
-policy for any form of discrimination, harassment, or unethical conduct. Any such
-incidents are promptly reported and addressed to ensure a safe, fair, and respectful working
-and research environment.`,
+    title: t("ethics.items.discrimination.title"),
+    description: t("ethics.items.discrimination.description"),
     className: "mr-auto mb-20 bg-[#0041F0]",
     animation: timealphablue,
   },
 ];
 
-export const FAQ = [
+export const FAQ = (t: any) => [
   {
     id: 1,
-    title: "Commitment to Adherence and Enforcement",
-    description: `We require all employees, partners,
-and stakeholders to strictly comply with our Code of Conduct, embedding ethical decisionmaking into every aspect of our operations. Through consistent oversight and proactive
-guidance, we cultivate a culture where compliance is not an afterthought but a standard
-operating principle.`,
-
+    title: t("faq.items.commitment.title"),
+    description: t("faq.items.commitment.description"),
     image:
       "https://images.unsplash.com/photo-1491602917301-a0d24c462b8b?q=80&w=2078&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
     id: 2,
-    title: "Continuous Policy Evolution and Ethical Adaptability",
-    description: `Ethics and regulatory
-landscapes are ever-evolving, and so are we. We routinely review, refine, and update our
-policies to reflect emerging legal frameworks, industry best practices, and ethical
-advancements, ensuring our governance remains robust, relevant, and forward-thinking.`,
+    title: t("faq.items.evolution.title"),
+    description: t("faq.items.evolution.description"),
     image:
       "https://images.unsplash.com/photo-1533601017-dc61895e03c0?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
     id: 3,
-    title: "Accountability Through Structured Oversight",
-    description: `Compliance without accountability is
-ineffective. We have established clear reporting mechanisms and corrective action
-protocols to address any breaches of our Code of Conduct. By holding individuals
-responsible for ethical lapses, we reinforce the integrity of our organization while fostering
-an environment of trust, fairness, and professionalism.`,
+    title: t("faq.items.accountability.title"),
+    description: t("faq.items.accountability.description"),
     image:
       "https://images.unsplash.com/photo-1595928796398-1d0ac507eed0?q=80&w=2067&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
 ];
 
-export const EXPERTISE = [
+export const EXPERTISE = (t: any) => [
   {
     id: 1,
-    title: `Rethinking possibilities, uncovering opportunities, and delivering
-strategic insights to drive transformation and success`,
-    description: `Our
-team of experts brings a wealth of industry knowledge, functional expertise, and
-diverse perspectives that challenge conventional thinking and drive meaningful
-change. We don’t just analyze problems—we rethink possibilities, question
-assumptions, and uncover opportunities that others might overlook. With a deep
-understanding of evolving market dynamics, we equip our clients with the insights
-and strategies needed to navigate complexities, seize opportunities, and stay ahead of
-the curve.
-`,
+    title: t("expertise.1.title"),
+    description: t("expertise.1.description"),
     image: "/think.png",
   },
   {
     id: 2,
-    title: `Turning data into decisions, insights into impact, and strategies into
-success—because the future won’t wait.`,
-    description: `At Surventix, we
-don’t just follow market trends—we help shape them. Backed by strategic
-partnerships with top research frontrunners, cutting-edge digital and analytics tools,
-and a powerhouse team of industry experts, we transform data into game-changing
-insights. Whether it’s refining strategies, optimizing operations, or unlocking new
-growth avenues, we deliver measurable impact with innovation at the core. When the
-future calls, we make sure you’re already ahead.
-`,
+    title: t("expertise.2.title"),
+    description: t("expertise.2.description"),
     image: "/data.png",
   },
   {
     id: 3,
-    title: `Collaboration is our strategy, success is our outcome`,
-    description: `What makes us different? We don’t just consult—we collaborate. At every
-level, we work hand-in-hand with clients, blending expertise with engagement to craft
-solutions that stick. Transparency, trust, and teamwork drive everything we do,
-ensuring insights turn into action and strategies lead to lasting success. Because real
-impact isn’t just delivered—it’s built together.
-`,
+    title: t("expertise.3.title"),
+    description: t("expertise.3.description"),
     image: "/colab.webp",
   },
 ];
 
-export const BLOGS = [
-  {
-    thumbnail: "/blog-1.jpg",
-    title: "Surventix: The Power of Global Insights at Your Fingertips",
-    description:
-      '"Reaching the World, One Insight at a Time"Surventix stands at the forefront of the online panel industry, renowned for its expansive reach and highly engaged user base. With a robust network of 7.5 million active users worldwide, we bridge the gap between businesses and consumers, ensuring that every research need is met with precision and reliability. Our panel encompasses diverse demographics, making Surventix the ideal choice for companies seeking comprehensive market intelligence on a global scale.',
-    category: "tech",
-    date: "10 Jan 2025",
-    slug: "surventix-the-power-of-global-insights-at-your-fingertips",
-    content: `<p class="mb-2">
-      A Leading Force in Market Research
-    </p>
-    <h2 class="text-xl text-blue-600 italic mb-6">
-      "Reaching the World, One Insight at a Time"
-    </h2>
-    <p class="mb-4">
-      Surventix stands at the forefront of the online panel industry, renowned for its expansive reach and highly engaged user base. With a robust network of 7.5 million active users worldwide, we bridge the gap between businesses and consumers, ensuring that every research need is met with precision and reliability.
-    </p>
-    <p>
-      Our panel encompasses diverse demographics, making Surventix the ideal choice for companies seeking comprehensive market intelligence on a global scale.
-    </p>`,
-  },
-  {
-    thumbnail: "/blog-2.jpg",
-    title:
-      "A Spectrum of Voices, A World of Knowledge: The Power of a Diverse Respondent Panel",
-    description:
-      "In today’s fast-paced business world, market research isn’t just about gathering data—it’s about understanding people. The success of any research initiative depends on the quality and diversity of its respondents. At Surventix, we believe that insightful decisions are built on a broad spectrum of voices, reflecting different industries, demographics, and perspectives.",
-    category: "tech",
-    date: "10 Jan 2025",
-    slug: "a-spectrum-of-voices-a-world-of-knowledge-the-power-of-a-diverse-respondent-panel",
-    content: `<p class="mb-2">
-      From Niche Studies to Global Surveys
-    </p>
-    <p class="mb-4">
-      In today’s fast-paced business world, market research isn’t just about gathering data—it’s about understanding people. The success of any research initiative depends on the quality and diversity of its respondents.
-    </p>
-    <p>
-      At Surventix, we believe that insightful decisions are built on a broad spectrum of voices, reflecting different industries, demographics, and perspectives.
-    </p>`,
-  },
-  {
-    thumbnail: "/blog-3.png",
-    title:
-      "The Power of Real People in Market Research Real People. Real Data. Real Impact",
-    description:
-      "In today’s fast-changing marketplace, businesses can’t afford to rely on outdated data or guesswork. Success comes from understanding real people, real trends, and real behaviors. That’s where Surventix comes in. With access to millions of authentic voices, we provide data-driven insights that help businesses stay ahead of industry shifts, predict market trends, and make smarter decisions. Whether you’re conducting a niche study or a global survey, our high-quality, real-world data fuels innovation, growth, and success. Don’t leave your next big decision to chance. Partner with Surventix today and turn insights into impact!",
-    category: "tech",
-    date: "10 Jan 2025",
-    slug: "the-power-of-real-people-in-market-research-real-people-real-data-real-impact",
-    content: `<p class="mb-4">
-      Turning Insights into Impact
-    </p>
-    <p class="mb-4">
-      In today’s fast-changing marketplace, businesses can’t afford to rely on outdated data or guesswork. Success comes from understanding real people, real trends, and real behaviors. That’s where Surventix comes in.
-    </p>
-    <p class="mb-4">
-      With access to millions of authentic voices, we provide data-driven insights that help businesses stay ahead of industry shifts, predict market trends, and make smarter decisions. Whether you’re conducting a niche study or a global survey, our high-quality, real-world data fuels innovation, growth, and success.
-    </p>
-    <p class="font-semibold text-blue-700">
-      Don’t leave your next big decision to chance. Partner with Surventix today and turn insights into impact!
-    </p>`,
-  },
-  {
-    thumbnail: "/blog-4.png",
-    title:
-      "More Than Numbers: How Surventix Turns Data into Your Secret Weapon",
-    description: `Let’s be real—data is everywhere. But great decisions? Those come from smart insights, not just spreadsheets
-full of numbers. At Surventix, we’re not just another data provider; we’re your strategic co-pilot in the everevolving world of market research.`,
-    category: "tech",
-    date: "10 Jan 2025",
-    slug: "more-than-numbers-how-surventix-turns-data-into-your-secret-weapon",
-    content: `<p class="mb-4">
-      Smart Insights for Smarter Decisions
-    </p>
-    <p class="mb-4">
-      Let’s be real—data is everywhere. But great decisions? Those come from smart insights, not just spreadsheets full of numbers. At Surventix, we’re not just another data provider; we’re your strategic co-pilot in the ever-evolving world of market research.
-    </p>
-    <p class="mb-4">
-      Need lightning-fast surveys? We’ve got you. Looking for deep-dive market segmentation? Done. Whether you're a startup testing the waters or an industry giant refining your next move, we deliver data with purpose—so you can make bold, confident decisions.
-    </p>
-    <p class="font-semibold text-blue-700">
-      Because in business, the right data isn’t just power—it’s profit. Let’s grow together.
-    </p>`,
-  },
-  {
-    thumbnail: "/blog-5.png",
-    title: "Fueling Strategies with the Voice of Millions",
-    description: `In business, guessing is risky—but listening is powerful. At Surventix, we tap into millions of real voices, turning
-raw opinions into golden insights that keep you ahead of the game. Whether you're spotting trends, finetuning strategies, or chasing the next big breakthrough, our data-driven intelligence ensures you make smart
-moves, not wild guesses. `,
-    category: "tech",
-    date: "10 Jan 2025",
-    slug: "fueling-strategies-with-the-voice-of-millions",
-    content: `<p class="mb-4">
-      Listening for Success
-    </p>
-    <p class="mb-4">
-      In business, guessing is risky—but listening is powerful. At Surventix, we tap into millions of real voices, turning raw opinions into golden insights that keep you ahead of the game. Whether you're spotting trends, fine-tuning strategies, or chasing the next big breakthrough, our data-driven intelligence ensures you make smart moves, not wild guesses.
-    </p>
-    <p class="font-semibold text-blue-700">
-      Why settle for assumptions when you can have real-world proof? Partner with Surventix today—because success isn’t about luck, it’s about listening to the right people.
-    </p>`,
-  },
-  {
-    thumbnail: "/blog-6.png",
-    title: "Surventix: Where Innovation Meets Impact ",
-    description: `At Surventix, we don’t just adapt to change—we drive it. Our mission? To create cutting- edge solutions that
-fuel success, and that starts with our people. We equip our team with the skills, tools, and bold mindsets
-needed to become visionary leaders in a fast-evolving world. 
-`,
-    category: "tech",
-    date: "10 Jan 2025",
-    slug: "surventix-where-innovation-meets-impact",
-    content: `<p class="mb-4">
-      Driving Change with Visionary Leadership
-    </p>
-    <p class="mb-4">
-      At Surventix, we don’t just adapt to change—we drive it. Our mission? To create cutting-edge solutions that fuel success, and that starts with our people. We equip our team with the skills, tools, and bold mindsets needed to become visionary leaders in a fast-evolving world.
-    </p>
-    <p class="mb-4">
-      Here, careers aren’t one-size-fits-all—they’re as unique as the people who shape them. Whether you’re pushing boundaries in research or redefining industry standards, we’re committed to helping you build an exceptional journey at Surventix.
-    </p>`,
-  },
-  {
-    thumbnail: "/blog-7.jpg",
-    title: "Surventix: Powered by People, Driven by Diversity ",
-    description: `At Surventix, we believe that innovation thrives on diverse minds and bold ideas. With a growing network of
-talented professionals and alumni, we cultivate a culture where inspiration meets impact—where every voice
-fuels growth, creativity, and success. 
-`,
-    category: "tech",
-    date: "10 Jan 2025",
-    slug: "surventix-powered-by-people-driven-by-diversity",
-    content: `<p class="mb-4">
-      Innovation Through Diversity
-    </p>
-    <p class="mb-4">
-      At Surventix, we believe that innovation thrives on diverse minds and bold ideas. With a growing network of talented professionals and alumni, we cultivate a culture where inspiration meets impact—where every voice fuels growth, creativity, and success.
-    </p>
-    <p class="mb-4">
-      Our team’s unique perspectives shape the way we deliver exceptional value to our clients. Because when inclusivity and innovation work hand in hand, progress isn’t just possible—it’s inevitable.
-    </p>
-    <p class="font-semibold text-blue-700">
-      Great ideas don’t come from one voice—they come from millions. Ready to add yours?
-    </p>`,
-  },
-  {
-    thumbnail: "/blog-8.png",
-    title: "Surventix: Investing in People, Building the Future  ",
-    description: `At Surventix, we don’t just embrace the future—we prepare for it. That’s why we’re investing in cutting-edge
-professional development, including our Surventix Tech MBA, created in partnership with top educational
-institutions
-`,
-    category: "tech",
-    date: "10 Jan 2025",
-    slug: "surventix-powered-by-people-driven-by-diversity",
-    content: `<p class="mb-4">
-      Preparing for the Future
-    </p>
-    <p class="mb-4">
-      At Surventix, we don’t just embrace the future—we prepare for it. That’s why we’re investing in cutting-edge professional development, including our Surventix Tech MBA, created in partnership with top educational institutions.
-    </p>
-    <p class="mb-4">
-      From technology and sustainability to leadership and innovation, we’re equipping our team with the skills that matter most. Because progress isn’t just about staying ahead—it’s about leading the way.
-    </p>
-    <p class="font-semibold text-blue-700">
-      The future is calling. At Surventix, we’re making sure our people are ready to answer.
-    </p>`,
-  },
-];
+export const BLOGS = (t: any) => {
+  return [
+    {
+      thumbnail: "/blog-1.jpg",
+      title: t("blogsSection.blogs.blog1.title"),
+      description: t("blogsSection.blogs.blog1.description"),
+      category: "tech",
+      date: "10 Jan 2025",
+      slug: "surventix-the-power-of-global-insights-at-your-fingertips",
+      content: `
+      <p class="mb-2">${t("blogsSection.blogs.blog1.content.heading")}</p>
+      <h2 class="text-xl text-blue-600 italic mb-6">
+        "${t("blogsSection.blogs.blog1.content.subheading")}"
+      </h2>
+      <p class="mb-4">${t("blogsSection.blogs.blog1.content.paragraph1")}</p>
+      <p>${t("blogsSection.blogs.blog1.content.paragraph2")}</p>
+    `,
+    },
+    {
+      thumbnail: "/blog-2.jpg",
+      title: t("blogsSection.blogs.blog2.title"),
+      description: t("blogsSection.blogs.blog2.description"),
+      content: `
+      <p class="mb-2">${t("blogsSection.blogs.blog2.content.heading")}</p>
+      <p class="mb-4">${t("blogsSection.blogs.blog2.content.paragraph1")}</p>
+      <p>${t("blogsSection.blogs.blog2.content.paragraph2")}</p>
+    `,
+      category: "tech",
+      date: "10 Jan 2025",
+      slug: "a-spectrum-of-voices-a-world-of-knowledge-the-power-of-a-diverse-respondent-panel",
+    },
+    {
+      thumbnail: "/blog-3.png",
+      title: t("blogsSection.blogs.blog3.title"),
+      description: t("blogsSection.blogs.blog3.description"),
+      content: `
+      <p class="mb-4">${t("blogsSection.blogs.blog3.content.heading")}</p>
+      <p class="mb-4">${t("blogsSection.blogs.blog3.content.paragraph1")}</p>
+      <p class="mb-4">${t("blogsSection.blogs.blog3.content.paragraph2")}</p>
+      <p class="font-semibold text-blue-700">${t(
+        "blogsSection.blogs.blog3.content.paragraph3"
+      )}</p>
+    `,
+      category: "tech",
+      date: "10 Jan 2025",
+      slug: "the-power-of-real-people-in-market-research-real-people-real-data-real-impact",
+    },
+    {
+      thumbnail: "/blog-4.png",
+      title: t("blogsSection.blogs.blog4.title"),
+      description: t("blogsSection.blogs.blog4.description"),
+      content: `
+      <p class="mb-4">${t("blogsSection.blogs.blog4.content.paragraph1")}</p>
+      <p class="mb-4">${t("blogsSection.blogs.blog4.content.paragraph2")}</p>
+      <p class="mb-4">${t("blogsSection.blogs.blog4.content.paragraph3")}</p>
+      <p class="font-semibold text-blue-700">${t(
+        "blogsSection.blogs.blog4.content.paragraph4"
+      )}</p>
+    `,
+      category: "tech",
+      date: "10 Jan 2025",
+      slug: "more-than-numbers-how-surventix-turns-data-into-your-secret-weapon",
+    },
+    {
+      thumbnail: "/blog-5.png",
+      title: t("blogsSection.blogs.blog5.title"),
+      description: t("blogsSection.blogs.blog5.description"),
+      content: `
+      <p class="mb-4">${t("blogsSection.blogs.blog5.content.paragraph1")}</p>
+      <p class="mb-4">${t("blogsSection.blogs.blog5.content.paragraph2")}</p>
+      <p class="mb-4">${t("blogsSection.blogs.blog5.content.paragraph3")}</p>
+      <p class="font-semibold text-blue-700">${t(
+        "blogsSection.blogs.blog5.content.paragraph5"
+      )}</p>
+    `,
+      category: "tech",
+      date: "10 Jan 2025",
+      slug: "more-than-numbers-how-surventix-turns-data-into-your-secret-weapon",
+    },
+    {
+      thumbnail: "/blog-6.png",
+      title: t("blogsSection.blogs.blog6.title"),
+      description: t("blogsSection.blogs.blog6.description"),
+      content: `
+      <p class="mb-4">${t("blogsSection.blogs.blog6.content.paragraph1")}</p>
+      <p class="mb-4">${t("blogsSection.blogs.blog6.content.paragraph2")}</p>
+      <p class="mb-4">${t("blogsSection.blogs.blog6.content.paragraph3")}</p>
+      <p class="font-semibold text-blue-700">${t(
+        "blogsSection.blogs.blog6.content.paragraph6"
+      )}</p>
+    `,
+      category: "tech",
+      date: "10 Jan 2025",
+      slug: "more-than-numbers-how-surventix-turns-data-into-your-secret-weapon",
+    },
+    {
+      thumbnail: "/blog-7.png",
+      title: t("blogsSection.blogs.blog7.title"),
+      description: t("blogsSection.blogs.blog7.description"),
+      content: `
+      <p class="mb-4">${t("blogsSection.blogs.blog7.content.paragraph1")}</p>
+      <p class="mb-4">${t("blogsSection.blogs.blog7.content.paragraph2")}</p>
+      <p class="mb-4">${t("blogsSection.blogs.blog7.content.paragraph3")}</p>
+      <p class="font-semibold text-blue-700">${t(
+        "blogsSection.blogs.blog7.content.paragraph7"
+      )}</p>
+    `,
+      category: "tech",
+      date: "10 Jan 2025",
+      slug: "more-than-numbers-how-surventix-turns-data-into-your-secret-weapon",
+    },
+    {
+      thumbnail: "/blog-8.png",
+      title: t("blogsSection.blogs.blog8.title"),
+      description: t("blogsSection.blogs.blog8.description"),
+      content: `
+      <p class="mb-4">${t("blogsSection.blogs.blog8.content.paragraph1")}</p>
+      <p class="mb-4">${t("blogsSection.blogs.blog8.content.paragraph2")}</p>
+      <p class="mb-4">${t("blogsSection.blogs.blog8.content.paragraph3")}</p>
+      <p class="font-semibold text-blue-700">${t(
+        "blogsSection.blogs.blog8.content.paragraph8"
+      )}</p>
+    `,
+      category: "tech",
+      date: "10 Jan 2025",
+      slug: "more-than-numbers-how-surventix-turns-data-into-your-secret-weapon",
+    },
+  ];
+};
 
 export const OUR_REACH = [
   { icon: "US", text: "United States" },
@@ -1069,82 +718,71 @@ export const OUR_REACH = [
   { icon: "UA", text: "Ukraine" },
 ];
 
-export const companyValues = [
+export const companyValues = (t: any) => [
   {
-    title: "Integrity",
-    description:
-      "At Surventix, integrity is our foundation. We don’t cut corners or play the numbers game—we deliver real, transparent, and ethical insights.",
+    title: t("companyValues.integrity.title"),
+    description: t("companyValues.integrity.description"),
     icon: "shield-check",
     image: v1,
   },
   {
-    title: "Diversity",
-    description:
-      "Market research thrives on diversity, and so do we. With a global network spanning industries, demographics, and perspectives, Surventix ensures that no insight is one-dimensional.",
+    title: t("companyValues.diversity.title"),
+    description: t("companyValues.diversity.description"),
     icon: "users",
     image: v2,
   },
   {
-    title: "Respect for the Individual",
-    description:
-      "At Surventix, we recognize that behind every data point is a real person. We value the expertise, aspirations, and individuality of our team and respondents alike.",
+    title: t("companyValues.respect.title"),
+    description: t("companyValues.respect.description"),
     icon: "user-heart",
     image: v3,
   },
   {
-    title: "Clients Come First",
-    description:
-      "Your business goals are our priority. Whether you need real-time market intelligence or a deep dive into consumer behavior, Surventix ensures you get the right insights—fast, accurate, and actionable.",
+    title: t("companyValues.clientsFirst.title"),
+    description: t("companyValues.clientsFirst.description"),
     icon: "handshake",
     image: v4,
   },
   {
-    title: "The Strategic Perspective",
-    description:
-      "Data is just numbers without the right perspective. At Surventix, we don’t just collect information—we analyze it through a strategic lens to drive smarter decisions.",
+    title: t("companyValues.strategicPerspective.title"),
+    description: t("companyValues.strategicPerspective.description"),
     icon: "chart-bar",
     image: v5,
   },
   {
-    title: "Value Delivered",
-    description:
-      "Every data set should serve a purpose, and at Surventix, we ensure that insights translate into impact. Our research is designed to drive real business results.",
+    title: t("companyValues.valueDelivered.title"),
+    description: t("companyValues.valueDelivered.description"),
     icon: "check-circle",
     image: v6,
   },
   {
-    title: "Partnership",
-    description:
-      "We don’t just offer research; we build long-term collaborations. Surventix partners with businesses, research firms, and industry leaders to create lasting value.",
+    title: t("companyValues.partnership.title"),
+    description: t("companyValues.partnership.description"),
     icon: "handshake",
     image: v8,
   },
   {
-    title: "Expanding the Art of the Possible",
-    description:
-      "Innovation in market research is what sets Surventix apart. We embrace new methodologies, emerging technologies, and forward-thinking strategies to redefine what's possible.",
+    title: t("companyValues.expandingPossibilities.title"),
+    description: t("companyValues.expandingPossibilities.description"),
     icon: "lightbulb",
     image: v9,
   },
   {
-    title: "Social Impact",
-    description:
-      "At Surventix, we believe in the power of responsible research. Ethical data collection, fair respondent engagement, and sustainability initiatives are at the core of what we do.",
+    title: t("companyValues.socialImpact.title"),
+    description: t("companyValues.socialImpact.description"),
     icon: "globe",
     image: v10,
   },
 ];
 
-export const OPPORTUNITIES = [
+export const OPPORTUNITIES = (t: any) => [
   {
     id: 1,
-    title: "Corporate at Surventix",
-
+    title: t("opportunities.items.corporate.title"),
     content: [
-      `At Surventix, our corporate teams play a vital role in driving business success and ensuring seamless service delivery. We support our regional operations with expertise in business development, service design, product innovation, operations, and market research management.
-`,
-      `To support both professional development and career advancement, we offer exciting job opportunities, hands-on projects, and comprehensive training programs. Through continuous learning and skill-building, we enable our teams to reach their full potential and make a lasting impact in market research and advertising.`,
-      `At Surventix, when our people succeed, we succeed.`,
+      t("opportunities.items.corporate.content.0"),
+      t("opportunities.items.corporate.content.1"),
+      t("opportunities.items.corporate.content.2"),
     ],
     className: "mr-auto md:mb-20 mb-10 bg-[#E2062E]",
     animation: timealphared,
@@ -1154,13 +792,12 @@ export const OPPORTUNITIES = [
   },
   {
     id: 2,
-    title: "A Learning Environment at Surventix",
+    title: t("opportunities.items.learning.title"),
     content: [
-      `At Surventix, continuous learning is at the core of our culture. We offer job rotations, hands-on assignments, and on-the-job training to foster career growth.`,
-      `Our training programs enhance competencies, including the Surventix Executive Development Program (SEDP) for future leaders and industry-specific courses in collaboration with top institutions.`,
-      `We also run Graduate Development Programs for top-tier undergraduates and provide fast-track opportunities for high-potential employees.
-`,
-      `At Surventix, learning never stops—because when our people grow, so does our success.`,
+      t("opportunities.items.learning.content.0"),
+      t("opportunities.items.learning.content.1"),
+      t("opportunities.items.learning.content.2"),
+      t("opportunities.items.learning.content.3"),
     ],
     className: "ml-auto md:mb-20 mb-10 bg-[#460073]",
     animation: timealphaviolet,
@@ -1170,10 +807,8 @@ export const OPPORTUNITIES = [
   },
   {
     id: 3,
-    title: "Surventix isn’t just another online market research company",
-    content: [
-      `it’s where research meets revolution. We don’t just listen to our people; we give them the tools, trust, and space to soar. At Surventix, we nurture an entrepreneurial mindset, creating a culture where hard work is celebrated, innovation is encouraged, and we work hard, but party harder. Here, we don’t just make waves in the industry, we make sure our team rides them all the way to success.`,
-    ],
+    title: t("opportunities.items.culture.title"),
+    content: [t("opportunities.items.culture.content.0")],
     className: "mr-auto mb-20 bg-[#0041F0]",
     animation: timealphablue,
     bg: "bg-[#0041F0]",
@@ -1183,51 +818,40 @@ export const OPPORTUNITIES = [
 
   {
     id: 4,
-    title: "Exciting Opportunities with Surventix",
-    content: [
-      `Join the Surventix community and explore exciting opportunities to participate in engaging surveys and research projects. By sharing your valuable insights, you'll not only help shape the future of products and services but also get rewarded for your time and input. Collaborate with leading brands and businesses, and make a real impact while enjoying the benefits of being part of a dynamic, forward-thinking research network. Your opinions matter at Surventix, and together, we can drive innovation and growth across industries.`,
-    ],
+    title: t("opportunities.items.engaging.title"),
+    content: [t("opportunities.items.engaging.content.0")],
     className: "mr-auto md:mb-20 mb-10 bg-[#E2062E]",
     animation: timealphared,
     bg: "bg-[#E2062E]",
   },
   {
     id: 5,
-    title: "Real-World Impact with Surventix",
-    content: [
-      `At Surventix, your opinions have the power to influence real-world product development and marketing strategies. By sharing your genuine consumer feedback, you directly contribute to shaping the future of industries, helping brands create products and services that truly meet the needs of their customers. Join a movement that values your voice, where your insights play a crucial role in driving meaningful change across various sectors. With Surventix, you're not just participating in research—you're making a difference.`,
-    ],
+    title: t("opportunities.items.impact.title"),
+    content: [t("opportunities.items.impact.content.0")],
     className: "ml-auto md:mb-20 mb-10 bg-[#460073]",
     animation: timealphaviolet,
     bg: "bg-[#460073]",
   },
   {
     id: 6,
-    title: "Unmatched Support with Surventix",
-    content: [
-      `At Surventix, we prioritize your experience every step of the way. Our dedicated team is committed to providing seamless support, ensuring you have everything you need to participate with confidence. We operate with complete transparency, adhering to ethical research practices to guarantee your trust. Whether you have a query or need assistance, we offer quick resolution and fair compensation for your time and insights. With Surventix, you can be assured of reliable, supportive, and ethical involvement in every research project.`,
-    ],
+    title: t("opportunities.items.support.title"),
+    content: [t("opportunities.items.support.content.0")],
     className: "mr-auto mb-20 bg-[#0041F0]",
     animation: timealphablue,
     bg: "bg-[#0041F0]",
   },
-
   {
     id: 7,
-    title: "Continuous Learning with Surventix",
-    content: [
-      `Surventix offers you the unique opportunity to gain exposure to a wide range of industries and market trends, expanding your understanding of the business world. By participating in our research projects, you’ll enhance your knowledge of consumer behavior and business strategies, staying ahead of the curve. Additionally, as a member, you’ll receive exclusive insights and reports on emerging market trends, giving you a valuable edge in understanding what’s next in the marketplace. With Surventix, your learning journey never stops—empowering you with knowledge that can shape both your professional and personal growth.`,
-    ],
+    title: t("opportunities.items.learning.title"),
+    content: [t("opportunities.items.learning.content.0")],
     className: "ml-auto md:mb-20 mb-10 bg-[#E2062E]",
     animation: timealphared,
     bg: "bg-[#E2062E]",
   },
   {
     id: 8,
-    title: "Professional Growth with Surventix",
-    content: [
-      `Surventix provides an excellent platform to build your reputation as a trusted survey respondent and market expert. By consistently sharing valuable insights, you’ll establish credibility and become a respected voice in the research community. You'll also gain access to exclusive networking opportunities, connecting with professionals across marketing, research, and analytics sectors. Additionally, participating in Surventix can open doors to potential career prospects in research, insights, and data-driven roles, offering a pathway for professional advancement and growth. With Surventix, your contributions can take your career to new heights.`,
-    ],
+    title: t("opportunities.items.professional.title"),
+    content: [t("opportunities.items.professional.content.0")],
     className: "mr-auto md:mb-20 mb-10 bg-[#460073]",
     animation: timealphaviolet,
     bg: "bg-[#460073]",

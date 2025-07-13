@@ -1,3 +1,5 @@
+"use client";
+
 import CareerModal from "@/components/card/CareerModal";
 import FAQcard from "@/components/card/FAQcard";
 import JobCard from "@/components/card/JobCard";
@@ -6,31 +8,18 @@ import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-
-const benefits = [
-  {
-    id: 1,
-    title: "Hands-On Experience",
-    description: "Work on real-world projects and gainpractical insights.",
-  },
-  {
-    id: 2,
-    title: "Expert Guidance",
-    description: "Learn from industry leaders with years of experience.",
-  },
-  {
-    id: 3,
-    title: "Innovation-Driven Environment",
-    description: "Be part of a dynamic team that values fresh ideas.",
-  },
-  {
-    id: 4,
-    title: "Career Growth",
-    description: "Build a strong foundation for long-term success.",
-  },
-];
+import { useTranslation } from "react-i18next";
 
 const Page = () => {
+  const { t } = useTranslation();
+  const benefits = t("careerPage.benefits", { returnObjects: true }) as {
+    id: number;
+    title: string;
+    description: string;
+  }[];
+
+  const OPPORTUNITIES_DATA = OPPORTUNITIES(t);
+
   return (
     <div className="">
       <div
@@ -42,9 +31,9 @@ const Page = () => {
       >
         <video
           className="h-full w-full object-cover"
-          muted={true}
-          autoPlay={true}
-          loop={true}
+          muted
+          autoPlay
+          loop
           src="/bg-video.mp4"
         ></video>
       </div>
@@ -52,19 +41,21 @@ const Page = () => {
       <div className="md:h-screen h-[75vh] relative bg-gradient-to-br from-black/70 to-black/35">
         <div className="container  md:pt-40 pt-32 ">
           <div className="pb-3 flex uppercase gap-2 text-sm tracking-[2.4px] font-bold border-b border-[#ffffff4d]">
-            <Link href="/">Home</Link> <span>/</span> <div>career</div>
+            <Link href="/">{t("careerPage.home")}</Link> <span>/</span>{" "}
+            <div>{t("careerPage.career")}</div>
           </div>
 
           <div className="md:mt-16 mt-8">
             <h1 className="md:mb-8 mb-3 md:leading-[64px] leading-[36px] md:text-[64px] text-4xl">
-              Build a future you <br /> believe in
+              {t("careerPage.heroTitle")} <br />
+              {t("careerPage.subHeroTitle")}
             </h1>
 
             <a
               href="#coc"
               className="md:text-lg text-base tracking-[0.5px] flex items-center gap-4"
             >
-              Browse Jobs{" "}
+              {t("careerPage.browseJobs")}{" "}
               <span className="w-10 h-10 bg-white text-black flex justify-center items-center rounded-full">
                 <ArrowRight />
               </span>
@@ -79,16 +70,11 @@ const Page = () => {
             <div className="grid md:grid-cols-2 gap-8 items-center">
               <div className="">
                 <h2 className="md:text-[35px] text-2xl leading-[24px] md:leading-[35px] mb-5 ">
-                  Join Our Team
+                  {t("careerPage.joinTeam")}
                 </h2>
 
                 <p className="max-w-[750px] mx-auto text-white/80">
-                  As a global company, we offer exceptional career and
-                  development opportunities with attractive remuneration for
-                  candidates in different roles in our Online Market Reserach
-                  services and Consulting businesses in our corporate offices
-                  and regional subsidiaries in Asia Pacific, North America,
-                  Europe and the Middle East.
+                  {t("careerPage.joinTeamDesc")}
                 </p>
               </div>
               <div>
@@ -104,7 +90,7 @@ const Page = () => {
             </div>
 
             <div className="gap-8 md:grid-cols-3 grid md:mt-16  mt-8">
-              {OPPORTUNITIES.slice(0, 3).map((item) => (
+              {OPPORTUNITIES_DATA.slice(0, 3).map((item) => (
                 <div
                   key={item.id}
                   className="rounded-2xl overflow-hidden bg-[#00233C]"
@@ -137,8 +123,9 @@ const Page = () => {
                 </div>
               ))}
             </div>
+
             <div className="md:mt-20 mt-8  mx-auto max-w-5xl">
-              {OPPORTUNITIES.slice(3).map((item) => (
+              {OPPORTUNITIES_DATA.slice(3).map((item) => (
                 <JobCard
                   key={item.id}
                   title={item.title}
@@ -156,14 +143,11 @@ const Page = () => {
           <div className="flex items-center justify-center ">
             <div className="max-w-3xl shadow-xl rounded-2xl text-center">
               <h2 className="text-3xl font-bold">
-                Kickstart Your Career with{" "}
+                {t("careerPage.kickstartTitle")}{" "}
                 <span className="text-blue-600">Surventix</span>
               </h2>
               <p className="mt-4 text-white/80 text-lg">
-                Looking for a career in market research and consumer insights?
-                At Surventix, we provide exciting opportunities for ambitious
-                individuals looking to grow, learn, and make an impact in the
-                ever-evolving world of data and advertising.
+                {t("careerPage.kickstartDesc")}
               </p>
               <div className="mt-10 flex flex-col gap-4">
                 {benefits.map((item) => (
@@ -174,9 +158,8 @@ const Page = () => {
           </div>
 
           <div className="flex justify-center items-center mt-16 gap-2">
-            Share your updated CV at
+            {t("careerPage.shareCV")}{" "}
             <a href="mailto:HR@surventix.com" className="text-blue-600">
-              {" "}
               HR@surventix.com
             </a>
           </div>

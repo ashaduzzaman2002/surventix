@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import type { AnimationItem } from "lottie-web";
 import JobModal from "./JobModal";
+import { useTranslation } from "react-i18next";
 
 const JobCard = ({
   className,
@@ -21,6 +22,7 @@ const JobCard = ({
   const animationInstance = useRef<AnimationItem | null>(null);
   const [isMobile, setIsMobile] = useState(false);
   const [isActive, setIsActive] = useState(false);
+    const { t } = useTranslation();
 
   useEffect(() => {
     const checkMobile = () => setIsMobile(window.innerWidth <= 768);

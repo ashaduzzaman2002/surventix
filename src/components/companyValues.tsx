@@ -4,11 +4,14 @@ import { Card } from "./ui/card";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 import { v1 } from "@/assets";
+import { useTranslation } from "react-i18next";
 
 const CompanyValues = () => {
+  const {t} = useTranslation();
+  const companyValueData = companyValues(t);
   return (
     <div className="container md:py-16 py-8 grid md:grid-cols-3 md:gap-6 gap-4 relative">
-      {companyValues.map((item, i) => (
+      {companyValueData.map((item, i) => (
         <Card
           key={i}
           className={cn(
@@ -28,9 +31,7 @@ const CompanyValues = () => {
           </div>
 
           <div className="absolute inset-0 bg-[#3961DC] translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-in-out">
-            <div className="absolute inset-0 bg-black/45">
-
-            </div>
+            <div className="absolute inset-0 bg-black/45"></div>
             <Image
               src={item.image || v1}
               alt={item.title}

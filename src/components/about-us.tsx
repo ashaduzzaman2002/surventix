@@ -2,9 +2,11 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { about1 } from "@/assets";
+import { useTranslation } from "react-i18next";
 // import { PlayWhite } from "@/assets/Icon";
 
 const AboutUs = () => {
+  const { t } = useTranslation();
   // const videoRef = useRef<HTMLVideoElement | null>(null);
 // const [isPlaying, setIsPlaying] = useState(false);
 
@@ -28,29 +30,24 @@ const AboutUs = () => {
           <div className="flex flex-col justify-center">
             <div className="md:mb-16 mb-4">
               <div className="max-w-[650px] mx-auto">
-                <h2 className="md:text-5xl text-3xl md:mb-5 mb-3">About Us</h2>
+                <h2 className="md:text-5xl text-3xl md:mb-5 mb-3">
+                  {" "}
+                  {t("about.heading")}
+                </h2>
                 <p className=" opacity-80 mb-5 md:mb-0">
-                  We turn research into results, We don’t just follow trends—we
-                  predict them so you’re always one step ahead!
+                  {t("about.subheading")}
                 </p>
               </div>
             </div>
 
-            <p className="md:text-lg text-sm">
-              At Surventix, we are redefining the way businesses approach market
-              research and problem-solving. We don’t just adapt to change—we
-              anticipate it, innovate around it, and create solutions that drive
-              real impact. Our commitment to excellence enables us to
-              consistently deliver meaningful, sustainable outcomes that benefit
-              both our clients and the communities they serve.
-            </p>
+            <p className="md:text-lg text-sm">{t("about.description")}</p>
 
             <div className="mt-10">
               <Link
                 href="/about-us"
                 className="uppercase text-xs py-3 px-7 bg-white text-[#02000F] rounded-3xl"
               >
-                Learn More
+                {t("about.learn_more")}
               </Link>
             </div>
           </div>
@@ -65,7 +62,6 @@ const AboutUs = () => {
                 />
               </div>
               <div className="w-[50%] aspect-square absolute bottom-0 right-0 rounded-[10px] border-[5px] border-[#F7F9FC]">
-             
                 <video
                   src="/home.mp4"
                   className="h-full w-full rounded-[10px] object-cover"

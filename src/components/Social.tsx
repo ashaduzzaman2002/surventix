@@ -1,6 +1,7 @@
 import { Linkedin } from "lucide-react";
 import Image from "next/image";
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 const posts = [
   {
@@ -38,10 +39,11 @@ const posts = [
 ];
 
 const Social = () => {
+  const {t} = useTranslation();
   return (
     <div className="container md:py-16 py-8">
       <h2 className="md:text-5xl text-3xl  text-center md:mb-16 mb-8">
-        Social Media
+        {t("socialMedia")}
       </h2>
 
       <div className="grid md:grid-cols-5 md:gap-8 gap-4">
@@ -52,15 +54,13 @@ const Social = () => {
             target="_blank"
             className="w-full aspect-square overflow-hidden group relative"
           >
-           
-              <Image
-                className="w-full h-full object-cover group-hover:scale-110 transition-all ease-in-out duration-300"
-                src={item.image}
-                alt="image"
-                width={200}
-                height={200}
-              />
-            
+            <Image
+              className="w-full h-full object-cover group-hover:scale-110 transition-all ease-in-out duration-300"
+              src={item.image}
+              alt="image"
+              width={200}
+              height={200}
+            />
 
             <div className="bg-black absolute inset-0 flex items-end p-2 translate-y-full group-hover:translate-y-0 duration-300 transition-all ease-in-out">
               <Linkedin />

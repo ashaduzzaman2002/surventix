@@ -5,6 +5,7 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
+import { useTranslation } from "react-i18next";
 
 export default function CareerModal({
   title,
@@ -15,11 +16,12 @@ export default function CareerModal({
   content: string[];
   bg: string
 }) {
+  const { t } = useTranslation();
   return (
     <Dialog>
       <DialogTrigger asChild>
         <button className="mt-4 border-[1.5px] border-white py-2.5 px-4">
-          Read More
+          {t("readMore")}
         </button>
       </DialogTrigger>
       <DialogContent className={"sm:max-w-2xl " + bg}>
@@ -36,7 +38,6 @@ export default function CareerModal({
             </p>
           ))}
         </div>
-       
       </DialogContent>
     </Dialog>
   );

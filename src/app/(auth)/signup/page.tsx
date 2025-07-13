@@ -15,11 +15,13 @@ import * as Yup from "yup";
 import { useRouter } from "next/navigation";
 
 function generateRandomReferralCode(length = 8): string {
-  return Math.random().toString(36).substring(2, 2 + length).toUpperCase();
-} 
+  return Math.random()
+    .toString(36)
+    .substring(2, 2 + length)
+    .toUpperCase();
+}
 
 const Signup = () => {
-
   const router = useRouter();
   const formik = useFormik({
     initialValues: {
@@ -51,7 +53,6 @@ const Signup = () => {
         const user = userCredential.user;
         await sendEmailVerification(user);
         const referralCode = generateRandomReferralCode();
-
 
         await setDoc(doc(db, "users", user.uid), {
           name: values.name,

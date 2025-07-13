@@ -2,15 +2,10 @@
 import React, { useEffect, useState } from "react";
 import { motion, useMotionValue, useSpring } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-
-const data = [
-  { label: "Bids", value: 5000 },
-  { label: "Projects", value: 1000 },
-  { label: "Completes", value: 200000 },
-  { label: "Clients", value: 40 },
-];
+import { useTranslation } from "react-i18next";
 
 const Counter = ({ target }: { target: number }) => {
+  const { t } = useTranslation();
   const count = useMotionValue(0);
   const springValue = useSpring(count, { stiffness: 100, damping: 20 });
   const { ref, inView } = useInView({ triggerOnce: true });
@@ -33,36 +28,39 @@ const Counter = ({ target }: { target: number }) => {
   return (
     <span ref={ref} className="md:text-5xl text-3xl font-bold">
       {displayValue.toLocaleString()}
-      { "+"}
+      {"+"}
     </span>
   );
 };
 
 const OurJourney = () => {
+  const { t } = useTranslation();
+  const data = [
+    { label: t("ourJourney.stats.bids"), value: 5000 },
+    { label: t("ourJourney.stats.projects"), value: 1000 },
+    { label: t("ourJourney.stats.completes"), value: 200000 },
+    { label: t("ourJourney.stats.clients"), value: 40 },
+  ];
   return (
     <div className="container flex flex-col items-center md:pt-20 pt-16">
       <h2 className="md:text-5xl text-3xl max-w-[550px] text-center font-semibold">
-        Our{" "}
+        {t("ourJourney.title.start")}{" "}
         <span className="bg-gradient-to-r from-purple-500 via-pink-500 to bg-yellow-500 bg-clip-text text-transparent">
-          Journey
+          {t("ourJourney.title.highlight1")}
         </span>{" "}
-        at{" "}
+        {t("ourJourney.title.middle")}{" "}
         <span className="bg-gradient-to-r from-yellow-500 via-purple-500 to bg-pink-500 bg-clip-text text-transparent">
-          Surventix:
+          {t("ourJourney.title.highlight2")}
         </span>{" "}
-        Insights Without{" "}
+        {t("ourJourney.title.end")}{" "}
         <span className="bg-gradient-to-r from-pink-500 via-yellow-500 to bg-purple-500 bg-clip-text text-transparent">
-          Borders
+          {t("ourJourney.title.highlight3")}
         </span>
       </h2>
 
       <p className="max-w-[750px] md:mt-6 mt-4 text-center opacity-70">
-        At Surventix, we don’t just collect data—we connect businesses with the
-        world. With 1,000+ projects completed, 50,000+ survey responses
-        delivered, and 100+ clients, we proudly operate in 50+ countries,
-        providing global insights that drive smart, data-driven decisions.
+        {t("ourJourney.description")}
       </p>
-
       <div className="md:mt-20 mt-8 mb-10 grid md:grid-cols-4 grid-cols-1 w-full md:gap-10 gap-6 text-center">
         {data.map((item, i) => (
           <motion.div

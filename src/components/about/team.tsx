@@ -1,9 +1,12 @@
-'use client';
+"use client";
 import { teamMembers } from "@/constant/data";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 
 export default function MeetOurTeam() {
+  const { t } = useTranslation();
+  const teamMembersData = teamMembers(t);
   const [isMobile, setIsMobile] = useState(false);
   const [flippedCards, setFlippedCards] = useState<number[]>([]);
 
@@ -18,24 +21,20 @@ export default function MeetOurTeam() {
 
   const toggleFlip = (index: number) => {
     setFlippedCards((prev) =>
-      prev.includes(index)
-        ? prev.filter((i) => i !== index)
-        : [...prev, index]
+      prev.includes(index) ? prev.filter((i) => i !== index) : [...prev, index]
     );
   };
 
   return (
     <div className="container text-white md:py-16 text-center mb-10">
-      <h2 className="md:text-5xl text-3xl font-bold mb-4">Meet Our Team</h2>
+      <h2 className="md:text-5xl text-3xl font-bold mb-4">
+        {t("meetTeam.heading")}
+      </h2>
       <p className="text-gray-400 mb-10 text-sm max-w-2xl mx-auto">
-        At Surventix, our leadership team is made up of passionate and
-        forward-thinking professionals committed to shaping the company’s
-        future. With deep expertise across various industries, they work
-        relentlessly to create meaningful solutions that drive success for our
-        global customers.”
+        {t("meetTeam.paragraph")}
       </p>
       <div className="grid md:grid-cols-3 gap-10 pt-10">
-        {teamMembers.map((member, index) => {
+        {teamMembersData.map((member, index) => {
           const isFlipped = flippedCards.includes(index);
 
           return (

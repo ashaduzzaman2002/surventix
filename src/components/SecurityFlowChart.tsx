@@ -1,5 +1,6 @@
+"use client";
 
-import React from 'react';
+import React from "react";
 import {
   Link2,
   ShieldCheck,
@@ -11,66 +12,72 @@ import {
   CheckCircle,
   ScanLine,
   ClipboardCheck,
-} from 'lucide-react';
+} from "lucide-react";
+import { useTranslation } from "react-i18next";
 
-import TimelineItem from './TimelineItem';
+import TimelineItem from "./TimelineItem";
 
-const surveyStages = [
-  {
-    icon: <Link2 className="h-6 w-6" />,
-    title: "Access Survey",
-    description: "Participants begin the survey process by accessing the provided link or platform for entry.",
-  },
-  {
-    icon: <ShieldCheck className="h-6 w-6" />,
-    title: "Provide Consent",
-    description: "Respondents must read and agree to terms, confirming willingness to participate in the survey process.",
-  },
-  {
-    icon: <Key className="h-6 w-6" />,
-    title: "Verification & HASH Key",
-    description: "Distill verifies user legitimacy; a unique HASH KEY ensures secure and authenticated survey entry.",
-  },
-  {
-    icon: <MapPin className="h-6 w-6" />,
-    title: "Location & System Tracking",
-    description: "System captures location, IP address, and device details to prevent fraud and ensure data integrity.",
-  },
-  {
-    icon: <AlertTriangle className="h-6 w-6" />,
-    title: "Fraud Profiling & Dedupe",
-    description: "Tools assess responses for suspicious patterns, duplicate entries, and signs of fraudulent activity.",
-  },
-  {
-    icon: <HelpCircle className="h-6 w-6" />,
-    title: "Red Herring Questions",
-    description: "Intentional trick questions validate attentiveness, helping identify inattentive or dishonest survey takers.",
-  },
-  {
-    icon: <FileInput className="h-6 w-6" />,
-    title: "Survey Entry",
-    description: "Once verified, respondent officially begins answering survey questions based on their knowledge or experience.",
-  },
-  {
-    icon: <CheckCircle className="h-6 w-6" />,
-    title: "Complete Survey",
-    description: "Participant provides responses to all questions, reaching the end of the survey questionnaire.",
-  },
-  {
-    icon: <ScanLine className="h-6 w-6" />,
-    title: "Exit HASH Key Verification",
-    description: "System checks exit HASH KEY to ensure survey was completed by the original, verified respondent.",
-  },
-  {
-    icon: <ClipboardCheck className="h-6 w-6" />,
-    title: "Survey Complete",
-    description: "Survey process is successfully concluded, and participant's data is securely stored for analysis.",
-  },
-];
 const SecurityFlowChart = () => {
+  const { t } = useTranslation();
+
+  const surveyStages = [
+    {
+      icon: <Link2 className="h-6 w-6" />,
+      title: t("securityFlow.accessSurvey.title"),
+      description: t("securityFlow.accessSurvey.description"),
+    },
+    {
+      icon: <ShieldCheck className="h-6 w-6" />,
+      title: t("securityFlow.provideConsent.title"),
+      description: t("securityFlow.provideConsent.description"),
+    },
+    {
+      icon: <Key className="h-6 w-6" />,
+      title: t("securityFlow.verification.title"),
+      description: t("securityFlow.verification.description"),
+    },
+    {
+      icon: <MapPin className="h-6 w-6" />,
+      title: t("securityFlow.tracking.title"),
+      description: t("securityFlow.tracking.description"),
+    },
+    {
+      icon: <AlertTriangle className="h-6 w-6" />,
+      title: t("securityFlow.fraudProfiling.title"),
+      description: t("securityFlow.fraudProfiling.description"),
+    },
+    {
+      icon: <HelpCircle className="h-6 w-6" />,
+      title: t("securityFlow.redHerring.title"),
+      description: t("securityFlow.redHerring.description"),
+    },
+    {
+      icon: <FileInput className="h-6 w-6" />,
+      title: t("securityFlow.surveyEntry.title"),
+      description: t("securityFlow.surveyEntry.description"),
+    },
+    {
+      icon: <CheckCircle className="h-6 w-6" />,
+      title: t("securityFlow.completeSurvey.title"),
+      description: t("securityFlow.completeSurvey.description"),
+    },
+    {
+      icon: <ScanLine className="h-6 w-6" />,
+      title: t("securityFlow.exitHash.title"),
+      description: t("securityFlow.exitHash.description"),
+    },
+    {
+      icon: <ClipboardCheck className="h-6 w-6" />,
+      title: t("securityFlow.surveyComplete.title"),
+      description: t("securityFlow.surveyComplete.description"),
+    },
+  ];
+
   return (
     <div className="max-w-3xl mx-auto px-4 py-12">
-      <h1 className="text-3xl font-bold text-center mb-12 text-primary capitalize">Security Flow Chart</h1>
+      <h1 className="text-3xl font-bold text-center mb-12 text-primary capitalize">
+        {t("securityFlow.heading")}
+      </h1>
       <div className="relative">
         {surveyStages.map((stage, index) => (
           <TimelineItem

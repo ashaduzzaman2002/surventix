@@ -9,15 +9,20 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "./ui/carousel";
+import { useTranslation } from "react-i18next";
 
 const Blog = () => {
+    const { t } = useTranslation();
+    const blogsData = BLOGS(t);
   return (
     <div className="container text-white  md:py-16 py-12">
-      <h2 className="md:text-5xl text-3xl  text-center md:mb-16 mb-8">Our Blogs</h2>
+      <h2 className="md:text-5xl text-3xl  text-center md:mb-16 mb-8">
+        {t("blogsSection.title")}
+      </h2>
 
       <Carousel className="w-full">
         <CarouselContent className="-ml-4 md:-ml-8">
-          {BLOGS.map((item, index) => (
+          {blogsData.map((item, index) => (
             <CarouselItem
               key={index}
               className="pl-4 md:pl-8 md:basis-1/2 lg:basis-1/3"
@@ -53,15 +58,20 @@ const Blog = () => {
                       {item.title}
                     </h2>
 
-                    <p className="md:mt-16 mt-8 line-clamp-3">{item.description}</p>
+                    <p className="md:mt-16 mt-8 line-clamp-3">
+                      {item.description}
+                    </p>
                   </div>
                 </div>
                 <div className="border-t border-gray-400 px-6 py-4 flex justify-end items-center">
                   {/* <button className="bg-[#F05BBE] px-6 py-1.5 rounded font-bold">
                     Join
                   </button> */}
-                  <Link href={`/blog/${item.slug}`} className="font-bold uppercase">
-                    Read More
+                  <Link
+                    href={`/blog/${item.slug}`}
+                    className="font-bold uppercase"
+                  >
+                    {t("readMore")}
                   </Link>
                 </div>
               </div>

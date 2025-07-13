@@ -1,33 +1,21 @@
 import { values } from "@/assets";
 import Image from "next/image";
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 const JoinUs = () => {
+  const { t } = useTranslation();
   return (
     <div className="relative">
       <div className="absolute bottom-0 w-[436.52px] h-[544.07px] rotate-[-47.46deg] blur-[200px] rounded-[200px] -left-40 bg-gradient-to-tr from-[#1A2980] to-[#26D0CE]"></div>
       <div className="md:py-16 py-8 container relative">
         <div className="grid md:grid-cols-2 md:gap-10 gap-5">
           <div className="flex flex-col">
-            <h2 className="md:text-5xl text-3xl mb-5">Our Values</h2>
+            <h2 className="md:text-5xl text-3xl mb-5">{t("joinUs.title")}</h2>
 
-            <p className="mb-10">Serious Business, With a Dash of Fun</p>
+            <p className="mb-10">{t("joinUs.subtitle")}</p>
 
-            <p>
-              At Surventix, we take our values very seriously—but who says
-              professionalism can’t come with a bit of personality? We believe
-              in ethics, integrity, and conducting business the right way... and
-              also in celebrating small wins (yes, even surviving a Monday
-              counts). <br />
-              <br />
-              Our team is built on trust, accountability, and an unshakable
-              commitment to excellence—plus a shared understanding that coffee
-              is a fundamental right. Every decision we make is backed by
-              principles, transparency, and maybe just a little caffeine-fueled
-              genius. <br /> <br />
-              Because at Surventix, we don’t just work hard—we work smart, with
-              a smile.
-            </p>
+            <p>{t("joinUs.description")}</p>
           </div>
 
           <div className="flex flex-col justify-center items-center pl-8 relative z-10">
@@ -40,7 +28,7 @@ const JoinUs = () => {
                 />
               </div>
               <div className="w-[50%] aspect-square absolute bottom-0 right-0 rounded-[10px] border-[5px] border-[#F7F9FC]">
-              <video
+                <video
                   src="/sea.mp4"
                   className="h-full w-full rounded-[10px] object-cover"
                   preload="metadata"

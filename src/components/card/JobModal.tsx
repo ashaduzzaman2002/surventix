@@ -7,6 +7,7 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
+import { useTranslation } from "react-i18next";
 
 export default function JobModal({
   title,
@@ -17,11 +18,12 @@ export default function JobModal({
   content: string[];
   bg: string
 }) {
+    const { t } = useTranslation();
   return (
     <Dialog>
       <DialogTrigger asChild>
         <button className="mt-4 border-[1.5px] border-white py-2.5 px-4">
-          Read More
+          {t("readMore")}
         </button>
       </DialogTrigger>
       <DialogContent className={"sm:max-w-2xl " + bg}>
@@ -39,8 +41,13 @@ export default function JobModal({
           ))}
         </div>
         <DialogFooter>
-            <DialogClose className="flex justify-end gap-2">
-          <button className="mt-4 border-[1.5px] border-white py-2.5 px-4" type="submit">Apply Now</button>
+          <DialogClose className="flex justify-end gap-2">
+            <button
+              className="mt-4 border-[1.5px] border-white py-2.5 px-4"
+              type="submit"
+            >
+              {t("applyNow")}
+            </button>
           </DialogClose>
         </DialogFooter>
       </DialogContent>

@@ -7,8 +7,11 @@ import { Facebook, LinkedIn } from "@/assets/Icon";
 import { NAV_LINKS } from "@/constant/path";
 import PanelBook from "./PanelBook";
 import { Instagram } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 const Footer = () => {
+  const { t } = useTranslation();
+  const navLinks = NAV_LINKS(t);
   return (
     <div
       className="flex flex-col text-white py-9 bg-[#02000F]"
@@ -29,16 +32,17 @@ const Footer = () => {
             </div>
 
             <p className="max-w-[300px] md:mt-5 mt-3 text-white/80">
-              At Surventix, we are constantly redefining our approach to work
-              and reimagining solutions to marketplace challenges.
+              {t("footer.description")}
             </p>
           </div>
           <div>
             <div className=" md:mt-2.5">
-              <h3 className="text-xl font-semibold mb-6">Quick Links</h3>
+              <h3 className="text-xl font-semibold mb-6">
+                {t("footer.quick_links")}
+              </h3>
 
               <div className="md:gap-[30px] gap-4 flex  flex-col opacity-80">
-                {NAV_LINKS.map((item, i) => (
+                {navLinks.map((item, i) => (
                   <Link key={i} href={item.href}>
                     {item.label}
                   </Link>
@@ -48,15 +52,20 @@ const Footer = () => {
           </div>
 
           <div className="md:mt-2.5">
-            <h3 className="text-xl font-semibold mb-6">Let’s Connect!</h3>
+            <h3 className="text-xl font-semibold mb-6">
+              {t("footer.lets_connect")}
+            </h3>
             <div className="flex md:gap-[30px] gap-4 flex-col">
               <p className="font-bold">
-                7th Floor, DLF One Horizon Centre, <br /> DLF Phase 5, Sector
-                43, Gurugram, <br /> Haryana 122002
+                {t("footer.address_line1")}
+                <br />
+                {t("footer.address_line2")}
+                <br />
+                {t("footer.address_line3")}
               </p>
 
               <a target="_blank" href="#">
-                sales@surventix.com
+                {t("footer.email")}
               </a>
             </div>
           </div>
@@ -80,7 +89,6 @@ const Footer = () => {
                 href="https://www.instagram.com/surventix/?hl=en"
               >
                 <div className="w-12 h-12 bg-[#EAEDFF] rounded-full flex justify-center items-center">
-               
                   <Instagram className="text-[#02000F]" />
                 </div>
               </a>
@@ -92,9 +100,9 @@ const Footer = () => {
 
         <div className="flex justify-center items-center border-t border-[#84828c] pt-5 gap-5">
           <p className="text-[10px] md:text-sm text-[#84828c] text-center">
-            Copyright © <span>2025</span> 2025 Surventix
+            {t("footer.copyright_line1")}
             <br />
-            All rights reserved. Powered by Surventix
+            {t("footer.copyright_line2")}
           </p>
         </div>
       </div>
