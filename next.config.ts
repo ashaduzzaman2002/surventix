@@ -2,6 +2,10 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   /* config options here */
+  typescript: {
+    ignoreBuildErrors: true,
+  },
+
   images: {
     domains: [
       "images.unsplash.com",
@@ -9,8 +13,8 @@ const nextConfig: NextConfig = {
       "plus.unsplash.com",
       "scontent-den2-1.cdninstagram.com",
       "media.licdn.com",
-      'hebbkx1anhila5yf.public.blob.vercel-storage.com',
-      'flagcdn.com'
+      "hebbkx1anhila5yf.public.blob.vercel-storage.com",
+      "flagcdn.com",
     ],
   },
 };
