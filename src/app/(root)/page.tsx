@@ -16,12 +16,9 @@ export default function Home() {
   return (
     <div className="overflow-hidden">
       <HeroSection />
-
       <AboutUs />
       <OurExpertise />
-
       <Blog />
-
       <OurJourney />
 
       <Client />
