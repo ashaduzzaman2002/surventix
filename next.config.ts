@@ -1,6 +1,7 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  output: "export",
   /* config options here */
   typescript: {
     ignoreBuildErrors: true,
@@ -16,6 +17,7 @@ const nextConfig: NextConfig = {
       "hebbkx1anhila5yf.public.blob.vercel-storage.com",
       "flagcdn.com",
     ],
+    unoptimized: true,
   },
 };
 
