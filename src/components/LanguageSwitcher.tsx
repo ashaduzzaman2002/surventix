@@ -3,7 +3,7 @@
 import { useTranslation } from "react-i18next";
 import { useEffect, useState } from "react";
 import Image from "next/image";
-import { Globe } from "lucide-react"; 
+import { Globe } from "lucide-react";
 
 const languages = [
   { value: "en", label: "English", icon: "https://flagcdn.com/w40/us.png" },
