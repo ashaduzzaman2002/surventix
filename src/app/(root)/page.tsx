@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import AboutUs from "@/components/about-us";
 import Blog from "@/components/blog";
@@ -8,9 +8,8 @@ import OurJourney from "@/components/our-journey";
 import Client from "@/components/Client";
 import CompanyValues from "@/components/companyValues";
 import JoinUs from "@/components/JoinUs";
-import Social from "@/components/Social";
 import GetinTouch from "@/components/GetinTouch";
-
+import Social from "@/components/Social";
 
 export default function Home() {
   return (
@@ -18,6 +17,7 @@ export default function Home() {
       <HeroSection />
 
       <AboutUs />
+
       <OurExpertise />
 
       <Blog />
