@@ -12,8 +12,8 @@ import {
 import { useTranslation } from "react-i18next";
 
 const Blog = () => {
-    const { t } = useTranslation();
-    const blogsData = BLOGS(t);
+  const { t } = useTranslation();
+  const blogsData = BLOGS(t);
   return (
     <div className="container text-white  md:py-16 py-12">
       <h2 className="md:text-5xl text-3xl  text-center md:mb-16 mb-8">
@@ -68,7 +68,7 @@ const Blog = () => {
                     Join
                   </button> */}
                   <Link
-                    href={`/blog/${item.slug}`}
+                    href={`/blog/${item?.slug}`}
                     className="font-bold uppercase"
                   >
                     {t("readMore")}

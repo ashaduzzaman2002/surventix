@@ -286,7 +286,7 @@ export const surventixHighlights = (t: any) => [
 
 export const SECURITY_CHECK = (t: any) => [
   {
-    id: 1 ,
+    id: 1,
     title: t("securityCheck.advancedEncryption.title"),
     items: [
       t("securityCheck.advancedEncryption.item1"),
@@ -395,7 +395,6 @@ export const SECURITY_CHECK = (t: any) => [
       "https://images.unsplash.com/photo-1523961131990-5ea7c61b2107?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
 ];
-
 
 export const CODE_OF_CONDUCT = (t: any) => [
   {
@@ -531,6 +530,23 @@ export const EXPERTISE = (t: any) => [
     title: t("expertise.3.title"),
     description: t("expertise.3.description"),
     image: "/colab.webp",
+  },
+];
+
+// staticBlogs.ts
+
+export const STATIC_BLOGS = [
+  {
+    slug: "surventix-the-power-of-global-insights-at-your-fingertips",
+  },
+  {
+    slug: "a-spectrum-of-voices-a-world-of-knowledge-the-power-of-a-diverse-respondent-panel",
+  },
+  {
+    slug: "the-power-of-real-people-in-market-research-real-people-real-data-real-impact",
+  },
+  {
+    slug: "more-than-numbers-how-surventix-turns-data-into-your-secret-weapon",
   },
 ];
 
