@@ -202,7 +202,7 @@ const Panel = () => {
               desc: [t("panel.cardsection.t2.desc")],
             },
             {
-              title: [t("panel.cardsection..title")],
+              title: [t("panel.cardsection.t3.title")],
               desc: [t("panel.cardsection.t3.desc")],
             },
           ].map((item, index) => (
