@@ -143,9 +143,9 @@ const Panel = () => {
           transition={{ duration: 1.2 }}
         >
           {/* SIGN UP NOW Button */}
-          <Link href={"/signup"}>
+          <Link href="/signup" className="w-full sm:w-64 md:w-72">
             <motion.button
-              className="w-full sm:w-64 md:w-72 py-4 text-base sm:text-lg md:text-xl rounded-full font-bold text-white bg-pink-600 border-2 border-pink-600 hover:bg-pink-700 hover:border-pink-700 transition-all duration-300 hover:scale-105 shadow-lg cursor-pointer"
+              className="w-full py-4 text-base sm:text-lg md:text-xl rounded-full font-bold text-white bg-pink-600 border-2 border-pink-600 hover:bg-pink-700 hover:border-pink-700 transition-all duration-300 hover:scale-105 shadow-lg cursor-pointer"
               whileHover={{ y: -4 }}
               transition={{ type: "spring", stiffness: 200 }}
             >
@@ -154,9 +154,9 @@ const Panel = () => {
           </Link>
 
           {/* LOGIN Button */}
-          <Link href={"/signin"}>
+          <Link href="/signin" className="w-full sm:w-64 md:w-72">
             <motion.button
-              className="w-full sm:w-64 md:w-72 py-4 text-base sm:text-lg md:text-xl rounded-full font-bold text-white border-2 border-white bg-transparent hover:bg-pink-600 hover:border-pink-600 transition-all duration-300 hover:scale-105 shadow-lg cursor-pointer"
+              className="w-full py-4 text-base sm:text-lg md:text-xl rounded-full font-bold text-white border-2 border-white bg-transparent hover:bg-pink-600 hover:border-pink-600 transition-all duration-300 hover:scale-105 shadow-lg cursor-pointer"
               whileHover={{ y: -4 }}
               transition={{ type: "spring", stiffness: 200 }}
             >
